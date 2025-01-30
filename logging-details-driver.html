@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="approvals-styles.css">
+	<link rel="stylesheet" href="overlay-logging.css">
+	
+	<script src="navbar.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+	
+    <title>Logging</title>
+	
+
+	
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+     
+	 	 	   <div id="navbar-placeholder"></div>
+
+        <!-- Main Content -->
+
+            <!-- Blue Line Container -->
+            <div class="blue-line-container">
+                <div class="blue-line"></div>
+            </div>
+
+
+			<!-- Overlay -->
+			<div class="overlay" style="margin-left: 25px; margin-top: -5px; height: 1150px;"></div>
+
+
+			<!-- Centered White Box -->
+			<div class="centered-box" style="margin-left: 150px;">
+				<!-- Close Button -->
+				<a href="logging.html" class="close-circle">&#x2715;</a>
+				<div class="outer-container" >
+
+					<!-- Top Container -->
+					<div class="top-container" style=" margin-top: 7px;">
+					
+						<div class="nav-bar-window">
+							<div class="navigation-buttons">
+								<button class="nav-button-circle" onclick="window.location.href='logging-review.html';">&#8249;</button>
+								<button class="nav-button-circle2">&#8250;</button>
+							</div>
+							<h2 class="window-head">John Doe - Driver - Logging Details</h2>
+						</div>
+						
+						
+
+
+					</div>
+					
+					<!-- Middle Containers -->
+					<div class="middle-container">
+
+						<div class="divider" style="margin-top: -10px; margin-bottom: 15px;"></div>
+
+					<div class="logg-container">
+						<!-- Top Section -->
+						<div class="logg-top">
+							<div class="logg-title">
+								<h2 class="logg-card-title">Crew Details</h2>
+								<div class="logg-divider"></div>
+							</div>
+							<div class="logg-row">
+								<div class="logg-red">
+									<span class="label3">Name</span>
+									<div class="box3">John</div>
+									<span class="label3">Role</span>
+									<div class="box3">Luton Van Driver</div>
+
+
+								</div>
+								<div class="logg-green">
+									<span class="label3">Surname</span>
+									<div class="box3">Doe</div>
+
+
+
+								</div>
+							</div>
+						</div>
+
+						<!-- Bottom Section -->
+						<div class="logg-bottom" style="margin-bottom: 250px;">
+							<div class="logg-title">
+								<h2 class="logg-card-title" style="margin-top: -110px;">Logging Information</h2>
+								<div class="logg-divider"></div>
+							</div>
+							<div class="logg-row">
+								<div class="logg-orange" style="margin-top: -80px;">
+									<span class="label3">Hours Worked</span>
+									<div class="box3">11 Hours 30 Minutes</div>
+									<span class="label3">Base Rate</span>
+									<div class="box3">£11.00</div>
+									<span class="label3"  style="margin-top: 510px;">Base Rate Cost</span>
+									<div class="box3">£88.00</div>
+
+								
+									<span class="label3">Start Time</span>
+									<div class="box3">08:00</div>
+									<span class="label3">Start Location</span>
+									<div class="box3" style="height: 80px; text-align: left; display: flex; align-items: flex-start;">
+									31 somewhere street
+									</br>LE12 12NG
+									</br>Lester
+									</br>United Kingdom
+									</div>
+									
+									<div class="logg-map" style="padding: 7px;">
+										<img src="Map.png" alt="Map" class="logg-map-image">
+									</div>
+						
+							   </div>
+								<div class="logg-blue" style="margin-top: -80px;">
+									<span class="label3"  style="color: white"  >easter egg</span>
+									<div class="box3" style="background-color: white;"></div>
+									<span class="label3">Overtime Rate</span>
+									<div class="box3">£15.00</div>
+									<span class="label3">Overtime Cost</span>
+									<div class="box3">£52.50</div>
+
+
+									
+									<span class="label3">End Time</span>
+									<div class="box3">19:30</div>
+									<span class="label3">End Location</span>
+									<div class="box3" style="height: 80px; text-align: left; display: flex; align-items: flex-start;">
+									31 somewhere street
+									</br>LE12 12NG
+									</br>Lester
+									</br>United Kingdom
+									</div>
+									
+									<div class="logg-map" style="padding: 7px;">
+										<img src="Map.png" alt="Map" class="logg-map-image">
+									</div>
+
+								</div>
+							</div>
+						</div>
+						
+
+						
+												<!-- Bottom Section -->
+						<div class="logg-bottom" style="margin-top: -10px; height: 280px;">
+							
+							<div class="logg-title">
+								<h2 class="logg-card-title">Vehicle Details</h2>
+								<div class="logg-divider"></div>
+							</div>
+							
+							<div class="logg-bottom" style="margin-top: 0px; margin-bottom: -25px; margin-left: -10px;">
+
+								<div class="logg-row">
+									<div class="logg-orange" style="height: 62px;">
+										<span class="label3">Vehicle Type</span>
+										<div class="box3" style="width: 102%">Mercedes-Benz Sprinter Luton</div>
+								   </div>
+
+								</div>
+							</div>
+							
+							<div class="logg-row">
+								<div class="logg-orange" style=" width: 500px; margin-top: 17px;">
+									<span class="label3">Registration Number</span>
+									<div class="box3">BX23 YHL</div>
+									
+									<div class="logg-map">
+										<img src="registration.png" alt="Map" class="logg-map-image">
+									</div>
+						
+							   </div>
+								<div class="logg-blue" style="margin-top: 17px;">
+									<span class="label3">Start Odometer</span>
+									<div class="box3">1,500 Miles</div>
+
+									
+									<div class="logg-map">
+										<img src="start-odo.png" alt="Map" class="logg-map-image">
+									</div>
+
+								</div>								
+								<div class="logg-blue" style="margin-top: 17px;">
+									<span class="label3">End Odometer</span>
+									<div class="box3">1,730 Miles</div>
+
+									
+									<div class="logg-map">
+										<img src="end-odo.png" alt="Map" class="logg-map-image">
+									</div>
+
+								</div>
+							</div>
+						</div>
+						
+
+						
+						<div class="logg-bottom" style="margin-top: -10px; margin-bottom: -25px;">
+
+							<div class="logg-row">
+								<div class="logg-orange" style="height: 62px;">
+									<span class="label3">Total Miles Driven (01/05/2024)</span>
+									<div class="box3">230 Miles</div>
+							   </div>
+
+							</div>
+						</div>
+						
+
+					</div>
+
+
+					</div>
+					
+				</div>
+			</div>
+
+
+
+
+            <!-- Fixed Header -->
+            <div class="fixed-header">
+                <div class="top-bar">
+			
+					<!-- Filter Section -->
+					<div class="filter-section2">
+						<span class="switch-label">Pay All:</span>
+						<label class="switch">
+							<input type="checkbox">
+							<span class="slider"></span>
+						</label>
+					</div>
+
+					
+                </div>
+                <div class="divider5"></div>
+				
+				<div class="title-container">
+					<h2 class="page-title">Schedule Payments</h2>
+					<div class="toggle-buttons">
+						<button id="show-grid">Show Grid</button>
+						<button id="show-table">Show Table</button>
+					</div>
+				</div>
+				
+            </div>
+
+			
+
+
+
+            <!-- Scrollable Content -->
+            <div class="scrollable-content">
+			
+                <div class="grid" style="margin-left: 130px; margin-top: 60px;">
+
+					
+				<a href="logging-review.html">
+					<div class="card2v1">
+						<h2 class="card-title">Post-production</h2>
+						<div class="divider4v1"></div>
+						<div style="text-align: center;">
+						</div>
+						<p style="text-align: center; font-size: 65px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">1</p>
+						<p style="text-align: center; font-size: 17px; font-weight: 1500; margin-top: -15px; margin-bottom: 5px;">PD-12345</p>
+					</div>
+				</a>
+
+				<a href="logging-review.html">
+					<div class="card2v1">
+						<h2 class="card-title">Post-production</h2>
+						<div class="divider4v1"></div>
+						<div style="text-align: center;">
+						</div>
+						<p style="text-align: center; font-size: 65px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">2</p>
+						<p style="text-align: center; font-size: 17px; font-weight: 1500; margin-top: -15px; margin-bottom: 5px;">PD-12345</p>
+					</div>
+				</a>
+
+				<a href="logging-review.html">
+					<div class="card2v1">
+						<h2 class="card-title">Post-production</h2>
+						<div class="divider4v1"></div>
+						<div style="text-align: center;">
+						</div>
+						<p style="text-align: center; font-size: 65px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">3</p>
+						<p style="text-align: center; font-size: 17px; font-weight: 1500; margin-top: -15px; margin-bottom: 5px;">PD-12345</p>
+					</div>
+				</a>
+
+				<a href="logging-review.html">
+					<div class="card2v1">
+						<h2 class="card-title">Post-production</h2>
+						<div class="divider4v1"></div>
+						<div style="text-align: center;">
+						</div>
+						<p style="text-align: center; font-size: 65px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">4</p>
+						<p style="text-align: center; font-size: 17px; font-weight: 1500; margin-top: -15px; margin-bottom: 5px;">PD-12345</p>
+					</div>
+				</a>
+
+				<a href="logging-review.html">
+					<div class="card2v1">
+						<h2 class="card-title">Post-production</h2>
+						<div class="divider4v1"></div>
+						<div style="text-align: center;">
+						</div>
+						<p style="text-align: center; font-size: 65px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">5</p>
+						<p style="text-align: center; font-size: 17px; font-weight: 1500; margin-top: -15px; margin-bottom: 5px;">PD-12345</p>
+					</div>
+				</a>
+
+				<a href="logging-review.html">
+					<div class="card2v1">
+						<h2 class="card-title">Post-production</h2>
+						<div class="divider4v1"></div>
+						<div style="text-align: center;">
+						</div>
+						<p style="text-align: center; font-size: 65px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">6</p>
+						<p style="text-align: center; font-size: 17px; font-weight: 1500; margin-top: -15px; margin-bottom: 5px;">PD-12345</p>
+					</div>
+				</a>
+
+				<a href="logging-review.html">
+					<div class="card2v1">
+						<h2 class="card-title">Post-production</h2>
+						<div class="divider4v1"></div>
+						<div style="text-align: center;">
+						</div>
+						<p style="text-align: center; font-size: 65px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">7</p>
+						<p style="text-align: center; font-size: 17px; font-weight: 1500; margin-top: -15px; margin-bottom: 5px;">PD-12345</p>
+					</div>
+				</a>
+
+
+                </div>
+				
+				
+				
+				
+	<div id="table-container" class="table-container" style="margin-top: 82px;">
+            
+			<table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Submitter</th>
+                        <th>Query</th>
+                        <th>Query Response</th>
+                        <th>Internal Notes</th>
+                        <th>Review</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Transaction</td>
+                        <td>Coffee for the Director</td>
+                        <td>£3.50</td>
+                        <td>Jenny</td>
+                        <td>Who approved it?</td>
+                        <td>It was approved by John</td>
+                        <td>--</td>
+                        <td><button class="button2" onclick="openPopup()">Review</button></td>
+                    </tr>
+					<tr class="grey-row">
+                        <td>Transaction</td>
+                        <td>AAA Batteries</td>
+                        <td>£12.99</td>
+                        <td>Raaja</td>
+                        <td>Who approved it?</td>
+                        <td>It was approved by John</td>
+                        <td>--</td>
+                        <td><button class="button2" onclick="openPopup()"disabled>Review</button></td>
+                    </tr >
+					<tr class="grey-row">
+                        <td>Transaction</td>
+                        <td>Fuel, Approved by john.</td>
+                        <td>£50.21</td>
+                        <td>Mike</td>
+                        <td>What is the vehicle's number plate?</td>
+                        <td>It's GK72 ZLD</td>
+                        <td>--</td>
+                        <td><button class="button2" onclick="openPopup()" disabled>Review</button></td>
+                    </tr>
+					<tr class="grey-row">
+                        <td>Transaction</td>
+                        <td>Breakfast for the Director</td>
+                        <td>£15.99</td>
+                        <td>Jenny</td>
+                        <td>Who approved it?</td>
+                        <td>It was approved by John</td>
+                        <td>--</td>
+                        <td><button class="button2" onclick="openPopup()" disabled>Review</button></td>
+                    </tr>
+					<tr class="grey-row">
+                        <td>Transaction</td>
+                        <td>Walkie-talkie battery</td>
+                        <td>£19.99</td>
+                        <td>Brian</td>
+                        <td>Please, return it</td>
+                        <td>Okay, no problem</td>
+                        <td>--</td>
+                        <td><button class="button2" onclick="openPopup()" disabled>Review</button></td>
+                    </tr>
+                    <!-- More rows can be added here -->
+                </tbody>
+            </table>
+        </div>			
+    </div>	
+
+
+
+
+
+
+
+    </div>
+
+    <script>
+	
+        // Dropdown functionality
+document.querySelectorAll('.dropdown-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+        const currentDropdown = button.nextElementSibling; // Target the submenu
+        const arrow = button.querySelector('.arrow'); // Target the arrow icon
+
+        // Close other dropdowns
+        document.querySelectorAll('.submenu').forEach(menu => {
+            if (menu !== currentDropdown) {
+                menu.classList.remove('active');
+                menu.style.display = 'none'; // Ensure hidden state
+                menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;'; // Reset arrow
+            }
+        });
+
+        // Toggle the current dropdown
+        if (currentDropdown.classList.contains('active')) {
+            currentDropdown.classList.remove('active');
+            setTimeout(() => {
+                currentDropdown.style.display = 'none'; // Hide after animation ends
+            }, 200); // Match the transition duration
+            arrow.innerHTML = '&#9660;'; // Change arrow to down
+        } else {
+            currentDropdown.style.display = 'block'; // Show immediately for animation
+            setTimeout(() => {
+                currentDropdown.classList.add('active');
+                // Apply staggered animation delays to each item
+                const items = currentDropdown.querySelectorAll('li');
+                items.forEach((item, index) => {
+                    item.style.setProperty('--delay', `${index * 0.03}s`); // Stagger delay for each item
+                });
+            }, 1); // Small delay to trigger animation
+            arrow.innerHTML = '&#9650;'; // Change arrow to up
+        }
+    });
+});
+    </script>
+	
+	
+	    <script>
+// Function to show overlay
+function showOverlay() {
+    document.querySelector('.overlay').style.display = 'flex';
+}
+
+// Function to hide overlay
+function hideOverlay() {
+    document.querySelector('.overlay').style.display = 'none';
+}
+    </script>
+	
+	
+	
+	<script>
+	// Function to hide overlay and white box
+function hideOverlay() {
+    document.querySelector('.overlay').style.display = 'none';
+    document.querySelector('.centered-box').style.display = 'none';
+}
+</script>
+	
+	
+	
+	<script>
+  let currentButton = null; // Store the currently clicked button
+
+  // Ensure the overlay is hidden on page load
+  window.onload = () => {
+    document.getElementById('confirmation-overlay').style.display = 'none';
+  };
+
+  function showConfirmation(button) {
+    currentButton = button; // Store the clicked button
+    const overlay = document.getElementById('confirmation-overlay');
+    overlay.style.display = 'flex'; // Show the overlay
+  }
+
+  document.getElementById('cancel-button').addEventListener('click', () => {
+    document.getElementById('confirmation-overlay').style.display = 'none'; // Hide the overlay
+  });
+
+  document.getElementById('okay-button').addEventListener('click', () => {
+    if (currentButton) {
+      const row = currentButton.closest('tr'); // Get the parent row
+      const statusCell = row.querySelector('td:nth-child(2)'); // Get the status cell
+      const missingText = statusCell.querySelector('.missing-text'); // Get the missing text
+
+      // Update the button
+      currentButton.textContent = 'Requested';
+      currentButton.style.backgroundColor = '#717171';
+      currentButton.style.color = '#fff';
+      currentButton.disabled = true; // Make the button non-functional
+
+      // Update the missing text
+      if (missingText) {
+        missingText.textContent = 'Requested';
+        missingText.style.color = '#717171';
+        const icon = missingText.querySelector('.icon'); // Remove the icon
+        if (icon) {
+          icon.remove();
+        }
+      }
+
+      // Hide the overlay
+      document.getElementById('confirmation-overlay').style.display = 'none';
+    }
+  });
+</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

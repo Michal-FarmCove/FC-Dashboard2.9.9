@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="approvals-styles.css">
+	<link rel="stylesheet" href="overlay.css">
+	
+	<script src="navbar.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+	
+    <title>Schedule Payment</title>
+	
+	<style>
+/* Title and Divider */
+.logg-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logg-card-title {
+    color: #32B8CD;
+    margin: 0;
+	font-size: 17px;
+}
+
+.logg-divider {
+    width: 100%;
+    height: 2px;
+    background-color: #32B8CD;
+    margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.logg-map {
+
+    margin-top: -370px; /* Space between the map and previous content */
+    width: 100%; /* Ensures the map spans the full width of the parent container */
+    display: flex;
+    justify-content: center; /* Centers the image */
+	
+}
+
+.logg-map-image {
+    height: 190px; /* Sets the height of the map */
+    width: auto; /* Ensures the aspect ratio is maintained */
+}
+
+
+
+	</style>
+	
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+           <div id="navbar-placeholder"></div>
+
+        <!-- Main Content -->
+
+            <!-- Blue Line Container -->
+            <div class="blue-line-container">
+                <div class="blue-line"></div>
+            </div>
+			
+			
+
+
+		<!-- Overlay -->
+		<div class="overlay" style="margin-left: 25px; margin-top: -5px; height: 1000px;"></div>
+ 
+
+		<!-- Centered White Box -->
+		<div class="centered-box" style=" background-color: white; margin-left: 110px; height: 700px;">
+			<!-- Close Button -->
+			<a href="schedule-payments.html" class="close-circle">&#x2715;</a>
+			
+			<div class="outer-container">
+			
+				<!-- Top Container -->
+				<div class="top-container">
+					<h2 class="window-head">Payment #000-0999</h2>
+					<div class="divider" style=" background-color: black"></div>
+				</div>
+				
+				<!-- Middle Containers -->
+				<div class="middle-container" style="background-color: white;">
+				
+
+<div class="pay-layout">
+    <div class="pay-container-left">
+        <div class="logg-title">
+            <h2 class="logg-card-title">Payment Details</h2>
+            <div class="logg-divider" style="width: 210%"></div>
+        </div>
+    </div>
+
+    <div class="pay-container-left" style="margin-top: 50px;">
+        <div class="pay-subcontainer-left">
+            <span class="label3" style="margin-top: 0px;">Paying</span>
+            <div class="box3">Costume Supplier LTD</div>
+            <span class="label3" style="margin-top: 0px;">Bank Payee Name</span>
+            <div class="box3">Bollywood LTD</div>
+        </div>
+
+        <div class="pay-subcontainer-right">
+            <span class="label3" style="margin-top: 0px;">Bank Name</span>
+            <div class="box3">Chase Bank</div>
+            <span class="label3" style="margin-top: 0px;">Bank Account No.</span>
+            <div class="box3">12345678</div>
+            <span class="label3" style="margin-top: 0px;">Bank Sort Code</span>
+            <div class="box3">20-30-40</div>
+        </div>
+    </div>
+
+    <!-- Add Map Below Both Columns -->
+    <div class="logg-map">
+        <img src="temp19.png" alt="Map" class="logg-map-image">
+    </div>
+
+    <div class="pay-container-right">
+        <div class="logg-title">
+            <h2 class="logg-card-title">Previous Transactions</h2>
+            <div class="logg-divider"></div>
+        </div>
+
+        <div class="pay-container-right-inner" style="margin-top: 41px; height: 366px;">
+            <div class="checkbox-list">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="item1" checked disabled>
+                    <label for="item1">10/10/2024:</label>
+                    <span class="amount">£500.00</span>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="item2" checked disabled>
+                    <label for="item2">15/10/2024:</label>
+                    <span class="amount">£500.00</span>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="item3" checked disabled>
+                    <label for="item3">22/10/2024:</label>
+                    <span class="amount">£500.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pay-footer" style="margin-top: 140px;">
+        <div class="pay-footer-red">
+            <div class="total-amount-container">
+                <label>Total Amount</label>
+                <div class="total-amount">£2,500.00</div>
+            </div>
+        </div>
+
+        <div class="pay-footer-green">
+            <div class="total-amount-container">
+                <label style="width: 500px;">Outstanding Amount</label>
+                <div class="total-amount">£1,000.00</div>
+            </div>
+        </div>
+
+        <div class="pay-footer-blue">
+            <div class="total-amount-container">
+                <label>Due Date</label>
+                <div class="total-amount">10/12/2024</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="payment-form-container">
+        <div class="divider" style="width: 165%; background-color: black; margin-top: -10px; margin-bottom: 15px;"></div>
+
+        <form class="payment-form">
+            <label for="amount">Amount</label>
+            <input type="text" id="amount" placeholder="£">
+
+            <label for="date">Date</label>
+            <input type="date" id="date">
+
+            <button type="submit" class="pay-button">Pay</button>
+        </form>
+    </div>
+</div>
+
+
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+            <!-- Fixed Header -->
+            <div class="fixed-header">
+                <div class="top-bar">
+                    <div class="tabs">
+                        <button class="nav-button active">
+                            <span class="circle active"></span> Crew and HOD's
+                        </button>
+                        <button class="nav-button">
+                            <span class="circle"></span> Cast
+                        </button>
+                        <button class="nav-button">
+                            <span class="circle"></span> Above the Line
+                        </button>
+                        <button class="nav-button">
+                            <span class="circle"></span> Supplier
+                        </button>
+                        <button class="nav-button">
+                            <span class="circle"></span> Other
+                        </button>
+                    </div>
+                </div>
+                <div class="divider5"></div>
+            </div>
+			
+			
+			
+			
+			
+			
+			
+			
+
+            <!-- Scrollable Content -->
+            <div class="scrollable-content">
+			
+                <div class="grid" style="margin-left: 50px;">
+
+					
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+ 							<div style="text-align: center;">
+								<span style="font-weight: bold;">Costume Supplies LTD</span>
+							</div>
+                        <div class="divider3v1"></div>
+						<p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£2,500.00</div>
+						<p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£1,500.00</div>
+						<p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
+                        <a href="pay.html"><button class="review-button">Pay</button></a>
+                    </div>
+
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+ 							<div style="text-align: center;">
+								<span style="font-weight: bold;">Costume Supplies LTD</span>
+							</div>
+                        <div class="divider3v1"></div>
+						<p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£2,500.00</div>
+						<p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£1,500.00</div>
+						<p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
+                        <a href="pay.html"><button class="review-button">Pay</button></a>
+                    </div>
+
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+ 							<div style="text-align: center;">
+								<span style="font-weight: bold;">Costume Supplies LTD</span>
+							</div>
+                        <div class="divider3v1"></div>
+						<p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£2,500.00</div>
+						<p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£1,500.00</div>
+						<p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
+                        <a href="pay.html"><button class="review-button">Pay</button></a>
+                    </div>
+
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+ 							<div style="text-align: center;">
+								<span style="font-weight: bold;">Costume Supplies LTD</span>
+							</div>
+                        <div class="divider3v1"></div>
+						<p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£2,500.00</div>
+						<p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£1,500.00</div>
+						<p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
+                        <a href="pay.html"><button class="review-button">Pay</button></a>
+                    </div>
+
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+ 							<div style="text-align: center;">
+								<span style="font-weight: bold;">Costume Supplies LTD</span>
+							</div>
+                        <div class="divider3v1"></div>
+						<p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£2,500.00</div>
+						<p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£1,500.00</div>
+						<p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
+                        <a href="pay.html"><button class="review-button">Pay</button></a>
+                    </div>
+
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+ 							<div style="text-align: center;">
+								<span style="font-weight: bold;">Costume Supplies LTD</span>
+							</div>
+                        <div class="divider3v1"></div>
+						<p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£2,500.00</div>
+						<p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£1,500.00</div>
+						<p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
+                        <a href="pay.html"><button class="review-button">Pay</button></a>
+                    </div>
+
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+ 							<div style="text-align: center;">
+								<span style="font-weight: bold;">Costume Supplies LTD</span>
+							</div>
+                        <div class="divider3v1"></div>
+						<p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£2,500.00</div>
+						<p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£1,500.00</div>
+						<p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
+                        <a href="pay.html"><button class="review-button">Pay</button></a>
+                    </div>
+
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+ 							<div style="text-align: center;">
+								<span style="font-weight: bold;">Costume Supplies LTD</span>
+							</div>
+                        <div class="divider3v1"></div>
+						<p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£2,500.00</div>
+						<p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£1,500.00</div>
+						<p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
+                        <a href="pay.html"><button class="review-button">Pay</button></a>
+                    </div>
+
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+ 							<div style="text-align: center;">
+								<span style="font-weight: bold;">Costume Supplies LTD</span>
+							</div>
+                        <div class="divider3v1"></div>
+						<p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£2,500.00</div>
+						<p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£1,500.00</div>
+						<p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
+                        <a href="pay.html"><button class="review-button">Pay</button></a>
+                    </div>
+
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+ 							<div style="text-align: center;">
+								<span style="font-weight: bold;">Costume Supplies LTD</span>
+							</div>
+                        <div class="divider3v1"></div>
+						<p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£2,500.00</div>
+						<p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£1,500.00</div>
+						<p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
+                        <a href="pay.html"><button class="review-button">Pay</button></a>
+                    </div>
+
+
+                </div>
+				
+				
+				
+				
+	
+
+
+
+
+	  
+	  
+	  
+	  
+
+    </div>
+
+    <script>
+	
+        // Dropdown functionality
+document.querySelectorAll('.dropdown-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+        const currentDropdown = button.nextElementSibling; // Target the submenu
+        const arrow = button.querySelector('.arrow'); // Target the arrow icon
+
+        // Close other dropdowns
+        document.querySelectorAll('.submenu').forEach(menu => {
+            if (menu !== currentDropdown) {
+                menu.classList.remove('active');
+                menu.style.display = 'none'; // Ensure hidden state
+                menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;'; // Reset arrow
+            }
+        });
+
+        // Toggle the current dropdown
+        if (currentDropdown.classList.contains('active')) {
+            currentDropdown.classList.remove('active');
+            setTimeout(() => {
+                currentDropdown.style.display = 'none'; // Hide after animation ends
+            }, 200); // Match the transition duration
+            arrow.innerHTML = '&#9660;'; // Change arrow to down
+        } else {
+            currentDropdown.style.display = 'block'; // Show immediately for animation
+            setTimeout(() => {
+                currentDropdown.classList.add('active');
+                // Apply staggered animation delays to each item
+                const items = currentDropdown.querySelectorAll('li');
+                items.forEach((item, index) => {
+                    item.style.setProperty('--delay', `${index * 0.03}s`); // Stagger delay for each item
+                });
+            }, 1); // Small delay to trigger animation
+            arrow.innerHTML = '&#9650;'; // Change arrow to up
+        }
+    });
+});
+    </script>
+	
+	
+	    <script>
+// Function to show overlay
+function showOverlay() {
+    document.querySelector('.overlay').style.display = 'flex';
+}
+
+// Function to hide overlay
+function hideOverlay() {
+    document.querySelector('.overlay').style.display = 'none';
+}
+    </script>
+	
+	
+	
+	<script>
+	// Function to hide overlay and white box
+function hideOverlay() {
+    document.querySelector('.overlay').style.display = 'none';
+    document.querySelector('.centered-box').style.display = 'none';
+}
+</script>
+	
+</body>
+</html>

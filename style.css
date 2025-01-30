@@ -1,0 +1,148 @@
+/* General Styles */
+* {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    background: #161616;
+    color: white;
+    overflow-x: hidden;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.header-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    height: 20px;
+}
+
+.logout-button {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    background: #32B8CD;
+    color: white;
+    padding: 5.2px 20px;
+    border-radius: 25px;
+    font-size: 10px;
+    font-weight: 550;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.divider {
+    width: 100%;
+    border: 1px #707070 solid;
+    margin-bottom: 20px;
+}
+
+.heading {
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    margin: 35px 0 40px;
+    text-align: center;
+}
+
+/* Posters Section */
+.poster-section {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 20px;
+    justify-content: center;
+}
+
+.poster-container {
+    position: relative;
+    width: 170px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Poster Images */
+.poster {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 1px solid #707070;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Hover Content */
+.poster-hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 101%;
+    height: 90%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.poster-container:hover .poster-hover-content {
+    opacity: 1;
+}
+
+.poster-container:hover .poster {
+    opacity: 0.8;
+}
+
+.status-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #32B8CD;
+    margin-bottom: 5px;
+}
+
+.progress-text {
+    font-size: 12px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.show-details-button {
+    background: #32B8CD;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Poster Titles */
+.poster-title {
+    margin-top: 10px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1.2;
+}

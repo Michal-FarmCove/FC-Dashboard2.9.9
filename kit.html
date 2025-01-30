@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="approvals-styles.css">
+	<link rel="stylesheet" href="overlay-crew-management-invoices.css">
+	
+	<script src="navbar.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+
+    <title>Approvals Layout</title>
+	
+
+	
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+     
+	    <div id="navbar-placeholder"></div>
+
+        <!-- Main Content -->
+
+            <!-- Blue Line Container -->
+            <div class="blue-line-container">
+                <div class="blue-line"></div>
+            </div>
+			
+			<!-- Overlay -->
+			<div class="overlay" style="margin-left: -25px; margin-top: -5px; height: 1150px; width: 1000px;"></div>
+
+
+			<!-- Centered White Box -->
+			<div class="centered-box" style="margin-left: 150px; margin-left: 150px; width: 655px; height: 740px;">
+				<!-- Close Button -->
+				<a href="crew-management.html" class="close-circle">&#x2715;</a>
+				<div class="outer-container">
+				
+					<!-- Top Container -->
+					<div class="top-container">
+						<div class="nav-bar-window">
+							<div class="navigation-buttons" >
+								<button class="nav-button-circle"   onclick="location.href='supplier-management-review.html';">&#8249;</button>
+								<button class="nav-button-circle2">&#8250;</button>
+							</div>
+							<h2 class="window-head">Microphone Kits</h2>
+						</div>
+						
+						<div class="divider" style="background-color: black;"></div>
+					</div>
+
+					<!-- Middle Containers -->
+					<div class="center-container" style="height: 22850px; width: 100%">
+				
+							<div class="top-row2">
+									
+								<div class="box-left" style="background-color: #EAEAEA; margin-top: 0px;">
+								
+									<div class="image-container3"><img src="supplier-kit-receipt.png" alt="starter-form" style="height: 550px; width: 435px; justify-content: center; align-items: center; margin-left: 45%; margin-right:0%; margin-top: 60px; margin-bottom: 5px;"></div>
+
+								</div>
+
+							</div>
+					</div>
+					
+				</div>
+			</div>
+
+
+            <!-- Fixed Header -->
+            <div class="fixed-header">
+                <div class="top-bar">
+                    <div class="tabs">
+                        <button class="nav-button active">
+                            <span class="circle active"></span> Query
+                        </button>
+                        <button class="nav-button">
+                            <span class="circle"></span> Payroll
+                        </button>
+                        <button class="nav-button">
+                            <span class="circle"></span> Expense Account Reconciliation
+                        </button>
+                        <button class="nav-button">
+                            <span class="circle"></span> Cast & Crew
+                        </button>
+                        <button class="nav-button">
+                            <span class="circle"></span> Personal Expense Claims
+                        </button>
+                        <button class="nav-button">
+                            <span class="circle"></span> Project Documents Sends
+                        </button>
+                        <button class="nav-button">
+                            <span class="circle"></span> History
+                        </button>
+                    </div>
+                </div>
+                <div class="divider5"></div>
+            </div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+            <!-- Scrollable Content -->
+            <div class="scrollable-content">
+                <div class="grid">
+                    <!-- Example Card -->
+                    <div class="card">
+                        <h2 class="card-title">Transactions</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Jenny</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Description</span>
+                            <div class="box">Fuel</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Query</span>
+                            <div class="box">Who approved it?</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Response</span>
+                            <div class="box">John approved it.</div>
+                        </div>
+                        <div class="price-box">£3.50</div>
+                        <button class="review-button-disabled" disabled>Review</button>
+                    </div>
+					
+                    <div class="card">
+                        <h2 class="card-title">Transactions</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Johnny</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Description</span>
+                            <div class="box">Costume, approved by John</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Query</span>
+                            <div class="box">What costume is it?</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Response</span>
+                            <div class="box">Pirate costume for scene 2a</div>
+                        </div>
+                        <div class="price-box">£59.99</div>
+                        <button class="review-button-disabled" disabled>Review</button>
+                    </div>
+					
+                    <div class="card">
+                        <h2 class="card-title">Transactions</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Jake</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Description</span>
+                            <div class="box">Camera equipment, approved by Sarah</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Query</span>
+                            <div class="box">When will the equipment arrive?</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Response</span>
+                            <div class="box">It will arrive tomorrow at 10 AM.</div>
+                        </div>
+                        <div class="price-box">£2,500.00</div>
+                        <button class="review-button-disabled" disabled>Review</button>
+                    </div>
+					
+                    <div class="card">
+                        <h2 class="card-title">Transactions</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Laura</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Description</span>
+                            <div class="box">Lighting setup for scene 5, approved by Chris</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Query</span>
+                            <div class="box">Is the setup complete?</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Response</span>
+                            <div class="box">Yes, it was completed this morning.</div>
+                        </div>
+                        <div class="price-box">£1,200.00</div>
+                        <button class="review-button-disabled" disabled>Review</button>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">Transactions</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Jenny</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Description</span>
+                            <div class="box">Catering order, approved by Maria</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Query</span>
+                            <div class="box">What meals are included?</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Response</span>
+                            <div class="box">Vegan, vegetarian, and meat options for 20 people.</div>
+                        </div>
+                        <div class="price-box">£750.00</div>
+                        <button class="review-button-disabled" disabled>Review</button>
+                    </div>
+					
+                    <div class="card">
+                        <h2 class="card-title">Transactions</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Sophie</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Description</span>
+                            <div class="box">Sound technician hire, approved by David</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Query</span>
+                            <div class="box">How long will the technician stay?</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Response</span>
+                            <div class="box">They are hired for the next 3 days.</div>
+                        </div>
+                        <div class="price-box">£1,800.00</div>
+                        <button class="review-button-disabled" disabled>Review</button>
+                    </div>
+					
+                    <div class="card">
+                        <h2 class="card-title">Transactions</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">James</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Description</span>
+                            <div class="box">Props for the final scene, approved by John</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Query</span>
+                            <div class="box">What props were ordered?</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Response</span>
+                            <div class="box">A vintage clock, a typewriter, and an old lamp.</div>
+                        </div>
+                        <div class="price-box">£900.50</div>
+                        <button class="review-button-disabled" disabled>Review</button>
+                    </div>
+					
+                    <div class="card">
+                        <h2 class="card-title">Transactions</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Mark</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Description</span>
+                            <div class="box">Cast member transportation, approved by Emily</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Query</span>
+                            <div class="box">How many vehicles are reserved?</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Response</span>
+                            <div class="box">Two vans and one car.</div>
+                        </div>
+                        <div class="price-box">£600.25</div>
+                        <button class="review-button-disabled" disabled>Review</button>
+                    </div>
+					
+                    <div class="card">
+                        <h2 class="card-title">Transactions</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Daniel</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Description</span>
+                            <div class="box">Makeup supplies, approved by Jessica</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Query</span>
+                            <div class="box">What brands were selected?</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Response</span>
+                            <div class="box">MAC and Kryolan products were chosen.</div>
+                        </div>
+                        <div class="price-box">£155.50</div>
+                        <button class="review-button-disabled" disabled>Review</button>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">Transactions</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Olivia</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Description</span>
+                            <div class="box">Location rental for scene 8, approved by Michael</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Query</span>
+                            <div class="box">What are the rental terms?</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Response</span>
+                            <div class="box">Available from 8 AM to 6 PM with a $500 deposit.</div>
+                        </div>
+                        <div class="price-box">£2000.00</div>
+                        <button class="review-button-disabled" disabled>Review</button>
+                    </div>
+					
+					
+					
+					
+					
+									
+                    <div class="card">
+                        <h2 class="card-title">Transactions</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Walter</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Description</span>
+                            <div class="box">Editing software license renewal, approved by Alex</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Query</span>
+                            <div class="box">What is the renewal period?</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Response</span>
+                            <div class="box">The license is valid for one year.</div>
+                        </div>
+                        <div class="price-box">£300.00</div>
+                        <button class="review-button-disabled" disabled>Review</button>
+                    </div>
+					
+                    <div class="card">
+                        <h2 class="card-title">Transactions</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Nathan</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Description</span>
+                            <div class="box">Costume for lead actress, approved by Anna</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Query</span>
+                            <div class="box">Who designed the costume?</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Response</span>
+                            <div class="box">The costume was designed by Emma Clark.</div>
+                        </div>
+                        <div class="price-box">£1,100.00</div>
+                        <button class="review-button-disabled" disabled>Review</button>
+                    </div>
+					
+                    <div class="card">
+                        <h2 class="card-title">Transactions</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Jenny</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Description</span>
+                            <div class="box">Coffee for the director</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Query</span>
+                            <div class="box">Who approved it?</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Response</span>
+                            <div class="box">John approved it.</div>
+                        </div>
+                        <div class="price-box">£3.50</div>
+                        <button class="review-button-disabled" disabled>Review</button>
+                    </div>
+					
+                    <div class="card">
+                        <h2 class="card-title">Transactions</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Oliver</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Description</span>
+                            <div class="box">Stunt equipment, approved by David</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Query</span>
+                            <div class="box">What equipment was ordered?</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Response</span>
+                            <div class="box">Safety harnesses, crash mats, and rigging cables.</div>
+                        </div>
+                        <div class="price-box">£399.99</div>
+                        <button class="review-button-disabled" disabled>Review</button>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">Transactions</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Ethan</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Description</span>
+                            <div class="box">Special effects materials, approved by Chris</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Query</span>
+                            <div class="box">What materials were purchased?</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Response</span>
+                            <div class="box">Fake blood, fog machines, and pyrotechnics.</div>
+                        </div>
+                        <div class="price-box">£599.99</div>
+                        <button class="review-button-disabled" disabled>Review</button>
+                    </div>	
+					
+					
+					
+					
+                </div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+            </div>
+
+    </div>
+
+    <script>
+	
+        // Dropdown functionality
+document.querySelectorAll('.dropdown-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+        const currentDropdown = button.nextElementSibling; // Target the submenu
+        const arrow = button.querySelector('.arrow'); // Target the arrow icon
+
+        // Close other dropdowns
+        document.querySelectorAll('.submenu').forEach(menu => {
+            if (menu !== currentDropdown) {
+                menu.classList.remove('active');
+                menu.style.display = 'none'; // Ensure hidden state
+                menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;'; // Reset arrow
+            }
+        });
+
+        // Toggle the current dropdown
+        if (currentDropdown.classList.contains('active')) {
+            currentDropdown.classList.remove('active');
+            setTimeout(() => {
+                currentDropdown.style.display = 'none'; // Hide after animation ends
+            }, 200); // Match the transition duration
+            arrow.innerHTML = '&#9660;'; // Change arrow to down
+        } else {
+            currentDropdown.style.display = 'block'; // Show immediately for animation
+            setTimeout(() => {
+                currentDropdown.classList.add('active');
+                // Apply staggered animation delays to each item
+                const items = currentDropdown.querySelectorAll('li');
+                items.forEach((item, index) => {
+                    item.style.setProperty('--delay', `${index * 0.03}s`); // Stagger delay for each item
+                });
+            }, 1); // Small delay to trigger animation
+            arrow.innerHTML = '&#9650;'; // Change arrow to up
+        }
+    });
+});
+    </script>
+	
+	
+	    <script>
+// Function to show overlay
+function showOverlay() {
+    document.querySelector('.overlay').style.display = 'flex';
+}
+
+// Function to hide overlay
+function hideOverlay() {
+    document.querySelector('.overlay').style.display = 'none';
+}
+    </script>
+	
+	
+	
+	<script>
+	// Function to hide overlay and white box
+function hideOverlay() {
+    document.querySelector('.overlay').style.display = 'none';
+    document.querySelector('.centered-box').style.display = 'none';
+}
+</script>
+	
+</body>
+</html>

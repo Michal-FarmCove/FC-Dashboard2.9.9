@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="approvals-styles.css">
+	
+	<script src="navbar.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+	
+    <title>Transactions</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div id="navbar-placeholder"></div>
+
+        <!-- Main Content -->
+        <!-- Blue Line Container -->
+        <div class="blue-line-container">
+            <div class="blue-line"></div>
+        </div>
+
+        <!-- Fixed Header -->
+        <div class="fixed-header">
+            <div class="top-bar"></div>
+            <div class="divider5"></div>
+            
+            <div class="title-container">
+                <h2 class="page-title">Transactions</h2>
+                <div class="toggle-buttons">
+                    <button id="show-grid">Show Grid</button>
+                    <button id="show-table">Show Table</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scrollable Content -->
+        <div class="scrollable-content">
+            <div class="grid" style="margin-top: 50px; margin-left: 32px;">
+                    <div class="card">
+                        <h2 class="card-title">TRX-000123</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Sarah Wilson</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Document Number</span>
+                            <div class="box">DOC-2025-001</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Status</span>
+                            <div class="box">Approved</div>
+                        </div>
+                        <div class="date-container">
+                            <div class="date-left">
+                                <span class="label">Date</span>
+                                <div class="box">27/01/2025</div>
+                            </div>
+                            <div class="date-right">
+                                <span class="label">Due Date</span>
+                                <div class="box">15/03/2025</div>
+                            </div>
+                        </div>
+                        <div class="T-container">
+                            <div class="T-left">
+                                <span class="T-label">Total</span>
+                                <div class="T-price-box">£3,500.00</div>
+                            </div>
+                            <div class="T-right">
+                                <span class="T-label">Balance</span>
+                                <div class="T-price-box">£1,250.00</div>
+                            </div>
+                        </div>
+                        <div style="width: 40%; margin-left: 73px;"><a href="transactions-review.html" class="review-button">Review</a></div>
+
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">TRX-000124</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Michael Chen</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Document Number</span>
+                            <div class="box">DOC-2025-002</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Status</span>
+                            <div class="box">Queried</div>
+                        </div>
+                        <div class="date-container">
+                            <div class="date-left">
+                                <span class="label">Date</span>
+                                <div class="box">26/01/2025</div>
+                            </div>
+                            <div class="date-right">
+                                <span class="label">Due Date</span>
+                                <div class="box">10/03/2025</div>
+                            </div>
+                        </div>
+                        <div class="T-container">
+                            <div class="T-left">
+                                <span class="T-label">Total</span>
+                                <div class="T-price-box">£5,999.00</div>
+                            </div>
+                            <div class="T-right">
+                                <span class="T-label">Balance</span>
+                                <div class="T-price-box">£2,999.50</div>
+                            </div>
+                        </div>
+                        <button class="t-review-button" disabled>Review</button>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">TRX-000125</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Emma Thompson</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Document Number</span>
+                            <div class="box">DOC-2025-003</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Status</span>
+                            <div class="box">Compliance Review Required</div>
+                        </div>
+                        <div class="date-container">
+                            <div class="date-left">
+                                <span class="label">Date</span>
+                                <div class="box">25/01/2025</div>
+                            </div>
+                            <div class="date-right">
+                                <span class="label">Due Date</span>
+                                <div class="box">05/03/2025</div>
+                            </div>
+                        </div>
+                        <div class="T-container">
+                            <div class="T-left">
+                                <span class="T-label">Total</span>
+                                <div class="T-price-box">£8,500.00</div>
+                            </div>
+                            <div class="T-right">
+                                <span class="T-label">Balance</span>
+                                <div class="T-price-box">£4,250.00</div>
+                            </div>
+                        </div>
+                        <button class="t-review-button" disabled>Review</button>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">TRX-000126</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">David Parker</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Document Number</span>
+                            <div class="box">DOC-2025-004</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Status</span>
+                            <div class="box">Approved</div>
+                        </div>
+                        <div class="date-container">
+                            <div class="date-left">
+                                <span class="label">Date</span>
+                                <div class="box">24/01/2025</div>
+                            </div>
+                            <div class="date-right">
+                                <span class="label">Due Date</span>
+                                <div class="box">01/03/2025</div>
+                            </div>
+                        </div>
+                        <div class="T-container">
+                            <div class="T-left">
+                                <span class="T-label">Total</span>
+                                <div class="T-price-box">£4,200.00</div>
+                            </div>
+                            <div class="T-right">
+                                <span class="T-label">Balance</span>
+                                <div class="T-price-box">£2,100.00</div>
+                            </div>
+                        </div>
+                        <button class="t-review-button" disabled>Review</button>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">TRX-000127</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Rachel Green</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Document Number</span>
+                            <div class="box">DOC-2025-005</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Status</span>
+                            <div class="box">Queried</div>
+                        </div>
+                        <div class="date-container">
+                            <div class="date-left">
+                                <span class="label">Date</span>
+                                <div class="box">23/01/2025</div>
+                            </div>
+                            <div class="date-right">
+                                <span class="label">Due Date</span>
+                                <div class="box">28/02/2025</div>
+                            </div>
+                        </div>
+                        <div class="T-container">
+                            <div class="T-left">
+                                <span class="T-label">Total</span>
+                                <div class="T-price-box">£6,750.00</div>
+                            </div>
+                            <div class="T-right">
+                                <span class="T-label">Balance</span>
+                                <div class="T-price-box">£3,375.00</div>
+                            </div>
+                        </div>
+                        <a href=""><button class="t-review-button" disabled>Review</button></a>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">TRX-000128</h2>
+                        <div class="divider4"></div>
+                        <div class="card-section-horizontal">
+                            <span class="label bold">Submitter:</span>
+                            <span class="value bold right">Thomas Brown</span>
+                        </div>
+                        <div class="divider3"></div>
+                        <div class="card-section">
+                            <span class="label">Document Number</span>
+                            <div class="box">DOC-2025-006</div>
+                        </div>
+                        <div class="card-section">
+                            <span class="label">Status</span>
+                            <div class="box">Compliance Review Required</div>
+                        </div>
+                        <div class="date-container">
+                            <div class="date-left">
+                                <span class="label">Date</span>
+                                <div class="box">22/01/2025</div>
+                            </div>
+                            <div class="date-right">
+                                <span class="label">Due Date</span>
+                                <div class="box">25/02/2025</div>
+                            </div>
+                        </div>
+                        <div class="T-container">
+                            <div class="T-left">
+                                <span class="T-label">Total</span>
+                                <div class="T-price-box">£7,800.00</div>
+                            </div>
+                            <div class="T-right">
+                                <span class="T-label">Balance</span>
+                                <div class="T-price-box">£3,900.00</div>
+                            </div>
+                        </div>
+                        <a href=""><button class="t-review-button" disabled>Review</button></a>
+                    </div>
+            </div>
+
+            <!-- Table Container -->
+            <div id="table-container" class="table-container" style="margin-top: 80px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Trans. ID</th>
+                            <th>Submitter</th>
+                            <th>Document Number</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Due Date</th>
+                            <th>Total</th>
+                            <th>Balance</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TRX-000123</td>
+                            <td>Sarah Wilson</td>
+                            <td>DOC-2025-001</td>
+                            <td>Approved</td>
+                            <td>27/01/2025</td>
+                            <td>15/03/2025</td>
+                            <td>£3,500.00</td>
+                            <td>£1,250.00</td>
+                            <td><button class="t-review-button" style="font-size: 13px; padding-left: 15px; padding-right: 15px;" disabled>Review</button></td>
+                        </tr>
+                        <tr class="grey-row">
+                            <td>TRX-000124</td>
+                            <td>Michael Chen</td>
+                            <td>DOC-2025-002</td>
+                            <td>Queried</td>
+                            <td>26/01/2025</td>
+                            <td>10/03/2025</td>
+                            <td>£5,999.00</td>
+                            <td>£2,999.50</td>
+                            <td><button class="t-review-button" style="font-size: 13px; padding-left: 15px; padding-right: 15px;" disabled>Review</button></td>
+                        </tr>
+                        <tr class="grey-row">
+                            <td>TRX-000125</td>
+                            <td>Emma Thompson</td>
+                            <td>DOC-2025-003</td>
+                            <td>Compliance Review Required</td>
+                            <td>25/01/2025</td>
+                            <td>05/03/2025</td>
+                            <td>£8,500.00</td>
+                            <td>£4,250.00</td>
+                            <td><button class="t-review-button" style="font-size: 13px; padding-left: 15px; padding-right: 15px;" disabled>Review</button></td>
+                        </tr>
+                        <tr class="grey-row">
+                            <td>TRX-000126</td>
+                            <td>David Parker</td>
+                            <td>DOC-2025-004</td>
+                            <td>Approved</td>
+                            <td>24/01/2025</td>
+                            <td>01/03/2025</td>
+                            <td>£4,200.00</td>
+                            <td>£2,100.00</td>
+                            <td><button class="t-review-button" style="font-size: 13px; padding-left: 15px; padding-right: 15px;" disabled>Review</button></td>
+                        </tr>
+                        <tr class="grey-row">
+                            <td>TRX-000127</td>
+                            <td>Rachel Green</td>
+                            <td>DOC-2025-005</td>
+                            <td>Queried</td>
+                            <td>23/01/2025</td>
+                            <td>28/02/2025</td>
+                            <td>£6,750.00</td>
+                            <td>£3,375.00</td>
+                            <td><button class="t-review-button" style="font-size: 13px; padding-left: 15px; padding-right: 15px;" disabled>Review</button></td>
+                        </tr>
+                        <tr>
+                            <td>TRX-000128</td>
+                            <td>Thomas Brown</td>
+                            <td>DOC-2025-006</td>
+                            <td>Compliance Review Required</td>
+                            <td>22/01/2025</td>
+                            <td>25/02/2025</td>
+                            <td>£7,800.00</td>
+                            <td>£3,900.00</td>
+                            <td><button class="t-review-button" style="font-size: 13px; padding-left: 15px; padding-right: 15px;" disabled>Review</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dropdown functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const currentDropdown = button.nextElementSibling;
+                const arrow = button.querySelector('.arrow');
+
+                document.querySelectorAll('.submenu').forEach(menu => {
+                    if (menu !== currentDropdown) {
+                        menu.classList.remove('active');
+                        menu.style.display = 'none';
+                        menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;';
+                    }
+                });
+
+                if (currentDropdown.classList.contains('active')) {
+                    currentDropdown.classList.remove('active');
+                    setTimeout(() => {
+                        currentDropdown.style.display = 'none';
+                    }, 200);
+                    arrow.innerHTML = '&#9660;';
+                } else {
+                    currentDropdown.style.display = 'block';
+                    setTimeout(() => {
+                        currentDropdown.classList.add('active');
+                        const items = currentDropdown.querySelectorAll('li');
+                        items.forEach((item, index) => {
+                            item.style.setProperty('--delay', `${index * 0.03}s`);
+                        });
+                    }, 1);
+                    arrow.innerHTML = '&#9650;';
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Initially, ensure only the grid is visible
+            document.querySelector('.grid').style.display = 'flex';
+            document.getElementById('table-container').style.display = 'none';
+
+            // Show Grid button functionality
+            document.getElementById('show-grid').addEventListener('click', () => {
+                document.querySelector('.grid').style.display = 'flex';
+                document.getElementById('table-container').style.display = 'none';
+            });
+
+            // Show Table button functionality
+            document.getElementById('show-table').addEventListener('click', () => {
+                document.querySelector('.grid').style.display = 'none';
+                document.getElementById('table-container').style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

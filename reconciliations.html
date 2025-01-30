@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="approvals-styles.css">
+	<script src="navbar.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+    <title>Reconciliations</title>
+	<style>
+        .box img {
+            width: 20px;
+            height: 20px;
+            margin-left: 0px;
+        }
+		
+        .underline-link {
+            text-decoration: underline;
+            color: #32B8CD;
+        }
+
+        .underline-link:hover {
+            text-decoration: none;
+            color: #32B8CD;
+        }
+	</style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div id="navbar-placeholder"></div>
+
+        <!-- Main Content -->
+            <!-- Blue Line Container -->
+            <div class="blue-line-container">
+                <div class="blue-line"></div>
+            </div>
+
+			<div class="overlay" style="margin-left: 25px; margin-top: -5px; height: 1150px;"></div>
+
+            <!-- Fixed Header -->
+            <div class="fixed-header">
+                <div class="top-bar">
+                    <div class="tabs">
+                        <button class="nav-button active" onclick="location.href='reconciliations.html'">
+                            <span class="circle active"></span> Reconciled
+                        </button>
+                        <button class="nav-button" onclick="location.href='reconciliations-pending.html'">
+                            <span class="circle"></span> Pending
+                        </button>
+                        <button class="nav-button" onclick="location.href='reconciliations-requested.html'">
+                            <span class="circle"></span> Requested
+                        </button>
+                    </div>
+                </div>
+                <div class="divider5"></div>
+				
+				<div class="title-container">
+					<h2 class="page-title">Reconciliations</h2>
+					<div class="toggle-buttons">
+						<button id="show-grid">Show Grid</button>
+						<button id="show-table">Show Table</button>
+					</div>
+				</div>
+            </div>
+
+            <!-- Scrollable Content -->
+            <div class="scrollable-content">
+                <div class="grid" style="margin-top: 100px; margin-left: 7px;">
+                    <!-- First card keeps original review-button -->
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Breakfast for the Director</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; padding-left: 0px; padding-right: 0px;	
+                            background-color: #32B8CD; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 100%; margin-left: 0px; margin-top: 5px;">
+                                Reconciled
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">Jack Smith</div>
+                        <p style="text-align: center; margin-bottom -2px; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">11/05/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">£8.65</div>
+                        <a href="reconciliations-overlay.html"><button class="review-button">Review</button></a>
+                    </div>
+					
+                    <!-- All other cards use secondary-review-button -->
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Costume</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; padding-left: 0px; padding-right: 0px;	
+                            background-color: #32B8CD; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 100%; margin-left: 0px; margin-top: 5px;">
+                                Reconciled
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 180px;">Johnny Bravo</div>
+                        <p style="text-align: center; margin-bottom -2px; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">11/10/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">£59.99</div>
+                        <a href="reconciliations-overlay.html"><button class="secondary-review-button">Review</button></a>
+                    </div>
+					
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Camera equipment</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; padding-left: 0px; padding-right: 0px;	
+                            background-color: #32B8CD; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 100%; margin-left: 0px; margin-top: 5px;">
+                                Reconciled
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">Sarah Smith</div>
+                        <p style="text-align: center; margin-bottom -2px; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">11/10/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">£2,500.00</div>
+                        <a href="reconciliations-overlay.html"><button class="secondary-review-button">Review</button></a>
+                    </div>
+					
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Lighting setup for scene 5</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; padding-left: 0px; padding-right: 0px;	
+                            background-color: #32B8CD; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 100%; margin-left: 0px; margin-top: 5px;">
+                                Reconciled
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">Laura Jacks</div>
+                        <p style="text-align: center; margin-bottom -2px; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">12/10/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">£1,200.00</div>
+                        <a href="reconciliations-overlay.html"><button class="secondary-review-button">Review</button></a>
+                    </div>
+					
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Coffee for the director</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; padding-left: 0px; padding-right: 0px;	
+                            background-color: #32B8CD; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 100%; margin-left: 0px; margin-top: 5px;">
+                                Reconciled
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 190px;">Paul Lothbroke</div>
+                        <p style="text-align: center; margin-bottom -2px; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">10/10/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">£20.00</div>
+                        <a href="reconciliations-overlay.html"><button class="secondary-review-button">Review</button></a>
+                    </div>
+					
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Stunt equipment</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; padding-left: 0px; padding-right: 0px;	
+                            background-color: #32B8CD; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 100%; margin-left: 0px; margin-top: 5px;">
+                                Reconciled
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 180px;">Oliver Brown</div>
+                        <p style="text-align: center; margin-bottom -2px; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">13/10/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">£20.00</div>
+                        <a href="reconciliations-overlay.html"><button class="secondary-review-button">Review</button></a>
+                    </div>
+                </div>
+				
+                <div id="table-container" class="table-container" style="margin-top: 130px; width: 650px; height: 480px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Person Responsible</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- First row keeps original button1 -->
+                            <tr>
+                                <td>Pay.</td>
+                                <td>Fuel for production Van</td>
+                                <td style="color: #32B8CD">Reconciled</td>
+                                <td>Jack Smith</td>
+                                <td>10/10/</br>2024</td>
+                                <td>£20.00</td>
+                                <td><a href="reconciliations-overlay.html"><button class="button1">Review</button></a></td>
+                            </tr>
+                            <!-- All other rows use secondary-review-button -->
+                            <tr>
+                                <td>Pay.</td>
+                                <td>Costume, approved by John</td>
+                                <td style="color: #32B8CD">Reconciled</td>
+                                <td>Johnny Bravo</td>
+                                <td>11/10/</br>2024</td>
+                                <td>£59.99</td>
+                                <td><a href="reconciliations-overlay.html"><button class="secondary-review-button">Review</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Pay.</td>
+                                <td>Camera equipment, approved by Sarah</td>
+                                <td style="color: #32B8CD">Reconciled</td>
+                                <td>Sarah Smith</td>
+                                <td>11/10/</br>2024</td>
+                                <td>£2,500.00</td>
+                                <td><a href="reconciliations-overlay.html"><button class="secondary-review-button">Review</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Pay.</td>
+                                <td>Lighting setup for scene 5, approved by Chris</td>
+                                <td style="color: #32B8CD">Reconciled</td>
+                                <td>Laura Jacks</td>
+                                <td>12/10/</br>2024</td>
+                                <td>£1,200.00</td>
+                                <td><a href="reconciliations-overlay.html"><button class="secondary-review-button">Review</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Pay.</td>
+                                <td>Coffee for the director</td>
+                                <td style="color: #32B8CD">Reconciled</td>
+                                <td>Paul Lothbroke</td>
+                                <td>12/10/</br>2024</td>
+                                <td>£3.50</td>
+                                <td><a href="reconciliations-overlay.html"><button class="secondary-review-button">Review</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Pay.</td>
+                                <td>Stunt equipment, approved by David</td>
+                                <td style="color: #32B8CD">Reconciled</td>
+                                <td>Oliver Brown</td>
+                                <td>13/10/</br>2024</td>
+                                <td>£20.00</td>
+                                <td><a href="reconciliations-overlay.html"><button class="secondary-review-button">Review</button></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>			
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dropdown functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const currentDropdown = button.nextElementSibling;
+                const arrow = button.querySelector('.arrow');
+
+                document.querySelectorAll('.submenu').forEach(menu => {
+                    if (menu !== currentDropdown) {
+                        menu.classList.remove('active');
+                        menu.style.display = 'none';
+                        menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;';
+                    }
+                });
+
+                if (currentDropdown.classList.contains('active')) {
+                    currentDropdown.classList.remove('active');
+                    setTimeout(() => {
+                        currentDropdown.style.display = 'none';
+                    }, 200);
+                    arrow.innerHTML = '&#9660;';
+                } else {
+                    currentDropdown.style.display = 'block';
+                    setTimeout(() => {
+                        currentDropdown.classList.add('active');
+                        const items = currentDropdown.querySelectorAll('li');
+                        items.forEach((item, index) => {
+                            item.style.setProperty('--delay', `${index * 0.03}s`);
+                        });
+                    }, 1);
+                    arrow.innerHTML = '&#9650;';
+                }
+            });
+        });
+    </script>
+	
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector('.grid').style.display = 'flex';
+            document.getElementById('table-container').style.display = 'none';
+
+            document.getElementById('show-grid').addEventListener('click', () => {
+                document.querySelector('.grid').style.display = 'flex';
+                document.getElementById('table-container').style.display = 'none';
+            });
+
+            document.getElementById('show-table').addEventListener('click', () => {
+                document.querySelector('.grid').style.display = 'none';
+                document.getElementById('table-container').style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

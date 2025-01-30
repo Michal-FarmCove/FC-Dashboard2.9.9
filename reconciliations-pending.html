@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="approvals-styles.css">
+	<script src="navbar.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+    <title>reconciliations</title>
+	<style>
+        .box img {
+            width: 20px;
+            height: 20px;
+            margin-left: 0px;
+        }
+		
+        .underline-link {
+            text-decoration: underline;
+            color: #32B8CD;
+        }
+
+        .underline-link:hover {
+            text-decoration: none;
+            color: #32B8CD;
+        }
+	</style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div id="navbar-placeholder"></div>
+
+        <!-- Main Content -->
+            <!-- Blue Line Container -->
+            <div class="blue-line-container">
+                <div class="blue-line"></div>
+            </div>
+
+            <!-- Fixed Header -->
+            <div class="fixed-header">
+                <div class="top-bar">
+                    <div class="tabs">
+                        <button class="nav-button" onclick="location.href='reconciliations.html'">
+                            <span class="circle"></span> Reconciled
+                        </button>
+                        <button class="nav-button active" onclick="location.href='reconciliations-pending.html'">
+                            <span class="circle active"></span> Pending
+                        </button>
+                        <button class="nav-button" onclick="location.href='reconciliations-requested.html'">
+                            <span class="circle"></span> Requested
+                        </button>
+                    </div>
+                </div>
+                <div class="divider5"></div>
+				
+				<div class="title-container">
+					<h2 class="page-title">Reconciliations</h2>
+					<div class="toggle-buttons">
+						<button id="show-grid">Show Grid</button>
+						<button id="show-table">Show Table</button>
+					</div>
+				</div>
+            </div>
+
+            <!-- Scrollable Content -->
+            <div class="scrollable-content">
+                <div class="grid" style="margin-top: 100px; margin-left: 32px;">
+                    <!-- First card keeps original review-button -->
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Fuel for Delivery Truck</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; 
+                                background-color: #F95A5A; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 94%;">
+                                Missing Receipt
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 190px;">Emma Johnson</div>
+                        <p style="text-align: center; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">11/10/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">&pound;21.44</div>
+                        <a href="reconciliations-overlay-pending.html"><button class="review-button">Review</button></a>
+                    </div>
+
+                    <!-- All other cards use secondary-review-button -->
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Office Supplies Purchase</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; 
+                                background-color: #F95A5A; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 94%;">
+                                Missing Receipt
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 180px;">Liam Williams</div>
+                        <p style="text-align: center; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">12/10/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">&pound;15.00</div>
+                        <a href="reconciliations-overlay-pending.html"><button class="secondary-review-button">Review</button></a>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Catering for Team Meeting</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; 
+                                background-color: #F95A5A; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 94%;">
+                                Missing Receipt
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 190px;">Olivia Brown</div>
+                        <p style="text-align: center; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">13/10/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">&pound;30.00</div>
+                        <a href="reconciliations-overlay-pending.html"><button class="secondary-review-button">Review</button></a>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Travel Expenses</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; 
+                                background-color: #F95A5A; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 94%;">
+                                Missing Receipt
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">Noah Davis</div>
+                        <p style="text-align: center; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">14/10/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">&pound;45.00</div>
+                        <a href="reconciliations-overlay-pending.html"><button class="secondary-review-button">Review</button></a>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Fuel for Backup Generator</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; 
+                                background-color: #F95A5A; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 94%;">
+                                Missing Receipt
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">Ava Wilson</div>
+                        <p style="text-align: center; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">15/10/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">&pound;35.00</div>
+                        <a href="reconciliations-overlay-pending.html"><button class="secondary-review-button">Review</button></a>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Snacks for Crew</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; 
+                                background-color: #F95A5A; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 94%;">
+                                Missing Receipt
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">Ethan Taylor</div>
+                        <p style="text-align: center; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">16/10/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">&pound;10.00</div>
+                        <a href="reconciliations-overlay-pending.html"><button class="secondary-review-button">Review</button></a>
+                    </div>
+                </div>
+				
+                <div id="table-container" class="table-container" style="margin-top: 130px; width: 690px; height: 360px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Person Responsible</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- First row keeps original button1 -->
+                            <tr>
+                                <td>Payment</td>
+                                <td>Fuel for Delivery Truck</td>
+                                <td style="color: #F95A5A">Pending</td>
+                                <td>Emma Johnson</td>
+                                <td>11/10/2024</td>
+                                <td>&pound;25.00</td>
+                                <td><a href="reconciliations-overlay-pending.html"><button class="button1">Review</button></a></td>
+                            </tr>
+                            <!-- All other rows use secondary-review-button -->
+                            <tr>
+                                <td>Payment</td>
+                                <td>Office Supplies Purchase</td>
+                                <td style="color: #F95A5A">Pending</td>
+                                <td>Liam Williams</td>
+                                <td>12/10/2024</td>
+                                <td>&pound;15.00</td>
+                                <td><a href="reconciliations-overlay-pending.html"><button class="secondary-review-button">Review</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Payment</td>
+                                <td>Catering for Team Meeting</td>
+                                <td style="color: #F95A5A">Pending</td>
+                                <td>Olivia Brown</td>
+                                <td>13/10/2024</td>
+                                <td>&pound;30.00</td>
+                                <td><a href="reconciliations-overlay-pending.html"><button class="secondary-review-button">Review</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Payment</td>
+                                <td>Travel Expenses</td>
+                                <td style="color: #F95A5A">Pending</td>
+                                <td>Noah Davis</td>
+                                <td>14/10/2024</td>
+                                <td>&pound;45.00</td>
+                                <td><a href="reconciliations-overlay-pending.html"><button class="secondary-review-button">Review</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Payment</td>
+                                <td>Fuel for Backup Generator</td>
+                                <td style="color: #F95A5A">Pending</td>
+                                <td>Ava Wilson</td>
+                                <td>15/10/2024</td>
+                                <td>&pound;35.00</td>
+                                <td><a href="reconciliations-overlay-pending.html"><button class="secondary-review-button">Review</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Payment</td>
+                                <td>Snacks for Crew</td>
+                                <td style="color: #F95A5A">Pending</td>
+                                <td>Ethan Taylor</td>
+                                <td>16/10/2024</td>
+                                <td>&pound;10.00</td>
+                                <td><a href="reconciliations-overlay-pending.html"><button class="secondary-review-button">Review</button></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dropdown functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const currentDropdown = button.nextElementSibling;
+                const arrow = button.querySelector('.arrow');
+
+                document.querySelectorAll('.submenu').forEach(menu => {
+                    if (menu !== currentDropdown) {
+                        menu.classList.remove('active');
+                        menu.style.display = 'none';
+                        menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;';
+                    }
+                });
+
+                if (currentDropdown.classList.contains('active')) {
+                    currentDropdown.classList.remove('active');
+                    setTimeout(() => {
+                        currentDropdown.style.display = 'none';
+                    }, 200);
+                    arrow.innerHTML = '&#9660;';
+                } else {
+                    currentDropdown.style.display = 'block';
+                    setTimeout(() => {
+                        currentDropdown.classList.add('active');
+                        const items = currentDropdown.querySelectorAll('li');
+                        items.forEach((item, index) => {
+                            item.style.setProperty('--delay', `${index * 0.03}s`);
+                        });
+                    }, 1);
+                    arrow.innerHTML = '&#9650;';
+                }
+            });
+        });
+    </script>
+	
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector('.grid').style.display = 'flex';
+            document.getElementById('table-container').style.display = 'none';
+
+            document.getElementById('show-grid').addEventListener('click', () => {
+                document.querySelector('.grid').style.display = 'flex';
+                document.getElementById('table-container').style.display = 'none';
+            });
+
+            document.getElementById('show-table').addEventListener('click', () => {
+                document.querySelector('.grid').style.display = 'none';
+                document.getElementById('table-container').style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

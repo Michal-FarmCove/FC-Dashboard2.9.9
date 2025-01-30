@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="approvals-styles.css">
+	<script src="navbar.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+    <title>Reconciliations</title>
+	<style>
+        .box img {
+            width: 20px;
+            height: 20px;
+            margin-left: 0px;
+        }
+		
+        .underline-link {
+            text-decoration: underline;
+            color: #32B8CD;
+        }
+
+        .underline-link:hover {
+            text-decoration: none;
+            color: #32B8CD;
+        }
+	</style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div id="navbar-placeholder"></div>
+
+        <!-- Main Content -->
+            <!-- Blue Line Container -->
+            <div class="blue-line-container">
+                <div class="blue-line"></div>
+            </div>
+
+            <!-- Fixed Header -->
+            <div class="fixed-header">
+                <div class="top-bar">
+                    <div class="tabs">
+                        <button class="nav-button" onclick="location.href='reconciliations.html'">
+                            <span class="circle"></span> Reconciled
+                        </button>
+                        <button class="nav-button" onclick="location.href='reconciliations-pending.html'">
+                            <span class="circle"></span> Pending
+                        </button>
+                        <button class="nav-button active" onclick="location.href='reconciliations-requested.html'">
+                            <span class="circle active"></span> Requested
+                        </button>
+                    </div>
+                </div>
+                <div class="divider5"></div>
+				
+				<div class="title-container">
+					<h2 class="page-title">Reconciliations</h2>
+					<div class="toggle-buttons">
+						<button id="show-grid">Show Grid</button>
+						<button id="show-table">Show Table</button>
+					</div>
+				</div>
+            </div>
+
+            <!-- Scrollable Content -->
+            <div class="scrollable-content">
+                <div class="grid" style="margin-top: 100px; margin-left: 32px;">
+                    <!-- First card keeps original review-button -->
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Travel Expense</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; 
+                                background-color: #717171; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 94%;">
+                                Receipt Requested
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 190px;">Grace Morgan</div>
+                        <p style="text-align: center; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">18/10/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">&pound;25.11</div>
+                        <a href="reconciliations-overlay-requested.html"><button class="review-button">Review</button></a>
+                    </div>
+
+                    <!-- All other cards use secondary-review-button -->
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Equipment Maintenance</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; 
+                                background-color: #717171; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 94%;">
+                                Receipt Requested
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 190px;">Michael Carter</div>
+                        <p style="text-align: center; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">19/10/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">&pound;250.00</div>
+                        <a href="reconciliations-overlay-requested.html"><button class="secondary-review-button">Review</button></a>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Location Rental</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; 
+                                background-color: #717171; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 94%;">
+                                Receipt Requested
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 190px;">Sarah Clark</div>
+                        <p style="text-align: center; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">20/10/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">&pound;800.00</div>
+                        <a href="reconciliations-overlay-requested.html"><button class="secondary-review-button">Review</button></a>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Set Design Materials</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; 
+                                background-color: #717171; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 94%;">
+                                Receipt Requested
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 190px;">James Cooper</div>
+                        <p style="text-align: center; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">21/10/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">&pound;1,500.00</div>
+                        <a href="reconciliations-overlay-requested.html"><button class="secondary-review-button">Review</button></a>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Catering for Staff</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; 
+                                background-color: #717171; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 94%;">
+                                Receipt Requested
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">Emily Scott</div>
+                        <p style="text-align: center; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">22/10/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">&pound;200.00</div>
+                        <a href="reconciliations-overlay-requested.html"><button class="secondary-review-button">Review</button></a>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Backup Power Rental</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+                            <div class="box" style="border-radius: 2px; margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; 
+                                background-color: #717171; color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 94%;">
+                                Receipt Requested
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">Ryan Lee</div>
+                        <p style="text-align: center; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">23/10/2024</div>
+                        <p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">&pound;350.00</div>
+                        <a href="reconciliations-overlay-requested.html"><button class="secondary-review-button">Review</button></a>
+                    </div>
+                </div>
+				
+                <div id="table-container" class="table-container" style="margin-top: 130px; width: 685px; height: 360px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Person Responsible</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- First row keeps original button1 -->
+                            <tr>
+                                <td>Payment</td>
+                                <td>Team Travel Expenses</td>
+                                <td style="color: #717171">Requested</td>
+                                <td>Grace Morgan</td>
+                                <td>18/10/2024</td>
+                                <td>&pound;120.00</td>
+                                <td><a href="reconciliations-overlay-requested.html"><button class="button1">Review</button></a></td>
+                            </tr>
+                            <!-- All other rows use secondary-review-button -->
+                            <tr>
+                                <td>Payment</td>
+                                <td>Equipment Maintenance</td>
+                                <td style="color: #717171">Requested</td>
+                                <td>Michael Carter</td>
+                                <td>19/10/2024</td>
+                                <td>&pound;250.00</td>
+                                <td><a href="reconciliations-overlay-requested.html"><button class="secondary-review-button">Review</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Payment</td>
+                                <td>Location Rental</td>
+                                <td style="color: #717171">Requested</td>
+                                <td>Sarah Clark</td>
+                                <td>20/10/2024</td>
+                                <td>&pound;800.00</td>
+                                <td><a href="reconciliations-overlay-requested.html"><button class="secondary-review-button">Review</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Payment</td>
+                                <td>Set Design Materials</td>
+                                <td style="color: #717171">Requested</td>
+                                <td>James Cooper</td>
+                                <td>21/10/2024</td>
+                                <td>&pound;1,500.00</td>
+                                <td><a href="reconciliations-overlay-requested.html"><button class="secondary-review-button">Review</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Payment</td>
+                                <td>Catering for Staff</td>
+                                <td style="color: #717171">Requested</td>
+                                <td>Emily Scott</td>
+                                <td>22/10/2024</td>
+                                <td>&pound;200.00</td>
+                                <td><a href="reconciliations-overlay-requested.html"><button class="secondary-review-button">Review</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Payment</td>
+                                <td>Backup Power Rental</td>
+                                <td style="color: #717171">Requested</td>
+                                <td>Ryan Lee</td>
+                                <td>23/10/2024</td>
+                                <td>&pound;350.00</td>
+                                <td><a href="reconciliations-overlay-requested.html"><button class="secondary-review-button">Review</button></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dropdown functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const currentDropdown = button.nextElementSibling;
+                const arrow = button.querySelector('.arrow');
+
+                document.querySelectorAll('.submenu').forEach(menu => {
+                    if (menu !== currentDropdown) {
+                        menu.classList.remove('active');
+                        menu.style.display = 'none';
+                        menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;';
+                    }
+                });
+
+                if (currentDropdown.classList.contains('active')) {
+                    currentDropdown.classList.remove('active');
+                    setTimeout(() => {
+                        currentDropdown.style.display = 'none';
+                    }, 200);
+                    arrow.innerHTML = '&#9660;';
+                } else {
+                    currentDropdown.style.display = 'block';
+                    setTimeout(() => {
+                        currentDropdown.classList.add('active');
+                        const items = currentDropdown.querySelectorAll('li');
+                        items.forEach((item, index) => {
+                            item.style.setProperty('--delay', `${index * 0.03}s`);
+                        });
+                    }, 1);
+                    arrow.innerHTML = '&#9650;';
+                }
+            });
+        });
+    </script>
+	
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector('.grid').style.display = 'flex';
+            document.getElementById('table-container').style.display = 'none';
+
+            document.getElementById('show-grid').addEventListener('click', () => {
+                document.querySelector('.grid').style.display = 'flex';
+                document.getElementById('table-container').style.display = 'none';
+            });
+
+            document.getElementById('show-table').addEventListener('click', () => {
+                document.querySelector('.grid').style.display = 'none';
+                document.getElementById('table-container').style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

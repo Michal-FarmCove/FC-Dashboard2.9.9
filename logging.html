@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="approvals-styles.css">
+	
+	<script src="navbar.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+	
+    <title>Schedule Payments</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+	 	 	 	   <div id="navbar-placeholder"></div>
+	 
+
+        <!-- Main Content -->
+
+            <!-- Blue Line Container -->
+            <div class="blue-line-container">
+                <div class="blue-line"></div>
+            </div>
+
+
+
+            <!-- Fixed Header -->
+            <div class="fixed-header">
+                <div class="top-bar">
+			
+					<!-- Filter Section -->
+					<div class="filter-section2">
+
+					</div>
+
+					
+                </div>
+                <div class="divider5"></div>
+				
+				<div class="title-container">
+					<h2 class="page-title">Logging</h2>
+					<div class="toggle-buttons">
+						<button id="show-grid">Show Grid</button>
+						<button id="show-table">Show Table</button>
+					</div>
+				</div>
+				
+            </div>
+
+			
+
+
+
+            <!-- Scrollable Content -->
+            <div class="scrollable-content">
+			
+			
+			<div class="above-grid">
+			<h2 style="font-weight: bold; font-size: 30px;"> Please choose the production day/s to review
+			</div>
+			
+			<div class="above-grid2">
+			<p style="font-weight: bold; font-size: 20px; margin-left: 230px;"> 7 of 139 items • 'x' items selected </p>
+			</div>
+			
+
+			
+                <div class="grid" style="margin-left: 70px; margin-top: 22px; width: 569px;">
+
+					
+
+					<div class="card2v1" style="position: relative;">
+						<h2 class="card-title">Post-production</h2>
+						<div class="divider4v1"></div>
+						<div style="text-align: center;">
+						</div>
+						<p style="text-align: center; font-size: 65px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">1</p>
+						<p style="text-align: center; font-size: 17px; font-weight: 1500; margin-top: -15px; margin-bottom: 5px;">PD-12345</p>
+					</div>
+
+
+
+					<div class="card2v1" style="position: relative;">
+						<h2 class="card-title">Post-production</h2>
+						<div class="divider4v1"></div>
+						<div style="text-align: center;">
+						</div>
+						<p style="text-align: center; font-size: 65px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">2</p>
+						<p style="text-align: center; font-size: 17px; font-weight: 1500; margin-top: -15px; margin-bottom: 5px;">PD-12345</p>
+					</div>
+
+
+
+					<div class="card2v1" style="position: relative;">
+						<h2 class="card-title">Post-production</h2>
+						<div class="divider4v1"></div>
+						<div style="text-align: center;">
+						</div>
+						<p style="text-align: center; font-size: 65px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">3</p>
+						<p style="text-align: center; font-size: 17px; font-weight: 1500; margin-top: -15px; margin-bottom: 5px;">PD-12345</p>
+					</div>
+
+
+
+					<div class="card2v1" style="position: relative;">
+						<h2 class="card-title">Post-production</h2>
+						<div class="divider4v1"></div>
+						<div style="text-align: center;">
+						</div>
+						<p style="text-align: center; font-size: 65px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">4</p>
+						<p style="text-align: center; font-size: 17px; font-weight: 1500; margin-top: -15px; margin-bottom: 5px;">PD-12345</p>
+					</div>
+
+
+
+					<div class="card2v1" style="position: relative;">
+						<h2 class="card-title">Post-production</h2>
+						<div class="divider4v1"></div>
+						<div style="text-align: center;">
+						</div>
+						<p style="text-align: center; font-size: 65px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">5</p>
+						<p style="text-align: center; font-size: 17px; font-weight: 1500; margin-top: -15px; margin-bottom: 5px;">PD-12345</p>
+					</div>
+
+
+
+					<div class="card2v1" style="position: relative;">
+						<h2 class="card-title">Post-production</h2>
+						<div class="divider4v1"></div>
+						<div style="text-align: center;">
+						</div>
+						<p style="text-align: center; font-size: 65px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">6</p>
+						<p style="text-align: center; font-size: 17px; font-weight: 1500; margin-top: -15px; margin-bottom: 5px;">PD-12345</p>
+					</div>
+
+
+
+					<div class="card2v1" style="position: relative;">
+						<h2 class="card-title">Post-production</h2>
+						<div class="divider4v1"></div>
+						<div style="text-align: center;">
+						</div>
+						<p style="text-align: center; font-size: 65px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">7</p>
+						<p style="text-align: center; font-size: 17px; font-weight: 1500; margin-top: -15px; margin-bottom: 5px;">PD-12345</p>
+					</div>
+
+
+
+                </div>
+				
+				
+				
+				
+	<div id="table-container" class="table-container" style="margin-top: 42px; height: 390px;">
+            
+			<table>
+                <thead>
+                    <tr>
+                        <th>Stage</th>
+                        <th>Day</th>
+                        <th>ID No.</th>
+						<th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Post-production</td>
+                        <td>1</td>
+                        <td>PD-12345</td>
+                        <td><a href="logging-review.html"><button class="button1">Review</button></a></td>
+                    </tr>
+					<tr>
+                        <td>Post-production</td>
+                        <td>2</td>
+                        <td>PD-12345</td>
+                        <td><a href="logging-review.html"><button class="button1">Review</button></a></td>
+                    </tr>
+					<tr>
+                        <td>Post-production</td>
+                        <td>3</td>
+                        <td>PD-12345</td>
+                        <td><a href="logging-review.html"><button class="button1">Review</button></a></td>
+                    </tr>
+					<tr>
+                        <td>Post-production</td>
+                        <td>4</td>
+                        <td>PD-12345</td>
+                        <td><a href="logging-review.html"><button class="button1">Review</button></a></td>
+                    </tr>
+					<tr>
+                        <td>Post-production</td>
+                        <td>5</td>
+                        <td>PD-12345</td>
+                        <td><a href="logging-review.html"><button class="button1">Review</button></a></td>
+                    </tr>
+					<tr>
+                        <td>Post-production</td>
+                        <td>6</td>
+                        <td>PD-12345</td>
+                        <td><a href="logging-review.html"><button class="button1">Review</button></a></td>
+                    </tr>
+					<tr>
+                        <td>Post-production</td>
+                        <td>7</td>
+                        <td>PD-12345</td>
+                        <td><a href="logging-review.html"><button class="button1">Review</button></a></td>
+                    </tr>
+					
+
+                    <!-- More rows can be added here -->
+                </tbody>
+            </table>
+        </div>			
+    </div>
+
+    </div>
+
+    <script>
+				// Dropdown functionality
+		document.querySelectorAll('.dropdown-toggle').forEach(button => {
+			button.addEventListener('click', () => {
+				const currentDropdown = button.nextElementSibling; // Target the submenu
+				const arrow = button.querySelector('.arrow'); // Target the arrow icon
+
+				// Close other dropdowns
+				document.querySelectorAll('.submenu').forEach(menu => {
+					if (menu !== currentDropdown) {
+						menu.classList.remove('active');
+						menu.style.display = 'none'; // Ensure hidden state
+						menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;'; // Reset arrow
+					}
+				});
+
+				// Toggle the current dropdown
+				if (currentDropdown.classList.contains('active')) {
+					currentDropdown.classList.remove('active');
+					setTimeout(() => {
+						currentDropdown.style.display = 'none'; // Hide after animation ends
+					}, 200); // Match the transition duration
+					arrow.innerHTML = '&#9660;'; // Change arrow to down
+				} else {
+					currentDropdown.style.display = 'block'; // Show immediately for animation
+					setTimeout(() => {
+						currentDropdown.classList.add('active');
+						// Apply staggered animation delays to each item
+						const items = currentDropdown.querySelectorAll('li');
+						items.forEach((item, index) => {
+							item.style.setProperty('--delay', `${index * 0.03}s`); // Stagger delay for each item
+						});
+					}, 1); // Small delay to trigger animation
+					arrow.innerHTML = '&#9650;'; // Change arrow to up
+				}
+			});
+		});
+    </script>
+	
+	
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Initially, ensure only the grid is visible
+    document.querySelector('.grid').style.display = 'flex'; // Show grid
+    document.getElementById('table-container').style.display = 'none'; // Hide table
+
+    // Show Grid button functionality
+    document.getElementById('show-grid').addEventListener('click', () => {
+        document.querySelector('.grid').style.display = 'flex'; // Show grid
+        document.getElementById('table-container').style.display = 'none'; // Hide table
+    });
+
+    // Show Table button functionality
+    document.getElementById('show-table').addEventListener('click', () => {
+        document.querySelector('.grid').style.display = 'none'; // Hide grid
+        document.getElementById('table-container').style.display = 'block'; // Show table
+    });
+});
+
+</script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".card2v1");
+    const container = document.querySelector(".scrollable-content");
+    let openButton = null;
+
+    // Remove any existing transitions
+    cards.forEach(card => {
+        card.style.transition = 'none';
+        card.addEventListener("click", function (e) {
+            // Prevent any default animations
+            e.preventDefault();
+            card.classList.toggle("selected");
+
+            // Check if any cards are selected
+            const anySelected = document.querySelectorAll(".card2v1.selected").length > 0;
+
+            if (anySelected && !openButton) {
+                // Create the "Open" button if it doesn't exist
+                openButton = document.createElement("button");
+                openButton.textContent = "Open";
+                openButton.classList.add("button1-log");
+                openButton.style.marginTop = "20px";
+                openButton.style.display = "block";
+                openButton.style.marginLeft = "305px";
+                openButton.style.marginRight = "auto";
+                container.appendChild(openButton);
+
+                // Add click event for the button
+                openButton.addEventListener("click", function () {
+                    window.location.href = "logging-review.html";
+                });
+            } else if (!anySelected && openButton) {
+                // Remove the "Open" button if no cards are selected
+                openButton.remove();
+                openButton = null;
+            }
+        });
+    });
+});
+</script>	
+	
+	
+	
+
+    </body>
+    
+</html>

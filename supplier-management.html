@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="approvals-styles.css">
+		<script src="navbar.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+    <title>Supplier Management</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+       	<div id="navbar-placeholder"></div>
+
+        <!-- Main Content -->
+            <!-- Blue Line Container -->
+            <div class="blue-line-container">
+                <div class="blue-line"></div>
+            </div>
+
+            <!-- Fixed Header -->
+            <div class="fixed-header">
+                <div class="top-bar"></div>
+                <div class="divider5"></div>
+				
+				<div class="title-container">
+					<h2 class="page-title">Supplier Management</h2>
+					<div class="toggle-buttons">
+						<button id="show-grid">Show Grid</button>
+						<button id="show-table">Show Table</button>
+					</div>
+				</div>
+            </div>
+
+    <!-- Scrollable Content -->
+    <div class="scrollable-content">
+        <div class="grid" style="margin-left: 32px; margin-top: 50px;">
+            <!-- First card keeps original review-button -->
+			<div class="card">
+                <h2 class="card-title">Decibel</h2>
+                <div class="divider4"></div>
+                <div class="card-section">
+                    <span class="label">Supplier Type</span>
+                    <div class="box">Sound Equipment</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Production Company Relationship</span>
+                    <div class="box">UK Production Company</div>
+                </div>
+                <a href="supplier-management-review.html"><button class="review-button">Review</button></a>
+            </div>
+			
+            <!-- All other cards use secondary-review-button -->
+            <div class="card">
+                <h2 class="card-title">Horizon</h2>
+                <div class="divider4"></div>
+                <div class="card-section">
+                    <span class="label">Supplier Type</span>
+                    <div class="box">Location Agency</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Production Company Relationship</span>
+                    <div class="box">UK Production Company</div>
+                </div>
+                <a href="supplier-management-review.html"><button class="secondary-review-button">Review</button></a>
+            </div>
+
+			<div class="card">
+                <h2 class="card-title">Hilton Hotel</h2>
+                <div class="divider4"></div>
+                <div class="card-section">
+                    <span class="label">Supplier Type</span>
+                    <div class="box">Accommodation</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Production Company Relationship</span>
+                    <div class="box">UK Production Company</div>
+                </div>
+                <a href="supplier-management-review.html"><button class="secondary-review-button">Review</button></a>
+            </div>
+
+			<div class="card">
+                <h2 class="card-title">Helping Hands </h2>
+                <div class="divider4"></div>
+                <div class="card-section">
+                    <span class="label">Supplier Type</span>
+                    <div class="box">Production Services</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Production Company Relationship</span>
+                    <div class="box">UK Production Company</div>
+                </div>
+                <a href="supplier-management-review.html"><button class="secondary-review-button">Review</button></a>
+            </div>
+
+			<div class="card">
+                <h2 class="card-title">Propsets </h2>
+                <div class="divider4"></div>
+                <div class="card-section">
+                    <span class="label">Supplier Type</span>
+                    <div class="box">Props</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Production Company Relationship</span>
+                    <div class="box">UK Production Company</div>
+                </div>
+                <a href="supplier-management-review.html"><button class="secondary-review-button">Review</button></a>
+            </div>
+
+			<div class="card">
+                <h2 class="card-title">London Transport</h2>
+                <div class="divider4"></div>
+                <div class="card-section">
+                    <span class="label">Supplier Type</span>
+                    <div class="box">Transport</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Production Company Relationship</span>
+                    <div class="box">UK Production Company</div>
+                </div>
+                <a href="supplier-management-review.html"><button class="secondary-review-button">Review</button></a>
+            </div>
+        </div>
+    </div>
+
+            <div id="table-container" class="table-container" style="margin-top: 160px; margin-left: 15px; height: 430px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Supplier Name</th>
+                            <th>Production Company Relationship</th>
+                            <th>Supplier Type</th>
+                            <th>Department</th>
+                            <th>Review</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Decibel</td>
+                            <td>UK Production Company</td>
+                            <td>Sound Equipment</td>
+                            <td>Audio</td>
+                            <td><a href="supplier-management-review.html"><button class="review-button" style="font-size: 11px; padding: 5px 15px;">Review</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>Horizon</td>
+                            <td>UK Production Company</td>
+                            <td>Location Agency</td>
+                            <td>Location</td>
+                            <td><a href="supplier-management-review.html"><button class="secondary-review-button" style="font-size: 11px; padding: 5px 15px;">Review</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>Hilton Hotel</td>
+                            <td>UK Production Company</td>
+                            <td>Accommodation</td>
+                            <td>Accommodation</td>
+                            <td><a href="supplier-management-review.html"><button class="secondary-review-button" style="font-size: 11px; padding: 5px 15px;">Review</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>Helping Hands</td>
+                            <td>UK Production Company</td>
+                            <td>Production Services</td>
+                            <td>Production</td>
+                            <td><a href="supplier-management-review.html"><button class="secondary-review-button" style="font-size: 11px; padding: 5px 15px;">Review</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>Propsets</td>
+                            <td>UK Production Company</td>
+                            <td>Props</td>
+                            <td>Props</td>
+                            <td><a href="supplier-management-review.html"><button class="secondary-review-button" style="font-size: 11px; padding: 5px 15px;">Review</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>London Transport</td>
+                            <td>UK Production Company</td>
+                            <td>Transport</td>
+                            <td>Transport</td>
+                            <td><a href="supplier-management-review.html"><button class="secondary-review-button" style="font-size: 11px; padding: 5px 15px;">Review</button></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>	
+    </div>
+
+    <script>
+        // Dropdown functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const currentDropdown = button.nextElementSibling;
+                const arrow = button.querySelector('.arrow');
+
+                document.querySelectorAll('.submenu').forEach(menu => {
+                    if (menu !== currentDropdown) {
+                        menu.classList.remove('active');
+                        menu.style.display = 'none';
+                        menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;';
+                    }
+                });
+
+                if (currentDropdown.classList.contains('active')) {
+                    currentDropdown.classList.remove('active');
+                    setTimeout(() => {
+                        currentDropdown.style.display = 'none';
+                    }, 200);
+                    arrow.innerHTML = '&#9660;';
+                } else {
+                    currentDropdown.style.display = 'block';
+                    setTimeout(() => {
+                        currentDropdown.classList.add('active');
+                        const items = currentDropdown.querySelectorAll('li');
+                        items.forEach((item, index) => {
+                            item.style.setProperty('--delay', `${index * 0.03}s`);
+                        });
+                    }, 1);
+                    arrow.innerHTML = '&#9650;';
+                }
+            });
+        });
+    </script>
+	
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector('.grid').style.display = 'flex';
+            document.getElementById('table-container').style.display = 'none';
+
+            document.getElementById('show-grid').addEventListener('click', () => {
+                document.querySelector('.grid').style.display = 'flex';
+                document.getElementById('table-container').style.display = 'none';
+            });
+
+            document.getElementById('show-table').addEventListener('click', () => {
+                document.querySelector('.grid').style.display = 'none';
+                document.getElementById('table-container').style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

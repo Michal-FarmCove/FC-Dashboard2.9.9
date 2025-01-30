@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="approvals-styles.css">
+    <title>Schedule Payments</title>
+	<script src="navbar.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div id="navbar-placeholder"></div>
+
+        <!-- Main Content -->
+            <!-- Blue Line Container -->
+            <div class="blue-line-container">
+                <div class="blue-line"></div>
+            </div>
+
+            <!-- Fixed Header -->
+            <div class="fixed-header">
+                <div class="top-bar"></div>
+                <div class="divider5"></div>
+				<div class="title-container">
+					<h2 class="page-title">Schedule Payments</h2>
+					<div class="toggle-buttons">
+						<button id="show-grid">Show Grid</button>
+						<button id="show-table">Show Table</button>
+					</div>
+				</div>
+            </div>
+
+            <!-- Scrollable Content -->
+            <div class="scrollable-content">
+                <div class="grid" style="margin-left: 21px; margin-top: 60px;">
+                    <!-- First card keeps original review-button -->
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Costume Supplies Ltd.</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£2,500.00</div>
+                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£1,500.00</div>
+                        <p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
+                        <a href="pay.html"><button class="review-button">Pay</button></a>
+                    </div>
+
+                    <!-- All other cards use secondary-review-button -->
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Artisan Equipment Co.</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£500.00</div>
+                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£140.00</div>
+                        <p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">11/10/2024</div>
+                        <a href="pay.html"><button class="secondary-review-button">Pay</button></a>
+                    </div>
+
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Scenic Props Ltd.</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£3,500.00</div>
+                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£2,250.00</div>
+                        <p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">11/10/2024</div>
+                        <a href="pay.html"><button class="secondary-review-button">Pay</button></a>
+                    </div>
+
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Stage & Screen Rentals</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£1,211.00</div>
+                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£1,011.00</div>
+                        <p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">13/10/2024</div>
+                        <a href="pay.html"><button class="secondary-review-button">Pay</button></a>
+                    </div>
+
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Lighting Masters Ltd.</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£760.00</div>
+                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£235.00</div>
+                        <p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">13/10/2024</div>
+                        <a href="pay.html"><button class="secondary-review-button">Pay</button></a>
+                    </div>
+
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Elite Costume Ltd.</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£1,140.00</div>
+                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£670.00</div>
+                        <p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
+                        <a href="pay.html"><button class="secondary-review-button">Pay</button></a>
+                    </div>
+
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Visionary Set Builders</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£12,700.00</div>
+                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£6,970.00</div>
+                        <p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
+                        <a href="pay.html"><button class="secondary-review-button">Pay</button></a>
+                    </div>
+
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">CineTech Supplies Inc.</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <p style="text-align: center;">Elite Costume Designers</p>
+                        <div class="price-box3" style="margin-top: -13px;">£13,500.00</div>
+                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£1,500.00</div>
+                        <p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
+                        <a href="pay.html"><button class="secondary-review-button">Pay</button></a>
+                    </div>
+
+                    <div class="card2">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: bold;">Premiere Film Props</span>
+                        </div>
+                        <div class="divider3v1"></div>
+                        <p style="text-align: center;">Total Invoice Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£12,500.00</div>
+                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <div class="price-box3" style="margin-top: -13px;">£10,500.00</div>
+                        <p style="text-align: center;">Due date</p>
+                        <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
+                        <a href="pay.html"><button class="secondary-review-button">Pay</button></a>
+                    </div>
+                </div>
+
+                <div id="table-container" class="table-container" style="margin-top: 82px; width: 690px; height: 500px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Supplier</th>
+                                <th>Total Invoice Amount</th>
+                                <th>Outstanding Amount</th>
+                                <th>Due Date</th>
+                                <th>Pay</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Costume Supplies LTD</td>
+                                <td>£2,500.00</td>
+                                <td>£1,500.00</td>
+                                <td>10/10/2024</td>
+                                <td><a href="pay.html"><button class="review-button">Pay</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Artisan Equipment Co.</td>
+                                <td>£500.00</td>
+                                <td>£140.00</td>
+                                <td>11/10/2024</td>
+                                <td><a href="pay.html"><button class="secondary-review-button">Pay</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Scenic Props Warehouse</td>
+                                <td>£3,500.00</td>
+                                <td>£2,250.00</td>
+                                <td>11/10/2024</td>
+                                <td><a href="pay.html"><button class="secondary-review-button">Pay</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Stage & Screen Rentals</td>
+                                <td>£1,211.00</td>
+                                <td>£1,011.00</td>
+                                <td>13/10/2024</td>
+                                <td><a href="pay.html"><button class="secondary-review-button">Pay</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Lighting Masters Ltd.</td>
+                                <td>£760.00</td>
+                                <td>£235.00</td>
+                                <td>13/10/2024</td>
+                                <td><a href="pay.html"><button class="secondary-review-button">Pay</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Elite Costume Designers</td>
+                                <td>£1,140.00</td>
+                                <td>£670.00</td>
+                                <td>10/10/2024</td>
+                                <td><a href="pay.html"><button class="secondary-review-button">Pay</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Visionary Set Builders</td>
+                                <td>£12,700.00</td>
+                                <td>£6,970.00</td>
+                                <td>10/10/2024</td>
+                                <td><a href="pay.html"><button class="secondary-review-button">Pay</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>CineTech Supplies Inc.</td>
+                                <td>£13,500.00</td>
+                                <td>£1,500.00</td>
+                                <td>10/10/2024</td>
+                                <td><a href="pay.html"><button class="secondary-review-button">Pay</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>Premiere Film Props</td>
+                                <td>£12,500.00</td>
+                                <td>£10,500.00</td>
+                                <td>10/10/2024</td>
+                                <td><a href="pay.html"><button class="secondary-review-button">Pay</button></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dropdown functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const currentDropdown = button.nextElementSibling;
+                const arrow = button.querySelector('.arrow');
+
+                document.querySelectorAll('.submenu').forEach(menu => {
+                    if (menu !== currentDropdown) {
+                        menu.classList.remove('active');
+                        menu.style.display = 'none';
+                        menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;';
+                    }
+                });
+
+                if (currentDropdown.classList.contains('active')) {
+                    currentDropdown.classList.remove('active');
+                    setTimeout(() => {
+                        currentDropdown.style.display = 'none';
+                    }, 200);
+                    arrow.innerHTML = '&#9660;';
+                } else {
+                    currentDropdown.style.display = 'block';
+                    setTimeout(() => {
+                        currentDropdown.classList.add('active');
+                        const items = currentDropdown.querySelectorAll('li');
+                        items.forEach((item, index) => {
+                            item.style.setProperty('--delay', `${index * 0.03}s`);
+                        });
+                    }, 1);
+                    arrow.innerHTML = '&#9650;';
+                }
+            });
+        });
+    </script>
+	
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector('.grid').style.display = 'flex';
+            document.getElementById('table-container').style.display = 'none';
+
+            document.getElementById('show-grid').addEventListener('click', () => {
+                document.querySelector('.grid').style.display = 'flex';
+                document.getElementById('table-container').style.display = 'none';
+            });
+
+            document.getElementById('show-table').addEventListener('click', () => {
+                document.querySelector('.grid').style.display = 'none';
+                document.getElementById('table-container').style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

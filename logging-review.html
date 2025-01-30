@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="approvals-styles.css">
+    <link rel="stylesheet" href="overlay-logging.css">
+	
+	<script src="navbar.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+    <title>Approvals Layout</title>
+    <style>
+        /* Inactive card styling */
+        .card2.inactive {
+            opacity: 0.5;
+            pointer-events: none;
+            cursor: default;
+        }
+
+        /* Embedded CSS for dropdown styling */
+        .logg-dropdown {
+            font-size: 14px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+            background-color: #f5f5f5;
+            color: #555;
+            transition: all 0.3s ease;
+            width: 100px;
+        }
+
+        .logg-dropdown:hover {
+            border-color: #aaa;
+            background-color: #f0f0f0;
+        }
+
+        .logg-dropdown:focus {
+            border-color: #32B8CD;
+            background-color: #fff;
+        }
+
+        /* Ensure the middle-container is scrollable */
+        .middle-container {
+            overflow-y: auto;
+            max-height: calc(100vh - 300px); /* Adjust height to allow space for the footer */
+        }
+
+        /* Pay Footer fixed positioning */
+        .pay-footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: white;
+            position: fixed;
+            bottom: 0;
+            width: 93.5%;
+            z-index: 1000;
+            box-shadow: none;
+        }
+
+        .pay-footer-divider {
+            width: 100%;
+            height: 2px;
+            background-color: #717171;
+            margin-bottom: 10px;
+        }
+
+        .pay-footer-content {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+
+        .pay-footer-red, .pay-footer-green, .pay-footer-blue {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            flex: 1;
+            max-width: 33%;
+        }
+
+        .total-amount-container {
+            text-align: center;
+        }
+
+        .total-amount {
+            background-color: #4A4A4A;
+            color: #FFF;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+       
+	 	   <div id="navbar-placeholder"></div>
+
+        <!-- Main Content -->
+        <div class="blue-line-container">
+            <div class="blue-line"></div>
+        </div>
+
+        <!-- Overlay -->
+        <div class="overlay" style="margin-left: 25px; margin-top: -5px;"></div>
+
+        <!-- Centered White Box -->
+        <div class="centered-box" style="margin-left: 150px;">
+            <a href="logging.html" class="close-circle">&#x2715;</a>
+
+            <div class="outer-container">
+                <div class="top-container" style="margin-bottom: 26px">
+                    <div class="nav-bar-window">
+                        <div class="navigation-buttons">
+                            <button class="nav-button-circle2">&#8249;</button>
+                            <button class="nav-button-circle2">&#8250;</button>
+                        </div>
+                        <h2 class="window-head">Logging</h2>
+
+                    </div>
+                    <div class="logg-navigation">
+                        <!-- Dropdown Menu -->
+                        <select id="category-dropdown" class="logg-dropdown" onchange="filterCards()">
+                            <option value="all">All</option>
+                            <option value="crew">Crew</option>
+                            <option value="drivers">Drivers</option>
+                        </select>
+                        <div class="logg-search">
+                            <input type="text" id="logg-search-input" placeholder="Search">
+                        </div>
+                    </div>
+                </div>
+                    <div class="divider" style="background-color: black; margin-top: -33px; height: 2px; margin-bottom: 25px; background-color:#717171;"></div>
+                <div class="middle-container" style="background-color: white;">
+                    <div id="card-container" class="grid2" style="margin-bottom: 25px;">
+                        <!-- Dynamic cards will populate here -->
+                    </div>
+                </div>
+
+                <!-- Pay Footer -->
+                <div class="pay-footer">
+                    <div class="pay-footer-divider"></div>
+                    <div class="pay-footer-content">
+                        <div class="pay-footer-red">
+                            <div class="total-amount-container">
+                                <label>Total base rate:</label>
+                                <div class="total-amount">£1,500.00</div>
+                            </div>
+                        </div>
+
+                        <div class="pay-footer-green">
+                            <div class="total-amount-container">
+                                <label>Total overtime:</label>
+                                <div class="total-amount">£3,500.00</div>
+                            </div>
+                        </div>
+
+                        <div class="pay-footer-blue">
+                            <div class="total-amount-container">
+                                <label style="margin-bottom: -3px">Total VAT:<label>
+                                <div class="total-amount" style="margin-top: 3px;">£1,005.00</div>
+                            </div>
+                        </div>
+						
+						<div class="pay-footer-blue">
+                            <div class="total-amount-container">
+                                <label>Total Cost:</label>
+                                <div class="total-amount">£6,005.00</div>
+                            </div>
+                        </div>
+						
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+		// Active names
+        const activeCrewMember = "Emily Carter";
+        const activeDriver = "John Doe";
+
+		const crewNames = [
+			"Emily Carter", "James Rodriguez", "Liam Henderson", "Noah Brooks", "Mason Cooper", 
+			"Sophia Miller", "Lucas Brown", "Emma Wilson", "Ava Thomas", "Olivia Johnson",
+			"Michael Scott", "Pam Beesly", "Jim Halpert", "Dwight Schrute", "Angela Martin"
+		];
+
+        const driverNames = ["John Doe", "Jane Smith", "Robert Lin", "Laura White", "Chris Green"];
+
+        function createCard(name, type) {
+            const card = document.createElement('a');
+            // Only set href if card is active
+            if ((type === 'crew' && name === activeCrewMember) || (type === 'drivers' && name === activeDriver)) {
+                card.href = type === 'crew' ? "logging-details.html" : "logging-details-driver.html";
+                card.className = "card2";
+            } else {
+                card.className = "card2 inactive";
+            }
+            card.innerHTML = `
+                <div class="image-container">
+                    <img src="avatar 2.png" alt="avatar" class="avatar-image">
+                </div>
+                <div class="card-section">
+                    <span class="avatar-text">${name}</span>
+                </div>
+            `;
+            return card;
+        }
+
+        function filterCards() {
+            const category = document.getElementById("category-dropdown").value;
+            const container = document.getElementById("card-container");
+            container.innerHTML = ""; // Clear existing cards
+
+            if (category === "all") {
+                crewNames.concat(driverNames).forEach(name => {
+                    const type = crewNames.includes(name) ? 'crew' : 'drivers';
+                    container.appendChild(createCard(name, type));
+                });
+            } else if (category === "crew") {
+                crewNames.forEach(name => container.appendChild(createCard(name, 'crew')));
+            } else if (category === "drivers") {
+                driverNames.forEach(name => container.appendChild(createCard(name, 'drivers')));
+            }
+        }
+
+        // Initial load with all cards
+        window.onload = () => {
+            filterCards();
+        };
+    </script>
+</body>
+</html>

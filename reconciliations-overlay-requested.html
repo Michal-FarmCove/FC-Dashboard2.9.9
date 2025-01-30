@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="approvals-styles.css">
+	
+	<script src="navbar.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+	
+	<link rel="stylesheet" href="overlay-logging.css">
+    <title>Reconciliations</title>
+	<style>
+	.box4 {
+    background-color: #32B8CD;
+    padding: 11.49px; /* Maintains the left margin */
+    font-size: 12px;
+    border-radius: 3.06px; /* Slight rounding for better aesthetics */
+    margin-top: 3.82px;
+    display: flex; /* Enables flexbox for alignment */
+    align-items: center; /* Vertically centers the text */
+    height: 33px;
+    width: 100.0%; /* Makes the box span the full width of its container */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+    color: black; /* Makes the text inside the box black */
+    text-align: left; /* Keeps the text aligned to the left */
+	margin-bottom: 11.49px;
+	color: white
+	}
+	
+.icon {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #F95A5A; /* Your preferred color */
+    border-radius: 50%;
+    margin-left: 7px; /* Removed extra margin */
+}
+	</style>
+	
+	
+    <style>
+
+        .recon-receipt {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            height: auto;
+        }
+
+        .logg-map-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .rec-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .recon-receipt:hover .rec-overlay {
+            opacity: 1;
+        }
+
+        .dynamic-content {
+            text-align: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .file-icon, .receipt-requested {
+            display: none;
+        }
+
+        .recon-receipt:hover .file-icon,
+        .recon-receipt:hover .receipt-requested {
+            display: block;
+        }
+
+    </style>
+	
+	
+	
+
+	
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+       
+	   <div id="navbar-placeholder"></div>
+
+        <!-- Main Content -->
+
+            <!-- Blue Line Container -->
+            <div class="blue-line-container">
+                <div class="blue-line"></div>
+            </div>
+
+
+			<!-- Overlay -->
+			<div class="overlay" style="margin-left: 25px; margin-top: -5px; height: 1150px;"></div>
+
+
+			<!-- Centered White Box -->
+			<div class="centered-box" style="margin-left: 150px;">
+				<!-- Close Button -->
+				<a href="reconciliations-requested.html" class="close-circle">&#x2715;</a>
+				<div class="outer-container" >
+
+					<!-- Top Container -->
+					<div class="top-container" style=" margin-top: 7px;">
+					
+						<div class="nav-bar-window">
+							<h2 class="window-head">Travel Expense</h2>
+						</div>
+						
+						
+
+
+					</div>
+					
+					<!-- Middle Containers -->
+					<div class="middle-container">
+
+						<div class="divider" style="margin-top: -10px; margin-bottom: 15px;"></div>
+
+					<div class="logg-container">
+						<!-- Top Section -->
+						<div class="logg-top">
+							<div class="logg-title">
+								<h2 class="logg-card-title">Payment Details</h2>
+								<div class="logg-divider"></div>
+							</div>
+							<div class="logg-row">
+								<div class="logg-red">
+									<span class="label3">Payment Type</span>
+									<div class="box3">Bank Account</div>
+									<span class="label3">Account</span>
+									<div class="box3">Lloyds Business</div>
+									<span class="label3">Person Responsible</span>
+									<div class="box3">Grace Morgan</div>
+									<span class="label3">Amount</span>
+									<div class="box3">£25.11</div>
+								</div>
+								<div class="logg-green">
+									<span class="label3">Date</span>
+									<div class="box3">18/10/2024</div>
+									<span class="label3">Description</span>
+									<div class="box3">Receipt #0859</div>
+									<span class="label3">Status</span>
+									<div class="box4" style="background-color: #717171; color: white;" >Receipt Requested</div>
+								</div>
+							</div>
+							
+<div class="recon-receipt">
+    <img src="temp20.png" alt="Map" class="logg-map-image">
+    <div class="rec-overlay">
+        <div class="dynamic-content">
+            <img src="File Icon.png" alt="File Icon" class="file-icon" width="80">
+            <p class="receipt-requested"style="width: 380px; font-size: 16px;">Receipt Requested</p>
+        </div>
+    </div>
+</div>
+							
+						</div>
+
+						<!-- Bottom Section -->
+						<div class="logg-bottom">
+							<div class="logg-title">
+								<h2 class="logg-card-title" style="margin-top: 25px">Chart of Account</h2>
+								<div class="logg-divider"></div>
+							</div>
+							<div class="logg-row">
+							
+							
+	<div id="table-container" class="table-container" style=" padding: 0; margin-top: 5px; margin-left: 0px; width: 1500px; height: 400px; box-shadow: none;">
+            
+			<table>
+                <thead>
+                    <tr>
+                        <th  style="background-color: #515151; color: white;">Type</th>
+                        <th  style="background-color: #515151; color: white;">Description</th>
+                        <th  style="background-color: #515151; color: white;">Amount</th>
+                        <th  style="background-color: #515151; color: white;">Submitter</th>
+                        <th  style="background-color: #515151; color: white;"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="background-color: #717171; color: white;">&#9660; Catering</td>
+                        <td style="background-color: #717171; color: white;"></td>
+                        <td style="background-color: #717171; color: white;"></td>
+                        <td style="background-color: #717171; color: white;"></td>
+                        <td style="background-color: #717171; color: white;"></td>	
+                    </tr>
+					<tr>
+                        <td>18/10/2024</td>
+                        <td>Tall Caffe Latte</td>
+                        <td>£2.75</td>
+                        <td>Bank Transfer</td>
+						<td><span class="icon">!</span></td>
+                    </tr>
+					
+					<tr>
+                        <td>18/10/2024</td>
+                        <td>BTL Sandwich</td>
+                        <td>£4.50</td>
+                        <td>Bank Transfer</td>
+						<td><span class="icon">!</span></td>
+                    </tr>
+					
+                    <tr>
+                        <td style="background-color: #717171; color: white;">&#9660; Transport</td>
+                        <td style="background-color: #717171; color: white;"></td>
+                        <td style="background-color: #717171; color: white;"></td>
+                        <td style="background-color: #717171; color: white;"></td>
+                        <td style="background-color: #717171; color: white;"></td>	
+                    </tr>
+					
+					<tr>
+                        <td>18/10/2024</td>
+                        <td>Pump #3 Diesel (12.5 Litres)</td>
+                        <td>£17.86</td>
+                        <td>Bank Transfer</td>
+						<td><span class="icon">!</span></td>
+                    </tr>
+					
+                    <tr>
+                        <td style="background-color: #717171; color: white;">&#9650; Location</td>
+                        <td style="background-color: #717171; color: white;"></td>
+                        <td style="background-color: #717171; color: white;"></td>
+                        <td style="background-color: #717171; color: white;"></td>
+                        <td style="background-color: #717171; color: white;"></td>	
+                    </tr>
+					
+					<tr>
+                        <td style="background-color: #717171; color: white;">&#9650; Misc</td>
+                        <td style="background-color: #717171; color: white;"></td>
+                        <td style="background-color: #717171; color: white;"></td>
+                        <td style="background-color: #717171; color: white;"></td>
+                        <td style="background-color: #717171; color: white;"></td>	
+                    </tr>
+					
+					
+					
+					
+					
+
+                    <!-- More rows can be added here -->
+                </tbody>
+            </table>
+        </div>	
+							
+
+							</div>
+						</div>
+					</div>
+
+
+					</div>
+					
+				</div>
+			</div>
+
+
+
+
+            <!-- Fixed Header -->
+            <div class="fixed-header">
+                <div class="top-bar">
+			
+					<!-- Filter Section -->
+					<div class="filter-section2">
+						<span class="switch-label">Pay All:</span>
+						<label class="switch">
+							<input type="checkbox">
+							<span class="slider"></span>
+						</label>
+					</div>
+
+					
+                </div>
+                <div class="divider5"></div>
+				
+				<div class="title-container">
+					<h2 class="page-title">Schedule Payments</h2>
+					<div class="toggle-buttons">
+						<button id="show-grid">Show Grid</button>
+						<button id="show-table">Show Table</button>
+					</div>
+				</div>
+				
+            </div>
+
+			
+
+
+
+            <!-- Scrollable Content -->
+            <div class="scrollable-content">
+			
+                <div class="grid" style="margin-top: 100px; margin-left: 32px;">
+                    <!-- Example Card -->
+					
+					
+                    <div class="card">
+                        <h2 class="card-title">Payment</h2>
+                        <div class="divider4v1"></div>
+ 							<div style="text-align: center;">
+								<span style="font-weight: bold;">Fuel for production Van</span>
+							</div>
+                        <div class="divider3v1"></div>
+                        <div class="card-section">
+							<div class="box" style="border-radius: 2px;  margin-bottom: 5px; padding-top: 4px; padding-bottom: 4px; padding-left: 0px; padding-right: 0px;	
+							background-color: #F95A5A;  color: white; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; width: 99%; margin-left: 0px; margin-top: 5px;">
+								Missing Receipt
+							</div>
+                        </div>
+						<p style="text-align: center; margin-top: 12px;">Person Responsible</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">Jack Smith</div>
+						<p style="text-align: center; margin-bottom -2px; margin-top: 10px;">Date</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px;">10/10/2024</div>
+						<p style="text-align: center; margin-top: 10px;">Amount</p>
+                        <div class="price-box3" style="margin-top: -13px; font-size: 25px; width: 150px; margin-bottom: 20px;">£20.00</div>
+                        <a href="reconciliations-overlay.html"><button class="review-button">Review</button></a>
+                    </div>
+
+					
+					
+                </div>
+			
+    </div>
+
+
+
+
+
+
+
+    </div>
+
+    <script>
+	
+        // Dropdown functionality
+document.querySelectorAll('.dropdown-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+        const currentDropdown = button.nextElementSibling; // Target the submenu
+        const arrow = button.querySelector('.arrow'); // Target the arrow icon
+
+        // Close other dropdowns
+        document.querySelectorAll('.submenu').forEach(menu => {
+            if (menu !== currentDropdown) {
+                menu.classList.remove('active');
+                menu.style.display = 'none'; // Ensure hidden state
+                menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;'; // Reset arrow
+            }
+        });
+
+        // Toggle the current dropdown
+        if (currentDropdown.classList.contains('active')) {
+            currentDropdown.classList.remove('active');
+            setTimeout(() => {
+                currentDropdown.style.display = 'none'; // Hide after animation ends
+            }, 200); // Match the transition duration
+            arrow.innerHTML = '&#9660;'; // Change arrow to down
+        } else {
+            currentDropdown.style.display = 'block'; // Show immediately for animation
+            setTimeout(() => {
+                currentDropdown.classList.add('active');
+                // Apply staggered animation delays to each item
+                const items = currentDropdown.querySelectorAll('li');
+                items.forEach((item, index) => {
+                    item.style.setProperty('--delay', `${index * 0.03}s`); // Stagger delay for each item
+                });
+            }, 1); // Small delay to trigger animation
+            arrow.innerHTML = '&#9650;'; // Change arrow to up
+        }
+    });
+});
+    </script>
+	
+	
+	    <script>
+// Function to show overlay
+function showOverlay() {
+    document.querySelector('.overlay').style.display = 'flex';
+}
+
+// Function to hide overlay
+function hideOverlay() {
+    document.querySelector('.overlay').style.display = 'none';
+}
+    </script>
+	
+	
+	
+	<script>
+	// Function to hide overlay and white box
+function hideOverlay() {
+    document.querySelector('.overlay').style.display = 'none';
+    document.querySelector('.centered-box').style.display = 'none';
+}
+</script>
+	
+	
+	
+	<script>
+  let currentButton = null; // Store the currently clicked button
+
+  // Ensure the overlay is hidden on page load
+  window.onload = () => {
+    document.getElementById('confirmation-overlay').style.display = 'none';
+  };
+
+  function showConfirmation(button) {
+    currentButton = button; // Store the clicked button
+    const overlay = document.getElementById('confirmation-overlay');
+    overlay.style.display = 'flex'; // Show the overlay
+  }
+
+  document.getElementById('cancel-button').addEventListener('click', () => {
+    document.getElementById('confirmation-overlay').style.display = 'none'; // Hide the overlay
+  });
+
+  document.getElementById('okay-button').addEventListener('click', () => {
+    if (currentButton) {
+      const row = currentButton.closest('tr'); // Get the parent row
+      const statusCell = row.querySelector('td:nth-child(2)'); // Get the status cell
+      const missingText = statusCell.querySelector('.missing-text'); // Get the missing text
+
+      // Update the button
+      currentButton.textContent = 'Requested';
+      currentButton.style.backgroundColor = '#717171';
+      currentButton.style.color = '#fff';
+      currentButton.disabled = true; // Make the button non-functional
+
+      // Update the missing text
+      if (missingText) {
+        missingText.textContent = 'Requested';
+        missingText.style.color = '#717171';
+        const icon = missingText.querySelector('.icon'); // Remove the icon
+        if (icon) {
+          icon.remove();
+        }
+      }
+
+      // Hide the overlay
+      document.getElementById('confirmation-overlay').style.display = 'none';
+    }
+  });
+</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>
