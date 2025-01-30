@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="approvals-styles.css">
+<link rel="stylesheet" href="overlay.css">
+<style>
+    .image-class2 {
+        transition: all 0.5s ease;
+        cursor: pointer;
+        transform-origin: center;
+    }
+    
+    .image-class2.enlarged {
+        transform: scale(2.55);
+        cursor: move;
+    }
+    
+    .container-b {
+        overflow: hidden;
+        position: relative;
+    }
+</style>
+
+		<script src="navbar.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+
+    <title>Compliance Documents</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+  
+  	  	    <div id="navbar-placeholder"></div>
+
+        <!-- Main Content -->
+
+            <!-- Blue Line Container -->
+            <div class="blue-line-container">
+                <div class="blue-line"></div>
+            </div>
+
+			<!-- Overlay -->
+			<div class="overlay" style="margin-left: 25px; margin-top: -5px;"></div>		
+			
+			<!-- Centered White Box -->
+			<div class="centered-box" style="height: 80%; margin-left: 110px;">
+				<!-- Close Button -->
+				<a href="compliance-documents.html" class="close-circle">&#x2715;</a>
+
+
+					<!-- Top Container -->
+					<div class="top-container" style="margin-top: 10px; margin-left: 5px; margin-right: 25px;">
+						<h2 class="window-head">Approval Structure</h2>
+						<div class="divider" style="background-color: black"></div>
+					</div>
+
+				<div class="outer-container" style="max-height: calc(100% - 80px); overflow-y: auto; padding-right: 10px;">
+
+
+
+
+					<!-- Grid Layout -->
+					<div class="layout">
+
+						<!-- Red Container -->
+
+						
+
+						<div class="container-r">
+
+							<h2 class="card-title" style="text-align: left; color: #32B8CD; margin-bottom: -5px;">Version Details</h2>
+							<div class="divider" style="margin-bottom: 5px; background-color: #32B8CD; margin-bottom: 25px;"></div>
+
+							<span class="label3" style="color: black;">Version</span>
+							<div class="box3">1</div>
+							<span class="label3" style="color: black;">Created</span>
+							<div class="box3">17/01/2025, 03:17</div>
+
+
+
+						</div>
+
+						<!-- Yellow Container -->
+						<div class="container-t-m">
+
+							<h2 class="card-title" style="text-align: left; color: #32B8CD; margin-bottom: -5px;">Project Document Details</h2>
+							<div class="divider" style="margin-bottom: 5px; background-color: #32B8CD; margin-bottom: 25px;"></div>
+
+							<span class="label3" style="color: black;">Creator</span>
+							<div class="box3">John McCall</div>
+							<span class="label3" style="color: black;">Status</span>
+							<div class="box3">Requested</div>
+							<span class="label3" style="color: black;">Type</span>
+							<div class="box3">Compliance</div>
+							<span class="label3" style="color: black;">Subtype</span>
+							<div class="box3">Approval Structure</div>
+
+						</div>
+
+						<!-- Blue Container -->
+						<div class="container-t-l" style="width: 180%;">
+							
+							<div class="manage-recipients">
+								<h2 class="card-title" style="text-align: left; color: #32B8CD; margin-bottom: -5px; margin-top: -5px;">Manage Recipients</h2>
+								<div class="divider" style="margin-bottom: 5px; background-color: #32B8CD; margin-bottom: 25px;"></div>
+								<h4 class="current-recipients-title" style="margin-top: -10px;">Current Recipients</h4>
+								<table class="recipients-table">
+									<thead>
+										<tr>
+											<th>Name and Role</th>
+											<th>Email Sent To</th>
+											<th>Mobile Sent To</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Oliver Brown (Producer)</td>
+											<td>producer@farmcove.co.uk</td>
+											<td>64226949310</td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+
+
+						</div>
+
+
+
+						<div class="container-b" style="color: red; height: auto;">
+							<div class="manage-recipients">
+								<h2 class="card-title" style="text-align: left; color: #32B8CD; margin-bottom: -5px; margin-top: 10px;">Document</h2>
+								<div class="divider" style="margin-bottom: 5px; background-color: #32B8CD; margin-bottom: 25px;"></div>
+
+							</div>	
+
+								<img src="compliance-docs\approval-structure.png" alt="Descriptive Text" class="image-class2"
+								style=" margin-top: 15px; height: auto; width: 595px; margin-bottom: 20px;">
+
+
+						</div>
+
+
+						
+
+
+					</div>
+				</div>	
+			</div>	
+
+			
+	</div>
+			
+
+
+	</div>
+
+
+
+            <!-- Fixed Header -->
+            <div class="fixed-header">
+                <div class="top-bar">
+				
+                    <div class="tabs">
+                        <button class="nav-button active">
+                            <span class="circle active"></span> All
+                        </button>
+                        <button class="nav-button">
+                            <span class="circle"></span> Production Approval Required
+                        </button>
+                        <button class="nav-button">
+                            <span class="circle"></span> Sent
+                        </button>
+                        <button class="nav-button">
+                            <span class="circle"></span> Generated
+                        </button>
+                    </div>
+					
+					
+			
+			
+					<!-- Filter Section -->
+					<div class="filter-section2">
+						<select class="dropdown2">
+							<option>Type</option>
+							<option>Option 1</option>
+							<option>Option 2</option>
+							<option>Option 3</option>
+						</select>
+						<select class="dropdown2">
+							<option>Submitter</option>
+							<option>Option A</option>
+							<option>Option B</option>
+							<option>Option C</option>
+						</select>
+						<select class="dropdown2">
+							<option>Sort by</option>
+							<option>Date</option>
+							<option>Amount</option>
+							<option>Priority</option>
+						</select>
+						<input type="text" class="search-bar2" placeholder="Search...">
+					</div>
+					
+                </div>
+                <div class="divider5"></div>
+				
+				<div class="title-container">
+					<h2 class="page-title">Compliance Documents</h2>
+					<div class="toggle-buttons">
+						<button id="show-grid">Show Grid</button>
+						<button id="show-table">Show Table</button>
+					</div>
+				</div>
+
+
+				
+            </div>
+						
+			
+
+            <!-- Scrollable Content -->
+            <div class="scrollable-content">
+			
+                <div class="grid" style="margin-left: 50px;">
+                    <!-- Example Card -->
+					
+                    <div class="cardv2">
+                        <h2 class="card-title">Approval Structure</h2>
+                        <div class="divider4"></div>
+                            <span class="label bold" style ="color: #F95A5A; text-align: center; margin-left: 11px;" >Production Approval Required</span>
+                        <div class="divider3"></div>
+						<div class="card-sectionv2" style="margin-top: 20px; margin-bottom: 20px;">
+							<img src="File Icon.png" alt="File Icon" class="card-imagev2">
+						</div>
+						<div class="divider3"></div>
+                        <a href="compliance-documents-details.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
+                    </div>
+					
+                    <div class="cardv2">
+                        <h2 class="card-title">Approval Structure</h2>
+                        <div class="divider4"></div>
+                            <span class="label bold" style ="color: #F95A5A; text-align: center; margin-left: 11px;" >Production Approval Required</span>
+                        <div class="divider3"></div>
+						<div class="card-sectionv2" style="margin-top: 20px; margin-bottom: 20px;">
+							<img src="File Icon.png" alt="File Icon" class="card-imagev2">
+						</div>
+						<div class="divider3"></div>
+                        <a href="compliance-documents-details.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
+                    </div>
+					
+                    <div class="cardv2">
+                        <h2 class="card-title">Transaction Processing </h2>
+                        <div class="divider4"></div>
+                        <a href="compliance-documents-details.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
+                    </div>
+					
+                    <div class="cardv2">
+                        <h2 class="card-title">Transaction Processing </h2>
+                        <div class="divider4"></div>
+                            <span class="label bold" style ="color: #515151; text-align: center; margin-left: 85px;" >Generated</span>
+                        <div class="divider3"></div>
+						<div class="card-sectionv3" style="margin-top: 20px; margin-bottom: 20px;">
+							<img src="Generated.png" alt="File Icon" class="card-imagev3">
+						</div>
+						<div class="divider3"></div>
+                        <a href="compliance-documents-details.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
+                    </div>
+					
+					<div class="cardv2">
+                        <h2 class="card-title">Transaction Processing </h2>
+                        <div class="divider4"></div>
+                            <span class="label bold" style ="color: #32B8CD; text-align: center; margin-left: 105px;" >Sent</span>
+                        <div class="divider3"></div>
+						<div class="card-sectionv2" style="margin-top: 20px; margin-bottom: 20px;">
+							<img src="tick.png" alt="File Icon" class="card-imagev3">
+						</div>
+						<div class="divider3"></div>
+                        <a href="compliance-documents-details.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
+                    </div>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+            </div>
+
+    </div>
+
+    <script>
+	
+        // Dropdown functionality
+document.querySelectorAll('.dropdown-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+        const currentDropdown = button.nextElementSibling; // Target the submenu
+        const arrow = button.querySelector('.arrow'); // Target the arrow icon
+
+        // Close other dropdowns
+        document.querySelectorAll('.submenu').forEach(menu => {
+            if (menu !== currentDropdown) {
+                menu.classList.remove('active');
+                menu.style.display = 'none'; // Ensure hidden state
+                menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;'; // Reset arrow
+            }
+        });
+
+        // Toggle the current dropdown
+        if (currentDropdown.classList.contains('active')) {
+            currentDropdown.classList.remove('active');
+            setTimeout(() => {
+                currentDropdown.style.display = 'none'; // Hide after animation ends
+            }, 200); // Match the transition duration
+            arrow.innerHTML = '&#9660;'; // Change arrow to down
+        } else {
+            currentDropdown.style.display = 'block'; // Show immediately for animation
+            setTimeout(() => {
+                currentDropdown.classList.add('active');
+                // Apply staggered animation delays to each item
+                const items = currentDropdown.querySelectorAll('li');
+                items.forEach((item, index) => {
+                    item.style.setProperty('--delay', `${index * 0.03}s`); // Stagger delay for each item
+                });
+            }, 1); // Small delay to trigger animation
+            arrow.innerHTML = '&#9650;'; // Change arrow to up
+        }
+    });
+});
+    </script>
+	
+	
+	    <script>
+// Function to show overlay
+function showOverlay() {
+    document.querySelector('.overlay').style.display = 'flex';
+}
+
+// Function to hide overlay
+function hideOverlay() {
+    document.querySelector('.overlay').style.display = 'none';
+}
+    </script>
+	
+	
+	
+	<script>
+	// Function to hide overlay and white box
+function hideOverlay() {
+    document.querySelector('.overlay').style.display = 'none';
+    document.querySelector('.centered-box').style.display = 'none';
+}
+    </script>
+    
+    <script>
+        window.addEventListener('load', function() {
+            const image = document.querySelector('.image-class2');
+            let isEnlarged = false;
+            let isDragging = false;
+            let currentX;
+            let currentY;
+            let initialX;
+            let initialY;
+            let xOffset = 0;
+            let yOffset = 0;
+
+            function setTranslate(xPos, yOffset) {
+                image.style.transform = `translate3d(${xPos}px, ${yOffset}px, 0) scale(${isEnlarged ? 1.25 : 1})`;
+            }
+
+            image.addEventListener('click', function(e) {
+                if (!isDragging) {
+                    isEnlarged = !isEnlarged;
+                    if (!isEnlarged) {
+                        xOffset = 0;
+                        yOffset = 0;
+                        setTranslate(0, 0);
+                    }
+                    this.classList.toggle('enlarged');
+                }
+            });
+
+            image.addEventListener('mousedown', function(e) {
+                if (isEnlarged) {
+                    initialX = e.clientX - xOffset;
+                    initialY = e.clientY - yOffset;
+                    isDragging = true;
+                }
+            });
+
+            window.addEventListener('mousemove', function(e) {
+                if (isDragging && isEnlarged) {
+                    e.preventDefault();
+                    currentX = e.clientX - initialX;
+                    currentY = e.clientY - initialY;
+                    xOffset = currentX;
+                    yOffset = currentY;
+                    setTranslate(currentX, currentY);
+                }
+            });
+
+            window.addEventListener('mouseup', function() {
+                isDragging = false;
+            });
+
+            image.addEventListener('dragstart', function(e) {
+                e.preventDefault();
+            });
+        });
+    </script>
+	
+</body>
+</html>

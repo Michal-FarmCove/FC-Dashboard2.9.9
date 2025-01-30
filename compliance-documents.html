@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="approvals-styles.css">
+			<script src="navbar.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+    <title>Compliance Documents</title>
+	
+
+	
+	
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+  
+  	  	    <div id="navbar-placeholder"></div>
+
+        <!-- Main Content -->
+
+            <!-- Blue Line Container -->
+            <div class="blue-line-container">
+                <div class="blue-line"></div>
+            </div>
+
+
+
+            <!-- Fixed Header -->
+            <div class="fixed-header">
+                <div class="top-bar">
+				
+
+					
+					
+			
+			
+
+					
+                </div>
+                <div class="divider5"></div>
+				
+				<div class="title-container">
+					<h2 class="page-title">Compliance Documents</h2>
+					<div class="toggle-buttons">
+						<button id="show-grid">Show Grid</button>
+						<button id="show-table">Show Table</button>
+					</div>
+				</div>
+
+
+				
+            </div>
+
+
+
+
+
+            <!-- Scrollable Content -->
+            <div class="scrollable-content">
+			
+                <div class="grid" style="margin-left: 30px; width: 800px">
+                    <!-- Example Card -->
+					
+                    <div class="cardv2">
+                        <h2 class="card-title">Approval Structure</h2>
+                        <div class="divider4"></div>
+                            <span class="label bold" style ="color: #515151; text-align: center; margin-left: 62px; font-size: 12px;" >Requested</span>
+                        <div class="divider3"></div>
+						<div class="card-sectionv2" style="margin-top: 20px; margin-bottom: 20px;">
+							<img src="Request Iconv2.png" alt="File Icon" class="card-imagev2">
+						</div>
+						<div class="divider3"></div>
+                        <a href="compliance-documents-details-requested.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
+                    </div>
+					
+                    <div class="cardv2">
+                        <h2 class="card-title">Approval Structure</h2>
+                        <div class="divider4"></div>
+                            <span class="label bold" style ="color: #F95A5A; text-align: center; margin-left: 4px; font-size: 12px;" >Production Approval Required</span>
+                        <div class="divider3"></div>
+						<div class="card-sectionv2" style="margin-top: 20px; margin-bottom: 20px;">
+							<img src="Prod Approval Required.png" alt="File Icon" class="card-imagev2">
+						</div>
+						<div class="divider3"></div>
+                        <a href="compliance-documents-details.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
+                    </div>
+					
+                    <div class="cardv2">
+                        <h2 class="card-title">Transaction Processing </h2>
+                        <div class="divider4"></div>
+                            <span class="label bold" style ="color: #515151; text-align: center; margin-left: 62px; font-size: 12px;" >Generated</span>
+                        <div class="divider3"></div>
+						<div class="card-sectionv2" style="margin-top: 20px; margin-bottom: 20px;">
+							<img src="Generated Icon.png" alt="File Icon" class="card-imagev2">
+						</div>
+						<div class="divider3"></div>
+                        <a href="compliance-documents-details-gen.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
+                    </div>
+					
+                    <div class="cardv2">
+                        <h2 class="card-title">Transaction Processing </h2>
+                        <div class="divider4"></div>
+                            <span class="label bold" style ="color: #515151; text-align: center;  margin-left: 75px; font-size: 12px;" >Draft</span>
+                        <div class="divider3"></div>
+						<div class="card-sectionv2" style="margin-top: 20px; margin-bottom: 20px;">
+							<img src="Draft Icon.png" alt="File Icon" class="card-imagev2">
+						</div>
+						<div class="divider3"></div>
+                        <a href="compliance-documents-details-draft.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
+                    </div>
+					                    
+					<div class="cardv2">
+                        <h2 class="card-title">Transaction Processing </h2>
+                        <div class="divider4"></div>
+                            <span class="label bold" style ="color: #515151; text-align: center;  margin-left: 70px; font-size: 12px;" >Queried</span>
+                        <div class="divider3"></div>
+						<div class="card-sectionv2" style="margin-top: 20px; margin-bottom: 20px;">
+							<img src="Querried Icon.png" alt="File Icon" class="card-imagev2">
+						</div>
+						<div class="divider3"></div>
+                        <a href="compliance-documents-details-queried.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
+                    </div>
+					
+					<div class="cardv2">
+                        <h2 class="card-title">Transaction Processing </h2>
+                        <div class="divider4"></div>
+                            <span class="label bold" style ="color: #32B8CD; text-align: center; margin-left: 78px; font-size: 12px;" >Sent</span>
+                        <div class="divider3"></div>
+						<div class="card-sectionv2" style="margin-top: 20px; margin-bottom: 20px;">
+							<img src="Sent Icon.png" alt="File Icon" class="card-imagev2">
+						</div>
+						<div class="divider3"></div>
+                        <a href="compliance-documents-details-sent.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
+                    </div>
+					
+					
+
+
+					
+
+					
+					
+					
+                </div>
+				
+				
+				
+				
+	<div id="table-container" class="table-container" style="margin-top: 103px; height: 300px;">
+            
+			<table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Status</th>
+ 						<th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Approvals Process</td>
+                        <td>October 20, 2024</td>
+                        <td style=" color: #F95A5A">Production Approval Required</td>
+                        <td><a href="compliance-documents-details.html"><button class="button1">View Details</button></a></td>
+                    </tr>
+					<tr>
+                        <td>Approvals Process</td>
+                        <td>October 20, 2024</td>
+                        <td style=" color: #F95A5A">Production Approval Required</td>
+                        <td><a href="compliance-documents-details.html"><button class="button1">View Details</button></a></td>
+                    </tr>
+					<tr>
+                        <td>Transaction Processing</td>
+                        <td>October 20, 2024</td>
+                        <td style=" color: #717171">Generated</td>
+                        <td><a href="compliance-documents-details.html"><button class="button1">View Details</button></a></td>
+                    </tr>
+					<tr>
+                        <td>Transaction Processing</td>
+                        <td>October 20, 2024</td>
+                        <td style=" color: #717171">Generated</td>
+                        <td><a href="compliance-documents-details.html"><button class="button1">View Details</button></a></td>
+                    </tr>
+					<tr>
+                        <td>Transaction Processing</td>
+                        <td>October 20, 2024</td>
+                        <td style=" color: #32B8CD">Sent</td>
+                        <td><a href="compliance-documents-details.html"><button class="button1">View Details</button></a></td>
+                    </tr>
+					
+
+
+
+
+
+
+                </tbody>
+            </table>
+        </div>			
+    </div>
+
+    </div>
+
+    <script>
+				// Dropdown functionality
+		document.querySelectorAll('.dropdown-toggle').forEach(button => {
+			button.addEventListener('click', () => {
+				const currentDropdown = button.nextElementSibling; // Target the submenu
+				const arrow = button.querySelector('.arrow'); // Target the arrow icon
+
+				// Close other dropdowns
+				document.querySelectorAll('.submenu').forEach(menu => {
+					if (menu !== currentDropdown) {
+						menu.classList.remove('active');
+						menu.style.display = 'none'; // Ensure hidden state
+						menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;'; // Reset arrow
+					}
+				});
+
+				// Toggle the current dropdown
+				if (currentDropdown.classList.contains('active')) {
+					currentDropdown.classList.remove('active');
+					setTimeout(() => {
+						currentDropdown.style.display = 'none'; // Hide after animation ends
+					}, 200); // Match the transition duration
+					arrow.innerHTML = '&#9660;'; // Change arrow to down
+				} else {
+					currentDropdown.style.display = 'block'; // Show immediately for animation
+					setTimeout(() => {
+						currentDropdown.classList.add('active');
+						// Apply staggered animation delays to each item
+						const items = currentDropdown.querySelectorAll('li');
+						items.forEach((item, index) => {
+							item.style.setProperty('--delay', `${index * 0.03}s`); // Stagger delay for each item
+						});
+					}, 1); // Small delay to trigger animation
+					arrow.innerHTML = '&#9650;'; // Change arrow to up
+				}
+			});
+		});
+    </script>
+	
+	
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Initially, ensure only the grid is visible
+    document.querySelector('.grid').style.display = 'flex'; // Show grid
+    document.getElementById('table-container').style.display = 'none'; // Hide table
+
+    // Show Grid button functionality
+    document.getElementById('show-grid').addEventListener('click', () => {
+        document.querySelector('.grid').style.display = 'flex'; // Show grid
+        document.getElementById('table-container').style.display = 'none'; // Hide table
+    });
+
+    // Show Table button functionality
+    document.getElementById('show-table').addEventListener('click', () => {
+        document.querySelector('.grid').style.display = 'none'; // Hide grid
+        document.getElementById('table-container').style.display = 'block'; // Show table
+    });
+});
+
+</script>
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

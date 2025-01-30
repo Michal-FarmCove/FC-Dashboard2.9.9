@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="approvals-styles.css">
+	<link rel="stylesheet" href="overlay.css">
+		<link rel="stylesheet" href="overlay-logging.css">
+		<script src="navbar.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+
+    <title>Approvals Layout</title>
+	
+	<style>
+.transaction-window {
+    position: relative;
+    width: 100%;
+}
+
+.transaction-header {
+    display: block;
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.transaction-divider {
+    margin-top: 10px;
+    height: 2px;
+    background-color: black;
+    width: 100%;
+    display: block;
+    clear: both;
+}
+	</style>
+	
+</head>
+<body>
+    <div class="container">
+        <div id="navbar-placeholder"></div>
+
+        <div class="blue-line-container">
+            <div class="blue-line"></div>
+        </div>
+
+		<div class="overlay" style="margin-left: 25px; margin-top: -5px; height: 1290px;"></div>
+
+		<div class="centered-box" style="margin-left: 150px;">
+			<a href="approvals.html" class="close-circle" style="z-index: 9998;">&#x2715;</a>
+			<div class="outer-container">
+				<div class="top-container" style="margin-top: 7px;">
+					<div class="transaction-window">
+						<h2 class="transaction-header">Transaction #TRX-000924</h2>
+						<div class="transaction-divider"></div>
+					</div>
+				</div>
+				
+				<div class="middle-container" style="margin-bottom: 495px;">
+					<div class="logg-container">
+						<div class="logg-top" style="margin-bottom: -65px;">
+							<div class="logg-title">
+								<h2 class="logg-card-title">Transaction Details</h2>
+								<div class="logg-divider"></div>
+							</div>
+							<div class="logg-row">
+								<div class="logg-red">
+									<span class="label3">Transaction ID</span>
+									<div class="box3">TRX-000924</div>
+									<span class="label3">Submission Date</span>
+									<div class="box3">02/03/24</div>
+									<span class="label3">Status</span>
+									<div class="box3">Awaiting Approval</div>
+								</div>
+								<div class="logg-green">
+									<span class="label3">Submitter</span>
+									<div class="box3">Jenny</div>
+									<span class="label3">Description</span>
+									<div class="box3">Breakfast for the producer</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="logg-bottom">
+							<div class="logg-row">
+								<div class="logg-orange">
+									<div class="logg-title">
+										<h2 class="logg-card-title">Cost Details</h2>
+										<div class="logg-divider"></div>
+									</div>
+									<span class="label3">Subtotal</span>
+									<div class="box3">£6.92</div>
+									<span class="label3">VAT</span>
+									<div class="box3">£1.73</div>
+									<span class="label3">Total</span>
+									<div class="box3">£8.65</div>
+									<span class="label3">Vendor</span>
+									<div class="box3">Costa Coffee</div>
+									<span class="label3">Date</span>
+									<div class="box3">11/05/2024</div>
+									<span class="label3">VAT Number:</span>
+									<div class="box3">GB123456789</div>
+								</div>
+								
+								<div class="logg-blue">
+									<div class="logg-title">
+										<h2 class="logg-card-title">Query History</h2>
+										<div class="logg-divider"></div>
+									</div>
+									<div class="logg-map">
+										<img src="Query-Chat.png" alt="Map" class="logg-map-image" style="margin-top: 23px; height: 366px">
+									</div>
+								</div>	
+							</div>
+						</div>
+					</div>
+	
+					<div class="logg-blue" style="margin-top: 180px;">
+						<div class="logg-title" style="margin-left: 15px; width: 550px;">
+							<h2 class="logg-card-title">Document</h2>
+							<div class="logg-divider"></div>
+						</div>
+
+						<div class="logg-map" style="margin-left: 5px; margin-right: 25px; margin-bottom: -30px; position: relative;">
+							<img src="temp22-backup.png" alt="Map" class="logg-map-image" style="margin-top: 5px; height: 276px; width: auto; margin-left: -10px;">
+						</div>
+						
+						<div class="button-group" style="margin-top: 55px; display: flex; gap: 15px; justify-content: center;">
+							<button class="button1" onclick="showConfirmationOverlay('approve')" style="min-width: 100px; padding: 8px 20px; font-size: 14px; border-radius: 39.81px; background-color: #32B8CD; transition: background-color 0.2s;">Approve</button>
+							<button class="button1" onclick="showConfirmationOverlay('query')" style="min-width: 100px; padding: 8px 20px; font-size: 14px; border-radius: 39.81px; background-color: #32B8CD; transition: background-color 0.2s;">Query</button>
+							<button class="button1" onclick="showConfirmationOverlay('reject')" style="min-width: 100px; padding: 8px 20px; font-size: 14px; border-radius: 39.81px; background-color: #32B8CD; transition: background-color 0.2s;">Reject</button>
+						</div>
+
+						<!-- Approve Confirmation Overlay -->
+						<div id="approve-overlay" class="confirmation-overlay">
+							<div class="confirmation-box">
+								<div class="confirmation-content">
+									<h3>Are you sure you want to approve this expense?</h3>
+									<div class="confirmation-buttons">
+										<button class="button1" onclick="handleAction('approve')">Approve</button>
+										<button class="button1" onclick="hideConfirmationOverlay('approve')">Cancel</button>
+									</div>
+								</div>
+								<div class="success-message">
+									<h3>This expense has been approved</h3>
+									<button class="button1" onclick="hideConfirmationOverlay('approve')">Okay</button>
+								</div>
+							</div>
+						</div>
+
+						<!-- Reject Confirmation Overlay -->
+						<div id="reject-overlay" class="confirmation-overlay">
+							<div class="confirmation-box">
+								<div class="confirmation-content">
+									<h3>Are you sure you want to reject this expense?</h3>
+									<div class="confirmation-buttons">
+										<button class="button1" onclick="handleAction('reject')">Reject</button>
+										<button class="button1" onclick="hideConfirmationOverlay('reject')">Cancel</button>
+									</div>
+								</div>
+								<div class="success-message">
+									<h3>This expense has been rejected</h3>
+									<button class="button1" onclick="hideConfirmationOverlay('reject')">Okay</button>
+								</div>
+							</div>
+						</div>
+
+						<!-- Query Overlay -->
+						<div id="query-overlay" class="confirmation-overlay">
+							<div class="confirmation-box">
+								<div class="confirmation-content">
+									<h3>Add your query below</h3>
+									<textarea class="query-textarea" placeholder="Type your query here..."></textarea>
+									<div class="confirmation-buttons">
+										<button class="button1" onclick="handleAction('query')">Send</button>
+										<button class="button1" onclick="hideConfirmationOverlay('query')">Cancel</button>
+									</div>
+								</div>
+								<div class="success-message">
+									<h3>Your query has been sent</h3>
+									<button class="button1" onclick="hideConfirmationOverlay('query')">Okay</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<style>
+						.confirmation-overlay {
+							display: none;
+							position: fixed;
+							top: 0;
+							left: 0;
+							width: 150%;
+							height: 150%;
+							background-color: rgba(0, 0, 0, 0.9);
+							z-index: 10000;
+							justify-content: center;
+							align-items: center;
+							margin-top: -20px;
+						}
+
+						.confirmation-box {
+							background-color: white;
+							padding: 30px;
+							border-radius: 8px;
+							text-align: center;
+							max-width: 400px;
+							width: 90%;
+							box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+							position: relative;
+							z-index: 10000;
+							margin-right: 300px;
+							margin-bottom: 350px;
+						}
+
+						.confirmation-box h3 {
+							color: black;
+							margin-bottom: 20px;
+							font-size: 16px;
+							font-weight: normal;
+						}
+
+						.confirmation-buttons {
+							display: flex;
+							justify-content: center;
+							gap: 15px;
+							margin-top: 25px;
+						}
+
+						.confirmation-buttons .button1 {
+							min-width: 100px;
+							padding: 8px 20px;
+							font-size: 14px;
+							border-radius: 39.81px;
+						}
+
+						.confirmation-buttons .button1:first-child {
+							background-color: #32B8CD;
+						}
+
+						.confirmation-buttons .button1:first-child:hover {
+							background-color: #2ca6b9;
+						}
+
+						.confirmation-buttons .button1:last-child {
+							background-color: #717171;
+						}
+
+						.confirmation-buttons .button1:last-child:hover {
+							background-color: #5a5a5a;
+						}
+
+						.confirmation-content {
+							display: block;
+						}
+
+						.success-message {
+							display: none;
+							text-align: center;
+						}
+
+						.success-message h3 {
+							color: black;
+							font-size: 16px;
+							font-weight: normal;
+							margin-bottom: 20px;
+
+						}
+
+						.success-message .button1 {
+							min-width: 100px;
+							padding: 8px 20px;
+							font-size: 14px;
+							border-radius: 39.81px;
+							background-color: #32B8CD;
+							transition: background-color 0.2s;
+						}
+
+						.success-message .button1:hover {
+							background-color: #2ca6b9;
+						}
+
+						.button1:hover {
+							background-color: #2ca6b9;
+						}
+
+						.query-textarea {
+							width: 94%;
+							height: 120px;
+							margin-right: 50px;
+							padding: 12px;
+							border: 1px solid #e0e0e0;
+							border-radius: 6px;
+							resize: none;
+							font-family: Arial, sans-serif;
+							font-size: 14px;
+							line-height: 1.5;
+							background-color: #f8f8f8;
+							transition: border-color 0.2s, background-color 0.2s;
+						}
+
+						.query-textarea:focus {
+							outline: none;
+							border-color: #32B8CD;
+							background-color: white;
+						}
+
+						.query-textarea::placeholder {
+							color: #999;
+						}
+					</style>
+
+					<script>
+						function showConfirmationOverlay(type) {
+							const overlay = document.getElementById(`${type}-overlay`);
+							overlay.style.display = 'flex';
+							overlay.querySelector('.confirmation-content').style.display = 'block';
+							overlay.querySelector('.success-message').style.display = 'none';
+						}
+
+						function hideConfirmationOverlay(type) {
+							const overlay = document.getElementById(`${type}-overlay`);
+							overlay.style.display = 'none';
+							if (type === 'query') {
+								document.querySelector('.query-textarea').value = '';
+							}
+							// Reset the overlay state
+							overlay.querySelector('.confirmation-content').style.display = 'block';
+							overlay.querySelector('.success-message').style.display = 'none';
+						}
+
+						function handleAction(type) {
+							const overlay = document.getElementById(`${type}-overlay`);
+							const confirmationContent = overlay.querySelector('.confirmation-content');
+							const successMessage = overlay.querySelector('.success-message');
+							
+							if (type === 'query') {
+								const queryText = document.querySelector('.query-textarea').value;
+								if (!queryText.trim()) {
+									return;
+								}
+							}
+							
+							// Hide confirmation content and show success message
+							confirmationContent.style.display = 'none';
+							successMessage.style.display = 'block';
+						}
+
+						// Close overlay when clicking outside the confirmation box
+						document.querySelectorAll('.confirmation-overlay').forEach(overlay => {
+							overlay.addEventListener('click', (e) => {
+								if (e.target === overlay) {
+									const type = overlay.id.split('-')[0];
+									hideConfirmationOverlay(type);
+								}
+							});
+						});
+					</script>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="scrollable-content">
+			<div class="grid">
+				<!-- Cards content remains the same -->
+			</div>
+		</div>
+    </div>
+</body>
+</html>

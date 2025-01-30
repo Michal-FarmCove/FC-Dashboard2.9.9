@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="approvals-styles.css">
+	<link rel="stylesheet" href="bfi-styles.css">
+	<link rel="stylesheet" href="overlay-crew-management.css">
+		<script src="navbar.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+
+    <title>BFI</title>
+
+	
+
+	
+	
+	
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+       	  	  	    <div id="navbar-placeholder"></div>
+
+        <!-- Main Content -->
+
+            <!-- Blue Line Container -->
+            <div class="blue-line-container">
+                <div class="blue-line"></div>
+            </div>
+
+			<!-- Overlay -->
+			<div class="overlay" style="margin-left: 25px"></div>
+
+
+			<!-- Centered White Box -->
+			<div class="centered-box" style="margin-left: 145px; height: 580px;">
+				<!-- Close Button -->
+				<a href="bfi.html" class="close-circle">&#x2715;</a>
+				
+				
+				
+				
+<div class="outer-container">
+
+    <!-- Top Container -->
+    <div class="top-container-bfi">
+        <div class="nav-bar-window-bfi">
+            <h2 class="window-head-bfi">English Translated Screenplay</h2>
+        </div>
+        <div class="divider" style="background-color: black; height: 1px;"></div>
+    </div>
+
+    <!-- Top1 Container -->
+    <div class="top1-container" style="margin-top: 25px;">
+
+					<div class="image-pdf-container2">
+						<img src="pdf for dashboard illustration2.png" alt="PDF Preview" class="image-pdf">
+					</div>
+
+    </div>
+
+
+
+
+
+
+
+    <!-- Bottom1 Container -->
+<div class="bottom1-container">
+
+    <h3 style="color: black; margin-top: 5px; margin-bottom: 10px; text-align: center; margin-left: 0px;">Version History</h3>
+	
+	
+    <table class="version-history-table" style="margin-left: 100px;">
+	
+
+        <tbody>
+            <tr>
+                <td>Version 1</td>
+                <td>Mark Brown</td>
+                <td>22/05/24</td>
+                <td style=" font-size: 17px;"><a href="#">Download</a></td>
+                <td style="text-align: right;">❌</td>
+            </tr>
+            <tr>
+                <td>Version 2</td>
+                <td>John Snow</td>
+                <td>18/10/24</td>
+                <td style=" font-size: 17px;"><a href="#">Download</a></td>
+                <td style="text-align: right;">❌</td>
+            </tr>
+        </tbody>
+		
+    </table>
+	
+	
+    <p class="upload-instructions" style=" text-align: center;">* Please upload the English translated dialogue version of the screenplay.</p>
+	
+
+        <button class="upload-button">Upload Files</button>
+        <span>Or drop files</span>
+
+	
+</div>
+
+    
+	
+	
+	
+	
+	
+</div>
+
+
+
+
+
+
+	
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			            <!-- Fixed Header -->
+            <div class="fixed-header2">
+                <div class="top-bar">
+				<h2 style="margin-top: -10px; margin-bottom: 0px; font-size: 32px; font-weight: bold; margin-left: 10px;">BFI Hub</h2>
+                </div>
+
+            </div>
+
+            <!-- Scrollable Content -->
+			<div class="scrollable-content2" style="margin-top: 86px;">
+				<div class="outer-container2">
+
+
+
+			<div class="left-section2">
+				<h3 style="margin-top: -5px; margin-bottom:0px; color: #32B8CD;">Interactive Points Calculator</h3>
+				<div class="title-divider" style="margin-bottom: 20px; margin-top: 6px;"></div>
+				<!-- Cultural Points -->
+				<div class="points-category">
+					<button class="dropdown-toggle-v2">
+						Cultural Points
+						<span class="arrow-v2">&#9650;</span>
+					</button>
+					<div class="table dropdown-content-v2 active">
+						<div class="row">
+							<div class="icon-cell">
+								<span class="icon">!</span>
+							</div>
+							<div class="description">Film Set in UK</div>
+							<div class="points">4/4</div>
+							<div class="button-cell"><button class="manage-button">Details</button></div>
+						</div>
+						<div class="row">
+							<div class="icon-cell">
+								<span class="icon">!</span>
+							</div>
+							<div class="description">Lead Character British or EEA Citizenship or Resident</div>
+							<div class="points">2/4</div>
+							<div class="button-cell"><button class="manage-button3" disabled>Details</button></div>
+						</div>
+						<div class="row">
+							<div class="icon-cell">
+								<span class="icon">!</span>
+							</div>
+							<div class="description">Film based on British or EEA Subject Matter or Underlying Material</div>
+							<div class="points">2/4</div>
+							<div class="button-cell"><button class="manage-button3"disabled>Details</button></div>
+						</div>
+						<div class="row">
+							<div class="icon-cell">
+								<span class="icon">!</span>
+							</div>
+							<div class="description">Original Dialogue Recorded in English or a Language Within the EEA</div>
+							<div class="points">2/4</div>
+							<div class="button-cell"><button class="manage-button3"disabled>Details</button></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Cultural Contribution Points -->
+				<div class="points-category">
+					<button class="dropdown-toggle-v2">
+						Cultural Contribution Points
+						<span class="arrow-v2">&#9660;</span>
+					</button>
+					<div class="table dropdown-content-v2 active" style="display: none;">
+						<div class="row">
+							<div class="icon-cell"></div>
+							<div class="description">Creativity, Heritage, and Diversity</div>
+							<div class="points">4/4</div>
+							<div class="button-cell"><button class="manage-button3"disabled>Details</button></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Cultural Hubs -->
+				<div class="points-category">
+					<button class="dropdown-toggle-v2">
+						Cultural Hubs
+						<span class="arrow-v2">&#9660;</span>
+					</button>
+					<div class="table dropdown-content-v2 active" style="display: none;">
+						<div class="row">
+							<div class="icon-cell"></div>
+							<div class="description">Principal Photography/Visual Effects/Special Effects</div>
+							<div class="points">4/4</div>
+							<div class="button-cell"><button class="manage-button3"disabled>Details</button></div>
+						</div>
+						<div class="row">
+							<div class="icon-cell"></div>
+							<div class="description">Music Recording/Audio Post Production/Picture Production</div>
+							<div class="points">1/1</div>
+							<div class="button-cell"><button class="manage-button3"disabled>Details</button></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Cultural Practitioners -->
+				<div class="points-category">
+					<button class="dropdown-toggle-v2">
+						Cultural Practitioners
+						<span class="arrow-v2">&#9660;</span>
+					</button>
+					<div class="table dropdown-content-v2 active" style="display: none;">
+						<div class="row">
+							<div class="icon-cell"></div>
+							<div class="description">Director</div>
+							<div class="points">0/1</div>
+							<div class="button-cell"><button class="manage-button3"disabled>Details</button></div>
+						</div>
+						<div class="row">
+							<div class="icon-cell"></div>
+							<div class="description">Scriptwriter</div>
+							<div class="points">0/1</div>
+							<div class="button-cell"><button class="manage-button3"disabled>Details</button></div>
+						</div>
+						<div class="row">
+							<div class="icon-cell"></div>
+							<div class="description">Producer</div>
+							<div class="points">0/1</div>
+							<div class="button-cell"><button class="manage-button3"disabled>Details</button></div>
+						</div>
+						<div class="row">
+							<div class="icon-cell"></div>
+							<div class="description">Composer</div>
+							<div class="points">1/1</div>
+							<div class="button-cell"><button class="manage-button3"disabled>Details</button></div>
+						</div>
+						<div class="row">
+							<div class="icon-cell"></div>
+							<div class="description">Lead Actor/Participants</div>
+							<div class="points">0/1</div>
+							<div class="button-cell"><button class="manage-button3"disabled>Details</button></div>
+						</div>
+						<div class="row">
+							<div class="icon-cell"></div>
+							<div class="description">Majority of Cast</div>
+							<div class="points">1/1</div>
+							<div class="button-cell"><button class="manage-button3"disabled>Details</button></div>
+						</div>
+						<div class="row">
+							<div class="icon-cell"></div>
+							<div class="description">Key Staff</div>
+							<div class="points">1/1</div>
+							<div class="button-cell"><button class="manage-button3"disabled>Details</button></div>
+						</div>
+						<div class="row">
+							<div class="icon-cell"></div>
+							<div class="description">Majority of Production Crew</div>
+							<div class="points">0/1</div>
+							<div class="button-cell"><button class="manage-button3"disabled>Details</button></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+					
+					<div class="right-section2">
+					
+					
+						<div class="top-right-section2">
+							<div class="divide">
+								<h3 style="margin-top: 3px; margin-bottom: -10px; color: #32B8CD">BFI Documents</h3>
+								<div class="documents-missing">
+									
+									<span class="missing-icon">❌</span>
+									<span class="missing-text">Documents Missing</span>
+								</div>
+								
+							</div>
+							<div class="title-divider"></div>
+						
+
+							<div class="documents-row">
+							
+								<div class="document-item" style="border-bottom: 1px solid #ddd;">
+									<span class="document-title">English Translated Screenplay</span>
+									<span class="document-version">Version 2</span>
+									<a href="#" class="document-link">Monsoon Melody 2024 Draft.pdf</a>
+									<button class="manage-button">Manage</button>
+								</div>
+								
+								<div class="document-item" style="border-bottom: 1px solid #ddd;">
+									<span class="document-title">Schedule</span>
+									<span class="document-version">Version 4</span>
+									<a href="#" class="document-link" style="color: #BCBCBC" disabled>Monsoon Melody Schedule 4.pdf</a>
+									<button class="manage-button" style="background-color: #BCBCBC">Manage</button>
+								</div>
+
+
+								<div class="upload-items-container">
+								
+									<div class="document-item2">
+										<span class="document-title">Budget:</span>
+										<div class="upload-container">
+											<label for="budget-upload" class="upload-label">
+												<span>Upload File</span>
+											</label>
+											<input type="file" id="budget-upload" class="upload-input">
+										</div>
+									</div>
+									
+									<div class="document-item3">
+									
+										<span class="document-title">Word Count:</span>
+										
+										<div class="upload-container">
+											<label for="wordcount-upload" class="upload-label" disabled>
+												<span>Upload File</span>
+											</label>
+											<input type="file" id="wordcount-upload" class="upload-input" disabled>
+										</div>
+									</div>
+									
+								</div>
+
+							</div>
+
+						</div>
+
+
+						<div class="middle-right-section2">
+						
+							<div class="divide">
+								<h3 style="margin-top: 3px; margin-bottom: -10px; color: #32B8CD">Supporting Tasks</h3>
+								<div class="documents-missing">
+									
+									<span class="missing-icon">❌</span>
+									<span class="missing-text"> Task Incomplete</span>
+								</div>
+								
+							</div>
+
+							<div class="title-divider"></div>
+							<div class="documents-row">
+							
+							
+								<div class="document-item" style="padding: 0;">
+									<span class="document-title2" style="font-weight: 50;">Provide a detailed synopsis</span>
+									<button class="manage-button">Open</button>
+								</div>
+							
+								<div class="document-item" style="padding: 0;">
+									<span class="document-title2" style="font-weight: 50;">Section A3 - Provide justification for British or EEA state story or underlying subject matter</span>
+									<button class="manage-button3">Open</button>
+								</div>
+								
+								<div class="document-item" style="padding: 0;">
+									<span class="document-title2" style="font-weight: 50;">Section B - Add cultural contribution justification</span>
+									<button class="manage-button3">Open</button>
+								</div>
+								
+								<div class="divider-below"></div>
+								
+								<div class="divide" style="margin-top: 0px;">
+								
+									<div class="button-container" style="margin-top: 5px;"><button class="manage-button2">+  Add Task</button></div>
+
+									
+								</div>
+								
+							</div>
+
+						</div>
+
+						
+						
+
+						
+						<div class="bottom-right-section2">
+						
+						<div class="divide">
+							<h3 style="margin-top: 20px; margin-bottom: 5px; color: #32B8CD">Feedback</h3>
+
+							
+						</div>
+						<div class="title-divider"></div>
+						
+						
+						
+							<img src="chat1.png" alt="Chat Image" class="chat1-image">
+						
+							<div class="comment-container">
+								<input type="text" class="comment-input" placeholder="Add comment">
+								<button class="comment-button">Add comment</button>
+							</div>
+
+						
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+				// Dropdown functionality
+		document.querySelectorAll('.dropdown-toggle').forEach(button => {
+			button.addEventListener('click', () => {
+				const currentDropdown = button.nextElementSibling; // Target the submenu
+				const arrow = button.querySelector('.arrow'); // Target the arrow icon
+
+				// Close other dropdowns
+				document.querySelectorAll('.submenu').forEach(menu => {
+					if (menu !== currentDropdown) {
+						menu.classList.remove('active');
+						menu.style.display = 'none'; // Ensure hidden state
+						menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;'; // Reset arrow
+					}
+				});
+
+				// Toggle the current dropdown
+				if (currentDropdown.classList.contains('active')) {
+					currentDropdown.classList.remove('active');
+					setTimeout(() => {
+						currentDropdown.style.display = 'none'; // Hide after animation ends
+					}, 200); // Match the transition duration
+					arrow.innerHTML = '&#9660;'; // Change arrow to down
+				} else {
+					currentDropdown.style.display = 'block'; // Show immediately for animation
+					setTimeout(() => {
+						currentDropdown.classList.add('active');
+						// Apply staggered animation delays to each item
+						const items = currentDropdown.querySelectorAll('li');
+						items.forEach((item, index) => {
+							item.style.setProperty('--delay', `${index * 0.03}s`); // Stagger delay for each item
+						});
+					}, 1); // Small delay to trigger animation
+					arrow.innerHTML = '&#9650;'; // Change arrow to up
+				}
+			});
+		});
+    </script>
+	
+	
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Initially, ensure only the grid is visible
+    document.querySelector('.grid').style.display = 'flex'; // Show grid
+    document.getElementById('table-container').style.display = 'none'; // Hide table
+
+    // Show Grid button functionality
+    document.getElementById('show-grid').addEventListener('click', () => {
+        document.querySelector('.grid').style.display = 'flex'; // Show grid
+        document.getElementById('table-container').style.display = 'none'; // Hide table
+    });
+
+    // Show Table button functionality
+    document.getElementById('show-table').addEventListener('click', () => {
+        document.querySelector('.grid').style.display = 'none'; // Hide grid
+        document.getElementById('table-container').style.display = 'block'; // Show table
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.querySelectorAll('.dropdown-toggle-v2').forEach(button => {
+    button.addEventListener('click', () => {
+        const dropdownContent = button.nextElementSibling; // Get the associated dropdown content
+        const arrow = button.querySelector('.arrow-v2'); // Get the arrow inside the button
+
+        // Toggle the active class
+        dropdownContent.classList.toggle('active');
+
+        // Adjust display and arrow direction
+        if (dropdownContent.classList.contains('active')) {
+            dropdownContent.style.display = 'block'; // Show the dropdown
+            arrow.innerHTML = '&#9650;'; // Up arrow
+        } else {
+            dropdownContent.style.display = 'none'; // Hide the dropdown
+            arrow.innerHTML = '&#9660;'; // Down arrow
+        }
+    });
+
+    // Initialize the state for dropdowns marked active
+    const dropdownContent = button.nextElementSibling;
+    const arrow = button.querySelector('.arrow-v2');
+    if (dropdownContent.classList.contains('active')) {
+        dropdownContent.style.display = 'block';
+        arrow.innerHTML = '&#9650;';
+    }
+});
+
+
+
+
+
+
+
+
+</script>
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

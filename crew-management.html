@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="approvals-styles.css">
+		<script src="navbar.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+    <title>Crew Management</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+       	<div id="navbar-placeholder"></div>
+
+        <!-- Main Content -->
+            <!-- Blue Line Container -->
+            <div class="blue-line-container">
+                <div class="blue-line"></div>
+            </div>
+
+            <!-- Fixed Header -->
+            <div class="fixed-header">
+                <div class="top-bar"></div>
+                <div class="divider5"></div>
+				
+				<div class="title-container">
+					<h2 class="page-title">Crew Management</h2>
+					<div class="toggle-buttons">
+						<button id="show-grid">Show Grid</button>
+						<button id="show-table">Show Table</button>
+					</div>
+				</div>
+            </div>
+
+    <!-- Scrollable Content -->
+    <div class="scrollable-content">
+        <div class="grid" style="margin-left: 32px; margin-top: 50px;">
+            <!-- First card keeps original review-button -->
+            <div class="card">
+                <h2 class="card-title">John Snow</h2>
+                <div class="divider4"></div>
+                <div class="card-section">
+                    <span class="label">Role</span>
+                    <div class="box">Sound Engineer</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Type</span>
+                    <div class="box">HOD</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Department</span>
+                    <div class="box">Sound</div>
+                </div>
+                <a href="crew-management-review.html"><button class="review-button">Review</button></a>
+            </div>
+
+            <!-- All other cards use secondary-review-button -->
+            <div class="card">
+                <h2 class="card-title">Emma Carter</h2>
+                <div class="divider4"></div>
+                <div class="card-section">
+                    <span class="label">Role</span>
+                    <div class="box">Editor</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Type</span>
+                    <div class="box">Crew Member</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Department</span>
+                    <div class="box">Post-Production</div>
+                </div>
+                <a href="crew-management-review.html"><button class="secondary-review-button">Review</button></a>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">Noah Bennett</h2>
+                <div class="divider4"></div>
+                <div class="card-section">
+                    <span class="label">Role</span>
+                    <div class="box">Director</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Type</span>
+                    <div class="box">HOD</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Department</span>
+                    <div class="box">Direction</div>
+                </div>
+                <a href="crew-management-review.html"><button class="secondary-review-button">Review</button></a>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">Sophia Turner</h2>
+                <div class="divider4"></div>
+                <div class="card-section">
+                    <span class="label">Role</span>
+                    <div class="box">Lighting Technician</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Type</span>
+                    <div class="box">Crew Member</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Department</span>
+                    <div class="box">Lighting</div>
+                </div>
+                <a href="crew-management-review.html"><button class="secondary-review-button">Review</button></a>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">Mia Ramirez</h2>
+                <div class="divider4"></div>
+                <div class="card-section">
+                    <span class="label">Role</span>
+                    <div class="box">Costume Designer</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Type</span>
+                    <div class="box">HOD</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Department</span>
+                    <div class="box">Costume</div>
+                </div>
+                <a href="crew-management-review.html"><button class="secondary-review-button">Review</button></a>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">Lucas Cooper</h2>
+                <div class="divider4"></div>
+                <div class="card-section">
+                    <span class="label">Role</span>
+                    <div class="box">Camera Operator</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Type</span>
+                    <div class="box">Loan Out</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Department</span>
+                    <div class="box">Camera</div>
+                </div>
+                <a href="crew-management-review.html"><button class="secondary-review-button">Review</button></a>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">Charlotte Adams</h2>
+                <div class="divider4"></div>
+                <div class="card-section">
+                    <span class="label">Role</span>
+                    <div class="box">Makeup Artist</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Type</span>
+                    <div class="box">Crew Member</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Department</span>
+                    <div class="box">Makeup</div>
+                </div>
+                <a href="crew-management-review.html"><button class="secondary-review-button">Review</button></a>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">Ethan Mitchell</h2>
+                <div class="divider4"></div>
+                <div class="card-section">
+                    <span class="label">Role</span>
+                    <div class="box">Sound Mixer</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Type</span>
+                    <div class="box">Loan Out</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Department</span>
+                    <div class="box">Sound</div>
+                </div>
+                <a href="crew-management-review.html"><button class="secondary-review-button">Review</button></a>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">Amelia Brooks</h2>
+                <div class="divider4"></div>
+                <div class="card-section">
+                    <span class="label">Role</span>
+                    <div class="box">Set Designer</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Type</span>
+                    <div class="box">HOD</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Department</span>
+                    <div class="box">Art</div>
+                </div>
+                <a href="crew-management-review.html"><button class="secondary-review-button">Review</button></a>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">Mason Parker</h2>
+                <div class="divider4"></div>
+                <div class="card-section">
+                    <span class="label">Role</span>
+                    <div class="box">Producer</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Type</span>
+                    <div class="box">HOD</div>
+                </div>
+                <div class="card-section">
+                    <span class="label">Department</span>
+                    <div class="box">Production</div>
+                </div>
+                <a href="crew-management-review.html"><button class="secondary-review-button">Review</button></a>
+            </div>
+        </div>
+    </div>
+
+            <div id="table-container" class="table-container" style="margin-top: 160px; margin-left: 15px; height: 420px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name & Surname</th>
+                            <th>Role</th>
+                            <th>Type</th>
+                            <th>Department</th>
+                            <th>Review</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Snow</td>
+                            <td>Sound Engineer</td>
+                            <td>HOD</td>
+                            <td>Sound</td>
+                            <td><a href="crew-management-review.html"><button class="review-button" style="font-size: 11px; padding: 5px 15px;">Review</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>Emma Carter</td>
+                            <td>Editor</td>
+                            <td>Crew Member</td>
+                            <td>Post-production</td>
+                            <td><a href="crew-management-review.html"><button class="secondary-review-button" style="font-size: 11px; padding: 5px 15px;">Review</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>Noah Bennett</td>
+                            <td>Director</td>
+                            <td>HOD</td>
+                            <td>Direction</td>
+                            <td><a href="crew-management-review.html"><button class="secondary-review-button" style="font-size: 11px; padding: 5px 15px;">Review</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>Sophia Turner</td>
+                            <td>Lighting Technician</td>
+                            <td>Crew Member</td>
+                            <td>Lighting</td>
+                            <td><a href="crew-management-review.html"><button class="secondary-review-button" style="font-size: 11px; padding: 5px 15px;">Review</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>Mia Ramirez</td>
+                            <td>Costume Designer</td>
+                            <td>HOD</td>
+                            <td>Costume</td>
+                            <td><a href="crew-management-review.html"><button class="secondary-review-button" style="font-size: 11px; padding: 5px 15px;">Review</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>Lucas Cooper</td>
+                            <td>Camera Operator</td>
+                            <td>Loan Out</td>
+                            <td>Camera</td>
+                            <td><a href="crew-management-review.html"><button class="secondary-review-button" style="font-size: 11px; padding: 5px 15px;">Review</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>Amelia Brooks</td>
+                            <td>Set Designer</td>
+                            <td>HOD</td>
+                            <td>Art</td>
+                            <td><a href="crew-management-review.html"><button class="secondary-review-button" style="font-size: 11px; padding: 5px 15px;">Review</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>Ethan Mitchell</td>
+                            <td>Sound Mixer</td>
+                            <td>Loan Out</td>
+                            <td>Sound</td>
+                            <td><a href="crew-management-review.html"><button class="secondary-review-button" style="font-size: 11px; padding: 5px 15px;">Review</button></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>	
+    </div>
+
+    <script>
+        // Dropdown functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const currentDropdown = button.nextElementSibling;
+                const arrow = button.querySelector('.arrow');
+
+                document.querySelectorAll('.submenu').forEach(menu => {
+                    if (menu !== currentDropdown) {
+                        menu.classList.remove('active');
+                        menu.style.display = 'none';
+                        menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;';
+                    }
+                });
+
+                if (currentDropdown.classList.contains('active')) {
+                    currentDropdown.classList.remove('active');
+                    setTimeout(() => {
+                        currentDropdown.style.display = 'none';
+                    }, 200);
+                    arrow.innerHTML = '&#9660;';
+                } else {
+                    currentDropdown.style.display = 'block';
+                    setTimeout(() => {
+                        currentDropdown.classList.add('active');
+                        const items = currentDropdown.querySelectorAll('li');
+                        items.forEach((item, index) => {
+                            item.style.setProperty('--delay', `${index * 0.03}s`);
+                        });
+                    }, 1);
+                    arrow.innerHTML = '&#9650;';
+                }
+            });
+        });
+    </script>
+	
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector('.grid').style.display = 'flex';
+            document.getElementById('table-container').style.display = 'none';
+
+            document.getElementById('show-grid').addEventListener('click', () => {
+                document.querySelector('.grid').style.display = 'flex';
+                document.getElementById('table-container').style.display = 'none';
+            });
+
+            document.getElementById('show-table').addEventListener('click', () => {
+                document.querySelector('.grid').style.display = 'none';
+                document.getElementById('table-container').style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
