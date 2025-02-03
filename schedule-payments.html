@@ -7,9 +7,66 @@
     <title>Schedule Payments</title>
 	<script src="navbar.js" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+    <style>
+        /* Review icon styles - only for table */
+        .review-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #32B8CD;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .review-icon:hover {
+            background-color: #717171;
+        }
+
+        .review-icon.secondary {
+            background-color: #717171;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .review-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+
+        /* Center icons in table cells */
+        .table-container td:last-child {
+            text-align: center;
+        }
+
+        /* Fix table layout */
+        .table-container table {
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .table-container th, .table-container td {
+            padding: 10px;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
+        <!-- SVG Definition (hidden) -->
+        <svg style="display: none;">
+            <symbol id="magnifying-glass" viewBox="0 0 24 24">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </symbol>
+        </svg>
+
         <!-- Sidebar -->
         <div id="navbar-placeholder"></div>
 
@@ -45,7 +102,7 @@
                         <div class="divider3v1"></div>
                         <p style="text-align: center;">Total Invoice Amount</p>
                         <div class="price-box3" style="margin-top: -13px;">£2,500.00</div>
-                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <p style="text-align: center;">Outstanding Amount</p>
                         <div class="price-box3" style="margin-top: -13px;">£1,500.00</div>
                         <p style="text-align: center;">Due date</p>
                         <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
@@ -62,7 +119,7 @@
                         <div class="divider3v1"></div>
                         <p style="text-align: center;">Total Invoice Amount</p>
                         <div class="price-box3" style="margin-top: -13px;">£500.00</div>
-                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <p style="text-align: center;">Outstanding Amount</p>
                         <div class="price-box3" style="margin-top: -13px;">£140.00</div>
                         <p style="text-align: center;">Due date</p>
                         <div class="price-box2" style="margin-top: -13px;">11/10/2024</div>
@@ -78,7 +135,7 @@
                         <div class="divider3v1"></div>
                         <p style="text-align: center;">Total Invoice Amount</p>
                         <div class="price-box3" style="margin-top: -13px;">£3,500.00</div>
-                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <p style="text-align: center;">Outstanding Amount</p>
                         <div class="price-box3" style="margin-top: -13px;">£2,250.00</div>
                         <p style="text-align: center;">Due date</p>
                         <div class="price-box2" style="margin-top: -13px;">11/10/2024</div>
@@ -94,7 +151,7 @@
                         <div class="divider3v1"></div>
                         <p style="text-align: center;">Total Invoice Amount</p>
                         <div class="price-box3" style="margin-top: -13px;">£1,211.00</div>
-                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <p style="text-align: center;">Outstanding Amount</p>
                         <div class="price-box3" style="margin-top: -13px;">£1,011.00</div>
                         <p style="text-align: center;">Due date</p>
                         <div class="price-box2" style="margin-top: -13px;">13/10/2024</div>
@@ -110,7 +167,7 @@
                         <div class="divider3v1"></div>
                         <p style="text-align: center;">Total Invoice Amount</p>
                         <div class="price-box3" style="margin-top: -13px;">£760.00</div>
-                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <p style="text-align: center;">Outstanding Amount</p>
                         <div class="price-box3" style="margin-top: -13px;">£235.00</div>
                         <p style="text-align: center;">Due date</p>
                         <div class="price-box2" style="margin-top: -13px;">13/10/2024</div>
@@ -126,7 +183,7 @@
                         <div class="divider3v1"></div>
                         <p style="text-align: center;">Total Invoice Amount</p>
                         <div class="price-box3" style="margin-top: -13px;">£1,140.00</div>
-                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <p style="text-align: center;">Outstanding Amount</p>
                         <div class="price-box3" style="margin-top: -13px;">£670.00</div>
                         <p style="text-align: center;">Due date</p>
                         <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
@@ -142,7 +199,7 @@
                         <div class="divider3v1"></div>
                         <p style="text-align: center;">Total Invoice Amount</p>
                         <div class="price-box3" style="margin-top: -13px;">£12,700.00</div>
-                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <p style="text-align: center;">Outstanding Amount</p>
                         <div class="price-box3" style="margin-top: -13px;">£6,970.00</div>
                         <p style="text-align: center;">Due date</p>
                         <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
@@ -158,7 +215,7 @@
                         <div class="divider3v1"></div>
                         <p style="text-align: center;">Elite Costume Designers</p>
                         <div class="price-box3" style="margin-top: -13px;">£13,500.00</div>
-                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <p style="text-align: center;">Outstanding Amount</p>
                         <div class="price-box3" style="margin-top: -13px;">£1,500.00</div>
                         <p style="text-align: center;">Due date</p>
                         <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
@@ -174,7 +231,7 @@
                         <div class="divider3v1"></div>
                         <p style="text-align: center;">Total Invoice Amount</p>
                         <div class="price-box3" style="margin-top: -13px;">£12,500.00</div>
-                        <p style="text-align: center; margin-bottom -2px;">Outstanding Amount</p>
+                        <p style="text-align: center;">Outstanding Amount</p>
                         <div class="price-box3" style="margin-top: -13px;">£10,500.00</div>
                         <p style="text-align: center;">Due date</p>
                         <div class="price-box2" style="margin-top: -13px;">10/10/2024</div>
@@ -182,7 +239,7 @@
                     </div>
                 </div>
 
-                <div id="table-container" class="table-container" style="margin-top: 82px; width: 690px; height: 500px;">
+                <div id="table-container" class="table-container" style=" margin-lefT: 40px; margin-top: 103px; height: 510px; width: 670px;">
                     <table>
                         <thead>
                             <tr>
@@ -199,63 +256,99 @@
                                 <td>£2,500.00</td>
                                 <td>£1,500.00</td>
                                 <td>10/10/2024</td>
-                                <td><a href="pay.html"><button class="review-button">Pay</button></a></td>
+                                <td>
+                                    <a href="pay.html" class="review-icon">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Artisan Equipment Co.</td>
                                 <td>£500.00</td>
                                 <td>£140.00</td>
                                 <td>11/10/2024</td>
-                                <td><a href="pay.html"><button class="secondary-review-button">Pay</button></a></td>
+                                <td>
+                                    <a href="pay.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Scenic Props Warehouse</td>
                                 <td>£3,500.00</td>
                                 <td>£2,250.00</td>
                                 <td>11/10/2024</td>
-                                <td><a href="pay.html"><button class="secondary-review-button">Pay</button></a></td>
+                                <td>
+                                    <a href="pay.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Stage & Screen Rentals</td>
                                 <td>£1,211.00</td>
                                 <td>£1,011.00</td>
                                 <td>13/10/2024</td>
-                                <td><a href="pay.html"><button class="secondary-review-button">Pay</button></a></td>
+                                <td>
+                                    <a href="pay.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Lighting Masters Ltd.</td>
                                 <td>£760.00</td>
                                 <td>£235.00</td>
                                 <td>13/10/2024</td>
-                                <td><a href="pay.html"><button class="secondary-review-button">Pay</button></a></td>
+                                <td>
+                                    <a href="pay.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Elite Costume Designers</td>
                                 <td>£1,140.00</td>
                                 <td>£670.00</td>
                                 <td>10/10/2024</td>
-                                <td><a href="pay.html"><button class="secondary-review-button">Pay</button></a></td>
+                                <td>
+                                    <a href="pay.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Visionary Set Builders</td>
                                 <td>£12,700.00</td>
                                 <td>£6,970.00</td>
                                 <td>10/10/2024</td>
-                                <td><a href="pay.html"><button class="secondary-review-button">Pay</button></a></td>
+                                <td>
+                                    <a href="pay.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>CineTech Supplies Inc.</td>
                                 <td>£13,500.00</td>
                                 <td>£1,500.00</td>
                                 <td>10/10/2024</td>
-                                <td><a href="pay.html"><button class="secondary-review-button">Pay</button></a></td>
+                                <td>
+                                    <a href="pay.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Premiere Film Props</td>
                                 <td>£12,500.00</td>
                                 <td>£10,500.00</td>
                                 <td>10/10/2024</td>
-                                <td><a href="pay.html"><button class="secondary-review-button">Pay</button></a></td>
+                                <td>
+                                    <a href="pay.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

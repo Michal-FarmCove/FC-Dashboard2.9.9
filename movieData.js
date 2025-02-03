@@ -5,7 +5,7 @@ const movieData = {
         language: "English",
         startDate: "1st February 2025",
         endDate: "15th April 2025",
-        poster: "posters/movie-poster.png",
+        poster: "posters/default-poster-01.png",
         status: "Proposed"
     },
     "Butterfly Effect": {

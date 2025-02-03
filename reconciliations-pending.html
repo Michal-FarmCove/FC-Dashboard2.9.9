@@ -23,10 +23,52 @@
             text-decoration: none;
             color: #32B8CD;
         }
+
+        /* Review icon styles - only for table */
+        .review-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #32B8CD;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .review-icon:hover {
+            background-color: #717171;
+        }
+
+        .review-icon.secondary {
+            background-color: #717171;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .review-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+
+        /* Center icons in table cells */
+        .table-container td:last-child {
+            text-align: center;
+        }
 	</style>
 </head>
 <body>
     <div class="container">
+        <!-- SVG Definition (hidden) -->
+        <svg style="display: none;">
+            <symbol id="magnifying-glass" viewBox="0 0 24 24">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </symbol>
+        </svg>
+
         <!-- Sidebar -->
         <div id="navbar-placeholder"></div>
 
@@ -39,27 +81,21 @@
             <!-- Fixed Header -->
             <div class="fixed-header">
                 <div class="top-bar">
-                    <div class="tabs">
-                        <button class="nav-button" onclick="location.href='reconciliations.html'">
-                            <span class="circle"></span> Reconciled
-                        </button>
-                        <button class="nav-button active" onclick="location.href='reconciliations-pending.html'">
-                            <span class="circle active"></span> Pending
-                        </button>
-                        <button class="nav-button" onclick="location.href='reconciliations-requested.html'">
-                            <span class="circle"></span> Requested
-                        </button>
-                    </div>
                 </div>
                 <div class="divider5"></div>
 				
-				<div class="title-container">
-					<h2 class="page-title">Reconciliations</h2>
-					<div class="toggle-buttons">
-						<button id="show-grid">Show Grid</button>
-						<button id="show-table">Show Table</button>
-					</div>
-				</div>
+                <div class="title-container">
+                    <h2 class="page-title">Reconciliations</h2>
+                    <div class="toggle-buttons">
+                        <select id="status-dropdown" class="status-dropdown">
+                            <option value="reconciled">Reconciled</option>
+                            <option value="pending" selected>Pending</option>
+                            <option value="requested">Requested</option>
+                        </select>
+                        <button id="show-grid">Show Grid</button>
+                        <button id="show-table">Show Table</button>
+                    </div>
+                </div>
             </div>
 
             <!-- Scrollable Content -->
@@ -200,7 +236,7 @@
                     </div>
                 </div>
 				
-                <div id="table-container" class="table-container" style="margin-top: 130px; width: 690px; height: 360px;">
+                <div id="table-container" class="table-container" style=" margin-left: 40px; margin-top: 103px; height: 380px; width: 670px;">
                     <table>
                         <thead>
                             <tr>
@@ -220,9 +256,13 @@
                                 <td>Fuel for Delivery Truck</td>
                                 <td style="color: #F95A5A">Pending</td>
                                 <td>Emma Johnson</td>
-                                <td>11/10/2024</td>
+                                <td>11/10/24</td>
                                 <td>&pound;25.00</td>
-                                <td><a href="reconciliations-overlay-pending.html"><button class="button1">Review</button></a></td>
+                                <td>
+                                    <a href="reconciliations-overlay-pending.html" class="review-icon">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <!-- All other rows use secondary-review-button -->
                             <tr>
@@ -230,45 +270,65 @@
                                 <td>Office Supplies Purchase</td>
                                 <td style="color: #F95A5A">Pending</td>
                                 <td>Liam Williams</td>
-                                <td>12/10/2024</td>
+                                <td>12/10/24</td>
                                 <td>&pound;15.00</td>
-                                <td><a href="reconciliations-overlay-pending.html"><button class="secondary-review-button">Review</button></a></td>
+                                <td>
+                                    <a href="reconciliations-overlay-pending.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Payment</td>
                                 <td>Catering for Team Meeting</td>
                                 <td style="color: #F95A5A">Pending</td>
                                 <td>Olivia Brown</td>
-                                <td>13/10/2024</td>
+                                <td>13/10/24</td>
                                 <td>&pound;30.00</td>
-                                <td><a href="reconciliations-overlay-pending.html"><button class="secondary-review-button">Review</button></a></td>
+                                <td>
+                                    <a href="reconciliations-overlay-pending.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Payment</td>
                                 <td>Travel Expenses</td>
                                 <td style="color: #F95A5A">Pending</td>
                                 <td>Noah Davis</td>
-                                <td>14/10/2024</td>
+                                <td>14/10/24</td>
                                 <td>&pound;45.00</td>
-                                <td><a href="reconciliations-overlay-pending.html"><button class="secondary-review-button">Review</button></a></td>
+                                <td>
+                                    <a href="reconciliations-overlay-pending.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Payment</td>
                                 <td>Fuel for Backup Generator</td>
                                 <td style="color: #F95A5A">Pending</td>
                                 <td>Ava Wilson</td>
-                                <td>15/10/2024</td>
+                                <td>15/10/24</td>
                                 <td>&pound;35.00</td>
-                                <td><a href="reconciliations-overlay-pending.html"><button class="secondary-review-button">Review</button></a></td>
+                                <td>
+                                    <a href="reconciliations-overlay-pending.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Payment</td>
                                 <td>Snacks for Crew</td>
                                 <td style="color: #F95A5A">Pending</td>
                                 <td>Ethan Taylor</td>
-                                <td>16/10/2024</td>
+                                <td>16/10/24</td>
                                 <td>&pound;10.00</td>
-                                <td><a href="reconciliations-overlay-pending.html"><button class="secondary-review-button">Review</button></a></td>
+                                <td>
+                                    <a href="reconciliations-overlay-pending.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -278,42 +338,19 @@
     </div>
 
     <script>
-        // Dropdown functionality
-        document.querySelectorAll('.dropdown-toggle').forEach(button => {
-            button.addEventListener('click', () => {
-                const currentDropdown = button.nextElementSibling;
-                const arrow = button.querySelector('.arrow');
-
-                document.querySelectorAll('.submenu').forEach(menu => {
-                    if (menu !== currentDropdown) {
-                        menu.classList.remove('active');
-                        menu.style.display = 'none';
-                        menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;';
-                    }
-                });
-
-                if (currentDropdown.classList.contains('active')) {
-                    currentDropdown.classList.remove('active');
-                    setTimeout(() => {
-                        currentDropdown.style.display = 'none';
-                    }, 200);
-                    arrow.innerHTML = '&#9660;';
-                } else {
-                    currentDropdown.style.display = 'block';
-                    setTimeout(() => {
-                        currentDropdown.classList.add('active');
-                        const items = currentDropdown.querySelectorAll('li');
-                        items.forEach((item, index) => {
-                            item.style.setProperty('--delay', `${index * 0.03}s`);
-                        });
-                    }, 1);
-                    arrow.innerHTML = '&#9650;';
-                }
-            });
+        // Handle status dropdown navigation
+        document.getElementById('status-dropdown').addEventListener('change', function() {
+            const value = this.value;
+            if (value === 'pending') {
+                window.location.href = 'reconciliations-pending.html';
+            } else if (value === 'requested') {
+                window.location.href = 'reconciliations-requested.html';
+            } else {
+                window.location.href = 'reconciliations.html';
+            }
         });
-    </script>
-	
-    <script>
+
+        // Handle grid/table view toggle
         document.addEventListener("DOMContentLoaded", function () {
             document.querySelector('.grid').style.display = 'flex';
             document.getElementById('table-container').style.display = 'none';

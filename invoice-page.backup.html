@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="approvals-styles.css">
 	<link rel="stylesheet" href="overlay-crew-management-invoices.css">
-	
 	<script src="navbar.js" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
-
+	
     <title>Approvals Layout</title>
 	
 
@@ -17,8 +16,8 @@
 <body>
     <div class="container">
         <!-- Sidebar -->
-     
-	    <div id="navbar-placeholder"></div>
+    
+	   <div id="navbar-placeholder"></div>
 
         <!-- Main Content -->
 
@@ -27,45 +26,89 @@
                 <div class="blue-line"></div>
             </div>
 			
-			<!-- Overlay -->
-			<div class="overlay" style="margin-left: -25px; margin-top: -5px; height: 1150px; width: 1000px;"></div>
+			
 
 
-			<!-- Centered White Box -->
-			<div class="centered-box" style="margin-left: 150px; margin-left: 150px; width: 655px; height: 740px;">
-				<!-- Close Button -->
-				<a href="crew-management.html" class="close-circle">&#x2715;</a>
-				<div class="outer-container">
+<!-- Overlay -->
+<div class="overlay" style="margin-left: -25px; margin-top: -5px; height: 1150px; width: 1000px;"></div>
+
+
+<!-- Centered White Box -->
+<div class="centered-box" style="margin-left: 150px; width: 655px; height: 740px;">
+    <!-- Close Button -->
+	<a href="crew-management.html" class="close-circle">&#x2715;</a>
+    <div class="outer-container">
+	
+	
+	
+	
+        <!-- Top Container -->
+        <div class="top-container">
+			<div class="nav-bar-window">
+				<div class="navigation-buttons">
+					<button class="nav-button-circle"   onclick="location.href='john-invoices.html';">&#8249;</button>
+					<button class="nav-button-circle2">&#8250;</button>
+				</div>
+				<h2 class="window-head">John Snow - TRX-00001</h2>
+			</div>
+			
+			<div class="divider" style="background-color: black;"></div>
+		</div>
+		
+
+		
+        <!-- Middle Containers -->
+        <<div class="middle-container">
+
+
+			<div class="center-containerv2">
+				<div class="top-rowv2">
 				
-					<!-- Top Container -->
-					<div class="top-container">
-						<div class="nav-bar-window">
-							<div class="navigation-buttons" >
-								<button class="nav-button-circle"   onclick="location.href='crew-management-review.html';">&#8249;</button>
-								<button class="nav-button-circle2">&#8250;</button>
-							</div>
-							<h2 class="window-head">Audio-Technica Headphones</h2>
-						</div>
-						
-						<div class="divider" style="background-color: black;"></div>
-					</div>
-
-					<!-- Middle Containers -->
-					<div class="center-container" style="height: 22850px; width: 100%">
 				
-							<div class="top-row2">
+					<div class="box-leftv2">
+					
+							<div class="main-container">
+							
+								<div class="left-container">
+
+									<span class="label3">Invoice Number</span>
+									<div class="box3">TRX-00001</div>
+									<span class="label3">Submission Date</span>
+									<div class="box3">15/02/2024</div>
+									<span class="label3">Due Date</span>
+									<div class="box3">15/03/2024</div>
 									
-								<div class="box-left" style="background-color: #EAEAEA; margin-top: 0px;">
-								
-									<div class="image-container3"><img src="headphones.png" alt="starter-form" style="height: 550px; width: 435px; justify-content: center; align-items: center; margin-left: 45%; margin-right:0%; margin-top: 60px; margin-bottom: 5px;"></div>
 
 								</div>
+								
+								
+								<div class="right-container">
 
+									<span class="label3">Subtotal</span>
+									<div class="box3">£3,000.00</div>
+									<span class="label3">VAT</span>
+									<div class="box3">£600.00</div>
+									<span class="label3">Total</span>
+									<div class="box3">£3,600.00</div>
+								</div>
+								
 							</div>
+					</div>
+					
+					<div class="box-rightv2">
+					
+						<img src="invoice-preview.png" alt="invoice" class="image-container4">  
+						
 					</div>
 					
 				</div>
 			</div>
+			
+			
+		</div>
+		
+    </div>
+</div>
 
 
             <!-- Fixed Header -->
@@ -272,7 +315,6 @@
     </div>
 
     <script>
-	
         // Dropdown functionality
 document.querySelectorAll('.dropdown-toggle').forEach(button => {
     button.addEventListener('click', () => {

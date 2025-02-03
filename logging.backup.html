@@ -105,7 +105,7 @@
 			</div>
 			
 			<div class="above-grid2">
-			<p style="font-weight: 0; font-size: 15px; margin-left: 260px; margin-bottom: 25px;"> 7 of 139 items • <span id="selected-count">0</span> items selected </p>
+			<p style="font-weight: 0; font-size: 15px; margin-left: 260px; margin-bottom: 25px;"> 7 of 139 items • 'x' items selected </p>
 			</div>
 	
 
@@ -196,7 +196,7 @@
 				
 				
 				
-	<div id="table-container" class="table-container" style=" margin-lefT: 40px; margin-top: 30px; height: 380px; width: 670px;">
+	<div id="table-container" class="table-container" style=" margin-lefT: 40px; margin-top: 103px; height: 380px; width: 670px;">
             
 			<table>
                 <thead>
@@ -355,7 +355,6 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const cards = document.querySelectorAll(".card2v1");
     const container = document.querySelector(".scrollable-content");
-    const selectedCountElement = document.getElementById("selected-count");
     let openButton = null;
 
     // Remove any existing transitions
@@ -366,12 +365,10 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault();
             card.classList.toggle("selected");
 
-            // Update selected count
-            const selectedCount = document.querySelectorAll(".card2v1.selected").length;
-            selectedCountElement.textContent = selectedCount;
-
             // Check if any cards are selected
-            if (selectedCount > 0 && !openButton) {
+            const anySelected = document.querySelectorAll(".card2v1.selected").length > 0;
+
+            if (anySelected && !openButton) {
                 // Create the "Open" button if it doesn't exist
                 openButton = document.createElement("button");
                 openButton.textContent = "Open";
@@ -386,7 +383,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 openButton.addEventListener("click", function () {
                     window.location.href = "logging-review.html";
                 });
-            } else if (selectedCount === 0 && openButton) {
+            } else if (!anySelected && openButton) {
                 // Remove the "Open" button if no cards are selected
                 openButton.remove();
                 openButton = null;

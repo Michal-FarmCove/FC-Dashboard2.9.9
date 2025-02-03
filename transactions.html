@@ -9,9 +9,52 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
 	
     <title>Transactions</title>
+    <style>
+        /* Review icon styles - only for table */
+        .review-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #32B8CD;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .review-icon:hover {
+            background-color: #717171;
+        }
+
+        .review-icon.secondary {
+            background-color: #717171;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .review-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+
+        /* Center icons in table cells */
+        .table-container td:last-child {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
+        <!-- SVG Definition (hidden) -->
+        <svg style="display: none;">
+            <symbol id="magnifying-glass" viewBox="0 0 24 24">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </symbol>
+        </svg>
+
         <!-- Sidebar -->
         <div id="navbar-placeholder"></div>
 
@@ -287,7 +330,7 @@
                             <th>Due Date</th>
                             <th>Total</th>
                             <th>Balance</th>
-                            <th>Action</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -300,7 +343,11 @@
                             <td>15/03/2025</td>
                             <td>£3,500.00</td>
                             <td>£1,250.00</td>
-                            <td><button class="t-review-button" style="font-size: 13px; padding-left: 15px; padding-right: 15px;" disabled>Review</button></td>
+                            <td>
+                                <a href="transactions-review.html" class="review-icon">
+                                    <svg><use href="#magnifying-glass"/></svg>
+                                </a>
+                            </td>
                         </tr>
                         <tr class="grey-row">
                             <td>TRX-000124</td>
@@ -311,7 +358,11 @@
                             <td>10/03/2025</td>
                             <td>£5,999.00</td>
                             <td>£2,999.50</td>
-                            <td><button class="t-review-button" style="font-size: 13px; padding-left: 15px; padding-right: 15px;" disabled>Review</button></td>
+                            <td>
+                                <a href="transactions-review.html" class="review-icon secondary">
+                                    <svg><use href="#magnifying-glass"/></svg>
+                                </a>
+                            </td>
                         </tr>
                         <tr class="grey-row">
                             <td>TRX-000125</td>
@@ -322,7 +373,11 @@
                             <td>05/03/2025</td>
                             <td>£8,500.00</td>
                             <td>£4,250.00</td>
-                            <td><button class="t-review-button" style="font-size: 13px; padding-left: 15px; padding-right: 15px;" disabled>Review</button></td>
+                            <td>
+                                <a href="transactions-review.html" class="review-icon secondary">
+                                    <svg><use href="#magnifying-glass"/></svg>
+                                </a>
+                            </td>
                         </tr>
                         <tr class="grey-row">
                             <td>TRX-000126</td>
@@ -333,7 +388,11 @@
                             <td>01/03/2025</td>
                             <td>£4,200.00</td>
                             <td>£2,100.00</td>
-                            <td><button class="t-review-button" style="font-size: 13px; padding-left: 15px; padding-right: 15px;" disabled>Review</button></td>
+                            <td>
+                                <a href="transactions-review.html" class="review-icon secondary">
+                                    <svg><use href="#magnifying-glass"/></svg>
+                                </a>
+                            </td>
                         </tr>
                         <tr class="grey-row">
                             <td>TRX-000127</td>
@@ -344,7 +403,11 @@
                             <td>28/02/2025</td>
                             <td>£6,750.00</td>
                             <td>£3,375.00</td>
-                            <td><button class="t-review-button" style="font-size: 13px; padding-left: 15px; padding-right: 15px;" disabled>Review</button></td>
+                            <td>
+                                <a href="transactions-review.html" class="review-icon secondary">
+                                    <svg><use href="#magnifying-glass"/></svg>
+                                </a>
+                            </td>
                         </tr>
                         <tr>
                             <td>TRX-000128</td>
@@ -355,7 +418,11 @@
                             <td>25/02/2025</td>
                             <td>£7,800.00</td>
                             <td>£3,900.00</td>
-                            <td><button class="t-review-button" style="font-size: 13px; padding-left: 15px; padding-right: 15px;" disabled>Review</button></td>
+                            <td>
+                                <a href="transactions-review.html" class="review-icon secondary">
+                                    <svg><use href="#magnifying-glass"/></svg>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
