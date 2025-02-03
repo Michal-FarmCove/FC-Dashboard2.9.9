@@ -674,6 +674,7 @@ a:has(.secondary-review-button) {
     cursor: pointer;
     box-sizing: border-box;
     border: 2px solid transparent;
+    height: 165px;
 }
 
 .card2v1.selected {
@@ -1138,4 +1139,39 @@ table tbody tr:hover {
 .switch {
     position: relative;
     display: inline-block;
+}
+
+/* Status Dropdown Styling */
+.status-dropdown {
+    padding: 6.12px 12.25px;
+    font-size: 10.73px;
+    color: #515151;
+    font-weight: bold;
+    background-color: #FCDF59;
+    border: none;
+    border-radius: 3.82px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23515151'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+    padding-right: 30px;
+    min-width: 120px;
+}
+
+.status-dropdown:hover {
+    opacity: 0.9;
+}
+
+.status-dropdown:focus {
+    outline: none;
+}
+
+.status-dropdown option {
+    background-color: white;
+    color: black;
+    padding: 8px;
 }

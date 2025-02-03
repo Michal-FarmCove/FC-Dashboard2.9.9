@@ -6,11 +6,99 @@
     <link rel="stylesheet" href="approvals-styles.css">
 	<script src="navbar.js" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
-	
+	<style>
+        /* Table styles */
+        .table-container {
+            width: 698px;
+            margin-left: 27px;
+            height: 610px;
+            margin-top: 80px;
+        }
+
+        /* Fixed table layout for better column control */
+        .table-container table {
+            table-layout: fixed;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* Column widths */
+        .table-container table th:nth-child(1),
+        .table-container table td:nth-child(1) { width: 12%; }  /* Type */
+        .table-container table th:nth-child(2),
+        .table-container table td:nth-child(2) { width: 13%; } /* Submitter */
+        .table-container table th:nth-child(3),
+        .table-container table td:nth-child(3) { width: 17%; } /* Description */
+        .table-container table th:nth-child(4),
+        .table-container table td:nth-child(4) { width: 16%; } /* Query */
+        .table-container table th:nth-child(5),
+        .table-container table td:nth-child(5) { width: 17%; } /* Query Response */
+        .table-container table th:nth-child(6),
+        .table-container table td:nth-child(6) { width: 13%; }  /* Amount */
+        .table-container table th:nth-child(7),
+        .table-container table td:nth-child(7) { width: 12%; }  /* Empty for icon */
+
+        /* Cell styles */
+        .table-container table td {
+            padding: 8px;
+            vertical-align: middle;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        /* Table header styles */
+        .table-container table th {
+            padding: 8px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        /* Review icon styles - only for table */
+        .review-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #32B8CD;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .review-icon:hover {
+            background-color: #717171;
+        }
+
+        .review-icon.secondary {
+            background-color: #717171;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .review-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+
+        /* Center icons in table cells */
+        .table-container td:last-child {
+            text-align: center;
+        }
+    </style>
     <title>Approvals</title>
 </head>
 <body>
     <div class="container">
+        <!-- SVG Definition (hidden) -->
+        <svg style="display: none;">
+            <symbol id="magnifying-glass" viewBox="0 0 24 24">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </symbol>
+        </svg>
+
         <!-- Sidebar -->
         <div id="navbar-placeholder"></div>
 
@@ -23,8 +111,6 @@
             <!-- Fixed Header -->
             <div class="fixed-header">
                 <div class="top-bar"></div>
-
-
                 <div class="divider5"></div>
 				
 				<div class="title-container">
@@ -187,225 +273,11 @@
                         <div class="price-box">£1,800.00</div>
                         <a href="approvals-review.html"><button class="secondary-review-button">Review</button></a>
                     </div>
-					
-                    <div class="card">
-                        <h2 class="card-title">Invoice</h2>
-                        <div class="divider4"></div>
-                        <div class="card-section-horizontal">
-                            <span class="label bold">Submitter:</span>
-                            <span class="value bold right">James</span>
-                        </div>
-                        <div class="divider3"></div>
-                        <div class="card-section">
-                            <span class="label">Description</span>
-                            <div class="box">Props for the final scene, approved by John</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Query</span>
-                            <div class="box">What props were ordered?</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Response</span>
-                            <div class="box">A vintage clock, a typewriter, and an old lamp.</div>
-                        </div>
-                        <div class="price-box">£900.50</div>
-                        <a href="approvals-review.html"><button class="secondary-review-button">Review</button></a>
-                    </div>
-					
-                    <div class="card">
-                        <h2 class="card-title">Expense</h2>
-                        <div class="divider4"></div>
-                        <div class="card-section-horizontal">
-                            <span class="label bold">Submitter:</span>
-                            <span class="value bold right">Mark</span>
-                        </div>
-                        <div class="divider3"></div>
-                        <div class="card-section">
-                            <span class="label">Description</span>
-                            <div class="box">Cast member transportation, approved by Emily</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Query</span>
-                            <div class="box">How many vehicles are reserved?</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Response</span>
-                            <div class="box">Two vans and one car.</div>
-                        </div>
-                        <div class="price-box">£600.25</div>
-                        <a href="approvals-review.html"><button class="secondary-review-button">Review</button></a>
-                    </div>
-					
-                    <div class="card">
-                        <h2 class="card-title">Invoice</h2>
-                        <div class="divider4"></div>
-                        <div class="card-section-horizontal">
-                            <span class="label bold">Submitter:</span>
-                            <span class="value bold right">Daniel</span>
-                        </div>
-                        <div class="divider3"></div>
-                        <div class="card-section">
-                            <span class="label">Description</span>
-                            <div class="box">Makeup supplies, approved by Jessica</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Query</span>
-                            <div class="box">What brands were selected?</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Response</span>
-                            <div class="box">MAC and Kryolan products were chosen.</div>
-                        </div>
-                        <div class="price-box">£155.50</div>
-                        <a href="approvals-review.html"><button class="secondary-review-button">Review</button></a>
-                    </div>
-
-                    <div class="card">
-                        <h2 class="card-title">Expense</h2>
-                        <div class="divider4"></div>
-                        <div class="card-section-horizontal">
-                            <span class="label bold">Submitter:</span>
-                            <span class="value bold right">Olivia</span>
-                        </div>
-                        <div class="divider3"></div>
-                        <div class="card-section">
-                            <span class="label">Description</span>
-                            <div class="box">Location rental for scene 8, approved by Michael</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Query</span>
-                            <div class="box">What are the rental terms?</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Response</span>
-                            <div class="box">Available from 8 AM to 6 PM with a $500 deposit.</div>
-                        </div>
-                        <div class="price-box">£2000.00</div>
-                        <a href="approvals-review.html"><button class="secondary-review-button">Review</button></a>
-                    </div>
-									
-                    <div class="card">
-                        <h2 class="card-title">Invoice</h2>
-                        <div class="divider4"></div>
-                        <div class="card-section-horizontal">
-                            <span class="label bold">Submitter:</span>
-                            <span class="value bold right">Walter</span>
-                        </div>
-                        <div class="divider3"></div>
-                        <div class="card-section">
-                            <span class="label">Description</span>
-                            <div class="box">Editing software license renewal, approved by Alex</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Query</span>
-                            <div class="box">What is the renewal period?</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Response</span>
-                            <div class="box">The license is valid for one year.</div>
-                        </div>
-                        <div class="price-box">£300.00</div>
-                        <a href="approvals-review.html"><button class="secondary-review-button">Review</button></a>
-                    </div>
-					
-                    <div class="card">
-                        <h2 class="card-title">Expense</h2>
-                        <div class="divider4"></div>
-                        <div class="card-section-horizontal">
-                            <span class="label bold">Submitter:</span>
-                            <span class="value bold right">Nathan</span>
-                        </div>
-                        <div class="divider3"></div>
-                        <div class="card-section">
-                            <span class="label">Description</span>
-                            <div class="box">Costume for lead actress, approved by Anna</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Query</span>
-                            <div class="box">Who designed the costume?</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Response</span>
-                            <div class="box">The costume was designed by Emma Clark.</div>
-                        </div>
-                        <div class="price-box">£1,100.00</div>
-                        <a href="approvals-review.html"><button class="secondary-review-button">Review</button></a>
-                    </div>
-					
-                    <div class="card">
-                        <h2 class="card-title">Invoice</h2>
-                        <div class="divider4"></div>
-                        <div class="card-section-horizontal">
-                            <span class="label bold">Submitter:</span>
-                            <span class="value bold right">Jenny</span>
-                        </div>
-                        <div class="divider3"></div>
-                        <div class="card-section">
-                            <span class="label">Description</span>
-                            <div class="box">Coffee for the director</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Query</span>
-                            <div class="box">Who approved it?</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Response</span>
-                            <div class="box">John approved it.</div>
-                        </div>
-                        <div class="price-box">£3.50</div>
-                        <a href="approvals-review.html"><button class="secondary-review-button">Review</button></a>
-                    </div>
-					
-                    <div class="card">
-                        <h2 class="card-title">Expense</h2>
-                        <div class="divider4"></div>
-                        <div class="card-section-horizontal">
-                            <span class="label bold">Submitter:</span>
-                            <span class="value bold right">Oliver</span>
-                        </div>
-                        <div class="divider3"></div>
-                        <div class="card-section">
-                            <span class="label">Description</span>
-                            <div class="box">Stunt equipment, approved by David</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Query</span>
-                            <div class="box">What equipment was ordered?</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Response</span>
-                            <div class="box">Safety harnesses, crash mats, and rigging cables.</div>
-                        </div>
-                        <div class="price-box">£399.99</div>
-                        <a href="approvals-review.html"><button class="secondary-review-button">Review</button></a>
-                    </div>
-
-                    <div class="card">
-                        <h2 class="card-title">Invoice</h2>
-                        <div class="divider4"></div>
-                        <div class="card-section-horizontal">
-                            <span class="label bold">Submitter:</span>
-                            <span class="value bold right">Ethan</span>
-                        </div>
-                        <div class="divider3"></div>
-                        <div class="card-section">
-                            <span class="label">Description</span>
-                            <div class="box">Special effects materials, approved by Chris</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Query</span>
-                            <div class="box">What materials were purchased?</div>
-                        </div>
-                        <div class="card-section">
-                            <span class="label">Response</span>
-                            <div class="box">Fake blood, fog machines, and pyrotechnics.</div>
-                        </div>
-                        <div class="price-box">£599.99</div>
-                        <a href="approvals-review.html"><button class="secondary-review-button">Review</button></a>
-                    </div>	
                 </div>
 				
-	            <div id="table-container" class="table-container" style="margin-top: 80px; width: 698px; height: 610px; margin-left: 27px;">
+	            <div id="table-container" class="table-container" style=" margin-lefT: 40px; 
+                margin-top: 103px; height: 500px; width: 670px;">
+                
                     <table>
                         <thead>
                             <tr>
@@ -415,8 +287,7 @@
                                 <th>Query</th>
                                 <th>Query Response</th>
                                 <th>Amount</th>
-                                <th>Internal Notes</th>
-                                <th>Review</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -426,9 +297,12 @@
                                 <td>Fuel</td>
                                 <td>Who approved it?</td>
                                 <td>John approved it.</td>
-                                <td>£3.50</td>
-                                <td>-</td>
-                                <td><a href="approvals-review.html"><button class="review-button" style="font-size: 11px;">Review</button></a></td>
+                                <td>£8.65</td>
+                                <td>
+                                    <a href="approvals-review.html" class="review-icon">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Trans.</td>
@@ -437,18 +311,24 @@
                                 <td>What costume is it?</td>
                                 <td>Pirate costume for scene 2a</td>
                                 <td>£59.99</td>
-                                <td>-</td>
-                                <td><a href="approvals-review.html"><button class="secondary-review-button" style="font-size: 11px;">Review</button></a></td>
+                                <td>
+                                    <a href="approvals-review.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Trans.</td>
                                 <td>Jake</td>
                                 <td>Camera equipment, approved by Sarah</td>
+                                <td>When will the equipment arrive?</td>
                                 <td>It will arrive tomorrow at 10 AM.</td>
-                                <td>John approved it.</td>
                                 <td>£2,500.00</td>
-                                <td>-</td>
-                                <td><a href="approvals-review.html"><button class="secondary-review-button" style="font-size: 11px;">Review</button></a></td>
+                                <td>
+                                    <a href="approvals-review.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Trans.</td>
@@ -457,8 +337,11 @@
                                 <td>Is the setup complete?</td>
                                 <td>Yes, it was completed this morning.</td>
                                 <td>£1,200.00</td>
-                                <td>-</td>
-                                <td><a href="approvals-review.html"><button class="secondary-review-button" style="font-size: 11px;">Review</button></a></td>
+                                <td>
+                                    <a href="approvals-review.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Trans.</td>
@@ -467,8 +350,11 @@
                                 <td>What meals are included?</td>
                                 <td>Vegan, vegetarian, and meat options for 20 people.</td>
                                 <td>£750.00</td>
-                                <td>-</td>
-                                <td><a href="approvals-review.html"><button class="secondary-review-button" style="font-size: 11px;">Review</button></a></td>
+                                <td>
+                                    <a href="approvals-review.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Trans.</td>
@@ -477,8 +363,11 @@
                                 <td>How long will the technician stay?</td>
                                 <td>They are hired for the next 3 days.</td>
                                 <td>£1,800.00</td>
-                                <td>-</td>
-                                <td><a href="approvals-review.html"><button class="secondary-review-button" style="font-size: 11px;">Review</button></a></td>
+                                <td>
+                                    <a href="approvals-review.html" class="review-icon secondary">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

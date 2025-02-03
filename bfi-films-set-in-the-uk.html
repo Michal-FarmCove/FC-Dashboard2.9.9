@@ -13,7 +13,29 @@
 
 	
 	
-	    <style>
+    <style>
+        /* Styles for the logg components */
+
+.logg-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logg-card-title {
+    color: #32B8CD;
+    margin: 0;
+    font-size: 17px;
+}
+
+.logg-divider {
+    width: 100%;
+    height: 2px;
+    background-color: #32B8CD;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
         /* Styles for the hover window */
         .hover-info {
             position: relative;
@@ -108,22 +130,21 @@
 				<!-- Close Button -->
 				<a href="bfi.html" class="close-circle">&#x2715;</a>
 				<div class="outer-container">
-				
-				
 
 
 				<div class="top-container-bfi" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0px; margin-top: 10px;">
-                    <div class="nav-bar-window-bfi">
+                <div class="nav-bar-window-bfi">
 						
                         <div><h2 class="window-head-bfi" style="margin: 0;">A1: Film set in the UK</h2>
-						<div class="divider" style="margin-top: 8px; margin-bottom: 0; height: 2px; background-color: black; width: calc(150% + 305px); margin-left: -20px;"></div>
+						<div class="divider" style="margin-top: 8px; margin-bottom: 0; height: 2px;
+						 background-color: black; width: calc(100% + 405px); margin-left: -20px;"></div>
 						</div>
                         <div class="hover-info" style="margin-top: -5px">
                             <span class="hover-info-icon">
 								<img src="info-icon.png" alt="Info Icon" />
 							</span>
 
-                            <div class="hover-window" style="margin-left: -354px;">
+                            <div class="hover-window" style="margin-left: -47px;">
                                 <div class="content-block-bfi" style="font-size: 15px;">
                                     <strong>Section A1 - Cultural Content - Proportion of the film set in the UK or another EEA State. (Up to 4 points)</strong>
                                 </div>
@@ -166,11 +187,8 @@
 				<!-- Center Video Container -->
 				<div class="bottom-container-bfi">
 
-					<div class="section-title-bfi" style="display: flex; justify-content: flex-start; align-items: flex-start; width: 100%;">
-						<h3 style="margin-top: 0px; margin-bottom: 0px; color: white; text-align: left; padding-left: 10px; width: 100%; font-size: 18px">Section A1: Walkthrough Video</h3>
-					</div>
 
-					<div class="video-container-bfi" style="margin-top: 0px; margin-bottom: 25px;">
+					<div class="video-container-bfi" style="margin-top: -20px; margin-bottom: 25px; background-color: #BCBCBC; height: 380px;">
 						<iframe width="606" height="315" 
 							src="https://www.youtube.com/embed/0PjD5VHcSHg" 
 							frameborder="0" 
@@ -191,16 +209,17 @@
 					
 					
 				<!-- Bottom Table Container -->
-				<div class="bottom-container-bfi" style="margin-top: 35px; width: 100%;">
+				<div class="bottom-container-bfi" style="margin-top: 5px;">
+
+					<div class="logg-title" style="margin-left: 0px; width: 550px;">
+						<h2 class="logg-card-title">Requirements to achieve these points</h2>
+						<div class="logg-divider" style="background-color: #32B8CD; width:107.5%"></div>
+					</div>
+
 
 					<table class="table-bfi" style="width: 100%; border-collapse: collapse;">
 						<thead>
-							<!-- New header row spanning all columns -->
-							<tr>
-								<th colspan="7" style="text-align: center; background-color: #515151; color: white; padding: 8px; font-weight: bold; font-size: 17px;">
-									Requirements to achieve these points
-								</th>
-							</tr>
+
 							<!-- Existing header row -->
 							<tr style="font-size: 15px;">
 								<th style="width: 5%; text-align: left; padding: 6px;">#</th>
@@ -245,15 +264,15 @@
 				<div class="bottom-container-bfi" style="margin-top: 55px;">
 
 
-						<div class="bottom-right-section2" style="margin-left: -28px; margin-top: -45px; width: 110%">
+						<div class="bottom-right-section2" style="margin-left: -28px; 
+						margin-top: -45px; width: 110%; background-color: white; ">
 						
-							<div class="divide">
-								<h3 style="margin-top: 20px; margin-bottom: 5px; color: #32B8CD"></h3>
-							</div>
-							
-							<div class="title-divider"></div>
+						<div class="logg-title" style="margin-left: 0px; width: 550px;">
+							<h2 class="logg-card-title">Contact Farm Cove</h2>
+							<div class="logg-divider" style="background-color: #32B8CD; width:107.5%"></div>
+						</div>
 						
-							<img src="chat2.png" alt="Chat Image" class="chat2-image" style=" height: 345px; margin-bottom: 10px;">
+							<img src="chat2.png" alt="Chat Image" class="chat2-image" style="height: 345px; margin-bottom: 10px;">
 						
 							<div class="comment-container">
 								<input type="text" class="comment-input" placeholder="Add comment">

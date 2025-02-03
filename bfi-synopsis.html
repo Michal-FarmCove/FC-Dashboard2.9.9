@@ -42,96 +42,80 @@
 				
 				
 				
-				<div class="outer-container-v2">
+                <div class="outer-container-v2">
+                    <!-- Top Container -->
+                    <div class="top-container-bfi" style="margin-bottom: 0px;">
+                        <div class="nav-bar-window-bfi">
+                            <h2 class="window-head-bfi">Task - BFI: Cultural Contribution</h2>
+                        </div>
+                        <div class="divider" style="background-color: black; height: 1px;"></div>
+                    </div>
 
-					<!-- Top Container -->
-					<div class="top-container-bfi">
-						<div class="nav-bar-window-bfi">
-							<h2 class="window-head-bfi">Task - BFI: Cultural Contribution</h2>
-						</div>
-						<div class="divider" style="background-color: black; height: 1px;"></div>
-					</div>
+                    <!-- Tab Navigation -->
+                    <div class="tab-container">
+                        <div class="tab-nav">
+                            <button class="tab-button active" onclick="openTab('creativity')">British Creativity</button>
+                            <button class="tab-button" onclick="openTab('diversity')">Diversity & Inclusion</button>
+                        </div>
 
+                        <!-- British Creativity Tab -->
+                        <div id="creativity" class="tab-content active">
+                            <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 15px;">British Creativity</h3>
+                            <p style="color: black; font-size: 14px; line-height: 1.5; margin-bottom: 20px;">
+                                Film is able to communicate both the culture of the whole country as well as an individual's point of view. 
+                                The impact of a film and its success in representing British culture can in large part be defined by its creative approach. 
+                                The success of a film in reaching out to particular groups or sections of society can be fundamentally influenced 
+                                by the filmmaker's approach, for example, the use of new techniques and formats or original and different approaches 
+                                to filmmaking. The ability of the filmmaker to tailor their approach to their target audience can demonstrate British creativity. 
+                                Points will be awarded based on the following determinants:
+                            </p>
+                            <ol style="margin-bottom: 20px; font-size: 14px;">
+                                <li style="color: black; margin-bottom: 10px;">
+                                    <strong>Subject:</strong> Does the film's portrayal of British culture come as a result of a filmmaker's creative approach? 
+                                    i.e. The content is not necessarily dictated by a pre-existing work but is a creative, new interpretation of British culture;
+                                </li>
+                                <li style="color: black;">
+                                    Other factors relating to creativity which can be shown to have an impact on the final content.
+                                </li>
+                            </ol>
+                            <label for="creativity-contribution" style="color: black; font-weight: bold; display: block; margin-bottom: 10px;">Cultural Contribution - Creativity</label>
+            <textarea id="creativity-contribution" placeholder="Write your message here..." rows="5"></textarea>
+            <div class="button-counter-container">
+                <button class="send-btn">Send</button>
+                <div class="text-counter">
+                    <span id="creativity-count">0</span>/1200
+                </div>
+            </div>
+                        </div>
 
-
-
-
-					<!-- Top1 Container -->
-					<div class="top1-container">
-						<h3>British Creativity</h3>
-						<p style="color:black;">
-							Film is able to communicate both the culture of the whole country as well as an individual's point of view. 
-							The impact of a film and its success in representing British culture can in large part be defined by its creative approach. 
-							The success of a film in reaching out to particular groups or sections of society can be fundamentally influenced 
-							by the filmmaker’s approach, for example, the use of new techniques and formats or original and different approaches 
-							to filmmaking. The ability of the filmmaker to tailor their approach to their target audience can demonstrate British creativity. 
-							Points will be awarded based on the following determinants:
-						</p>
-						<ol>
-							<li style="color:black;">
-								<strong>Subject:</strong> Does the film’s portrayal of British culture come as a result of a filmmaker’s creative approach? 
-								i.e. The content is not necessarily dictated by a pre-existing work but is a creative, new interpretation of British culture;
-							</li>
-							<li style="color:black;">
-								Other factors relating to creativity which can be shown to have an impact on the final content.
-							</li>
-						</ol>
-						</br>
-						<!-- New Custom Box -->
-						<label for="cultural-contribution" style="color:black; margin-bottom: 0px;">Cultural Contribution - Creativity</label>
-						<div class="custom-box">
-							<img src="for-text-box.png" alt="Image for Text Box" class="text-box-image">
-						</div>
-						
-						<textarea id="cultural-contribution" placeholder="Write your input here..." rows="5" style="margin-top: 0px;"></textarea>
-						<div class="text-counter">
-							<span id="character-count">0</span>/1200
-						</div>
-					</div>
-
-
-
-
-
-
-
-
-
-
-						<!-- Bottom1 Container -->
-					<div class="bottom1-container">
-						<h3>British Creativity</h3>
-						<p style="color:black;">
-							Film is able to communicate both the culture of the whole country as well as an individual's point of view. 
-							The impact of a film and its success in representing British culture can in large part be defined by its creative approach. 
-							The success of a film in reaching out to particular groups or sections of society can be fundamentally influenced 
-							by the filmmaker’s approach, for example, the use of new techniques and formats or original and different approaches 
-							to filmmaking. The ability of the filmmaker to tailor their approach to their target audience can demonstrate British creativity. 
-							Points will be awarded based on the following determinants:
-						</p>
-						<ol>
-							<li style="color:black;">
-								<strong>Subject:</strong> Does the film’s portrayal of British culture come as a result of a filmmaker’s creative approach? 
-								i.e. The content is not necessarily dictated by a pre-existing work but is a creative, new interpretation of British culture;
-							</li>
-							<li style="color:black;">
-								Other factors relating to creativity which can be shown to have an impact on the final content.
-							</li>
-						</ol>
-						</br>
-						<!-- New Custom Box -->
-						<label for="cultural-contribution" style="color:black; margin-bottom: 0px;">Cultural Contribution - Creativity</label>
-						<div class="custom-box">
-							<img src="for-text-box.png" alt="Image for Text Box" class="text-box-image">
-						</div>
-						
-						<textarea id="cultural-contribution" placeholder="Write your input here..." rows="5" style="margin-top: 0px;"></textarea>
-						<div class="text-counter">
-							<span id="character-count">0</span>/1200
-						</div>
-					</div>
-
-				</div>
+                        <!-- Diversity & Inclusion Tab -->
+                        <div id="diversity" class="tab-content">
+                            <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 15px;">Diversity & Inclusion</h3>
+                            <p style="color: black; font-size: 14px; line-height: 1.5; margin-bottom: 20px;">
+                                Diversity and inclusion in film play a crucial role in representing the multicultural fabric of British society. 
+                                The film industry has a unique opportunity to showcase and celebrate different perspectives, experiences, and voices. 
+                                Through authentic storytelling and representation, films can contribute to a more inclusive cultural narrative. 
+                                Points will be awarded based on the following criteria:
+                            </p>
+                            <ol style="margin-bottom: 20px; font-size: 14px;">
+                                <li style="color: black; margin-bottom: 10px;">
+                                    <strong>Representation:</strong> How effectively does the film represent diverse communities and perspectives within British society?
+                                </li>
+                                <li style="color: black;">
+                                    <strong>Authentic Voice:</strong> Does the film provide authentic representation and storytelling from diverse perspectives?
+                                </li>
+                            </ol>
+                            <label for="diversity-contribution" style="color: black; font-weight: bold; display: block; margin-bottom: 10px;">Cultural Contribution - Diversity</label>
+            <textarea id="diversity-contribution" placeholder="Write your message here..." rows="5"></textarea>
+            <div class="button-counter-container">
+                <button class="send-btn">Send</button>
+                <div class="text-counter">
+                    <span id="diversity-count">0</span>/1200
+                </div>
+            </div>
+                        </div>
+                    </div>
+                </div>
 
 			</div>
 			
@@ -426,8 +410,8 @@
 							<img src="chat1.png" alt="Chat Image" class="chat1-image">
 						
 							<div class="comment-container">
-								<input type="text" class="comment-input" placeholder="Add comment">
-								<button class="comment-button">Add comment</button>
+                <input type="text" class="comment-input" placeholder="Type a message...">
+                <button class="comment-button">Send</button>
 							</div>
 
 						
@@ -487,7 +471,52 @@
 
 
     <script>
-				// Dropdown functionality
+        // Tab functionality
+        function openTab(tabName) {
+            // Hide all tab content
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let content of tabContents) {
+                content.classList.remove('active');
+            }
+            
+            // Remove active class from all buttons
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let button of tabButtons) {
+                button.classList.remove('active');
+            }
+            
+            // Show the selected tab content and activate the button
+            document.getElementById(tabName).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // Character counter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const textareas = ['creativity-contribution', 'diversity-contribution'];
+            
+            textareas.forEach(id => {
+                const textarea = document.getElementById(id);
+                const counter = document.getElementById(id.split('-')[0] + '-count');
+                
+                textarea.addEventListener('input', function() {
+                    const count = this.value.length;
+                    counter.textContent = count;
+                    
+                    // Optional: Add visual feedback when approaching/exceeding limit
+                    if (count > 1200) {
+                        counter.style.color = '#F95A5A';
+                        this.value = this.value.substring(0, 1200);
+                        counter.textContent = '1200';
+                    } else if (count > 1000) {
+                        counter.style.color = '#FFA500';
+                    } else {
+                        counter.style.color = '#666';
+                    }
+                });
+            });
+        });
+
+        // Existing dropdown functionality
 		document.querySelectorAll('.dropdown-toggle').forEach(button => {
 			button.addEventListener('click', () => {
 				const currentDropdown = button.nextElementSibling; // Target the submenu
@@ -527,23 +556,7 @@
 	
 	
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    // Initially, ensure only the grid is visible
-    document.querySelector('.grid').style.display = 'flex'; // Show grid
-    document.getElementById('table-container').style.display = 'none'; // Hide table
-
-    // Show Grid button functionality
-    document.getElementById('show-grid').addEventListener('click', () => {
-        document.querySelector('.grid').style.display = 'flex'; // Show grid
-        document.getElementById('table-container').style.display = 'none'; // Hide table
-    });
-
-    // Show Table button functionality
-    document.getElementById('show-table').addEventListener('click', () => {
-        document.querySelector('.grid').style.display = 'none'; // Hide grid
-        document.getElementById('table-container').style.display = 'block'; // Show table
-    });
-});
+// No need for grid/table functionality in this view
 
 
 

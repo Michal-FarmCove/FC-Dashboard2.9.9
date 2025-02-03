@@ -4,40 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="approvals-styles.css">
-			<script src="navbar.js" defer></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+    <script src="navbar.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
     <title>Compliance Documents</title>
-	
+    <style>
+        /* Review icon styles - only for table */
+        .review-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #32B8CD;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
 
-	
-	
+        .review-icon:hover {
+            background-color: #717171;
+        }
+
+        .review-icon.secondary {
+            background-color: #717171;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .review-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+
+        /* Center icons in table cells */
+        .table-container td:last-child {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
+        <!-- SVG Definition (hidden) -->
+        <svg style="display: none;">
+            <symbol id="magnifying-glass" viewBox="0 0 24 24">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </symbol>
+        </svg>
+
         <!-- Sidebar -->
-  
-  	  	    <div id="navbar-placeholder"></div>
+        <div id="navbar-placeholder"></div>
 
         <!-- Main Content -->
-
             <!-- Blue Line Container -->
             <div class="blue-line-container">
                 <div class="blue-line"></div>
             </div>
 
-
-
             <!-- Fixed Header -->
             <div class="fixed-header">
                 <div class="top-bar">
-				
-
-					
-					
-			
-			
-
-					
                 </div>
                 <div class="divider5"></div>
 				
@@ -48,21 +75,12 @@
 						<button id="show-table">Show Table</button>
 					</div>
 				</div>
-
-
-				
             </div>
-
-
-
-
 
             <!-- Scrollable Content -->
             <div class="scrollable-content">
-			
                 <div class="grid" style="margin-left: 30px; width: 800px">
                     <!-- Example Card -->
-					
                     <div class="cardv2">
                         <h2 class="card-title">Approval Structure</h2>
                         <div class="divider4"></div>
@@ -134,149 +152,127 @@
 						<div class="divider3"></div>
                         <a href="compliance-documents-details-sent.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
                     </div>
-					
-					
-
-
-					
-
-					
-					
-					
                 </div>
 				
-				
-				
-				
-	<div id="table-container" class="table-container" style="margin-top: 103px; height: 300px;">
-            
-			<table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Date</th>
-                        <th>Status</th>
- 						<th></th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Approvals Process</td>
-                        <td>October 20, 2024</td>
-                        <td style=" color: #F95A5A">Production Approval Required</td>
-                        <td><a href="compliance-documents-details.html"><button class="button1">View Details</button></a></td>
-                    </tr>
-					<tr>
-                        <td>Approvals Process</td>
-                        <td>October 20, 2024</td>
-                        <td style=" color: #F95A5A">Production Approval Required</td>
-                        <td><a href="compliance-documents-details.html"><button class="button1">View Details</button></a></td>
-                    </tr>
-					<tr>
-                        <td>Transaction Processing</td>
-                        <td>October 20, 2024</td>
-                        <td style=" color: #717171">Generated</td>
-                        <td><a href="compliance-documents-details.html"><button class="button1">View Details</button></a></td>
-                    </tr>
-					<tr>
-                        <td>Transaction Processing</td>
-                        <td>October 20, 2024</td>
-                        <td style=" color: #717171">Generated</td>
-                        <td><a href="compliance-documents-details.html"><button class="button1">View Details</button></a></td>
-                    </tr>
-					<tr>
-                        <td>Transaction Processing</td>
-                        <td>October 20, 2024</td>
-                        <td style=" color: #32B8CD">Sent</td>
-                        <td><a href="compliance-documents-details.html"><button class="button1">View Details</button></a></td>
-                    </tr>
-					
-
-
-
-
-
-
-                </tbody>
-            </table>
-        </div>			
-    </div>
-
+	            <div id="table-container" class="table-container" style=" margin-lefT: 40px; margin-top: 103px; height: 300px; width: 670px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Approvals Process</td>
+                                <td>October 20, 2024</td>
+                                <td style="color: #F95A5A">Production Approval Required</td>
+                                <td>
+                                    <a href="compliance-documents-details.html" class="review-icon">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Approvals Process</td>
+                                <td>October 20, 2024</td>
+                                <td style="color: #F95A5A">Production Approval Required</td>
+                                <td>
+                                    <a href="compliance-documents-details.html" class="review-icon">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Transaction Processing</td>
+                                <td>October 20, 2024</td>
+                                <td style="color: #717171">Generated</td>
+                                <td>
+                                    <a href="compliance-documents-details.html" class="review-icon">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Transaction Processing</td>
+                                <td>October 20, 2024</td>
+                                <td style="color: #717171">Generated</td>
+                                <td>
+                                    <a href="compliance-documents-details.html" class="review-icon">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Transaction Processing</td>
+                                <td>October 20, 2024</td>
+                                <td style="color: #32B8CD">Sent</td>
+                                <td>
+                                    <a href="compliance-documents-details.html" class="review-icon">
+                                        <svg><use href="#magnifying-glass"/></svg>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>			
+            </div>
+        </div>
     </div>
 
     <script>
-				// Dropdown functionality
-		document.querySelectorAll('.dropdown-toggle').forEach(button => {
-			button.addEventListener('click', () => {
-				const currentDropdown = button.nextElementSibling; // Target the submenu
-				const arrow = button.querySelector('.arrow'); // Target the arrow icon
+        // Dropdown functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const currentDropdown = button.nextElementSibling;
+                const arrow = button.querySelector('.arrow');
 
-				// Close other dropdowns
-				document.querySelectorAll('.submenu').forEach(menu => {
-					if (menu !== currentDropdown) {
-						menu.classList.remove('active');
-						menu.style.display = 'none'; // Ensure hidden state
-						menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;'; // Reset arrow
-					}
-				});
+                document.querySelectorAll('.submenu').forEach(menu => {
+                    if (menu !== currentDropdown) {
+                        menu.classList.remove('active');
+                        menu.style.display = 'none';
+                        menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;';
+                    }
+                });
 
-				// Toggle the current dropdown
-				if (currentDropdown.classList.contains('active')) {
-					currentDropdown.classList.remove('active');
-					setTimeout(() => {
-						currentDropdown.style.display = 'none'; // Hide after animation ends
-					}, 200); // Match the transition duration
-					arrow.innerHTML = '&#9660;'; // Change arrow to down
-				} else {
-					currentDropdown.style.display = 'block'; // Show immediately for animation
-					setTimeout(() => {
-						currentDropdown.classList.add('active');
-						// Apply staggered animation delays to each item
-						const items = currentDropdown.querySelectorAll('li');
-						items.forEach((item, index) => {
-							item.style.setProperty('--delay', `${index * 0.03}s`); // Stagger delay for each item
-						});
-					}, 1); // Small delay to trigger animation
-					arrow.innerHTML = '&#9650;'; // Change arrow to up
-				}
-			});
-		});
+                if (currentDropdown.classList.contains('active')) {
+                    currentDropdown.classList.remove('active');
+                    setTimeout(() => {
+                        currentDropdown.style.display = 'none';
+                    }, 200);
+                    arrow.innerHTML = '&#9660;';
+                } else {
+                    currentDropdown.style.display = 'block';
+                    setTimeout(() => {
+                        currentDropdown.classList.add('active');
+                        const items = currentDropdown.querySelectorAll('li');
+                        items.forEach((item, index) => {
+                            item.style.setProperty('--delay', `${index * 0.03}s`);
+                        });
+                    }, 1);
+                    arrow.innerHTML = '&#9650;';
+                }
+            });
+        });
     </script>
 	
-	
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    // Initially, ensure only the grid is visible
-    document.querySelector('.grid').style.display = 'flex'; // Show grid
-    document.getElementById('table-container').style.display = 'none'; // Hide table
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector('.grid').style.display = 'flex';
+            document.getElementById('table-container').style.display = 'none';
 
-    // Show Grid button functionality
-    document.getElementById('show-grid').addEventListener('click', () => {
-        document.querySelector('.grid').style.display = 'flex'; // Show grid
-        document.getElementById('table-container').style.display = 'none'; // Hide table
-    });
+            document.getElementById('show-grid').addEventListener('click', () => {
+                document.querySelector('.grid').style.display = 'flex';
+                document.getElementById('table-container').style.display = 'none';
+            });
 
-    // Show Table button functionality
-    document.getElementById('show-table').addEventListener('click', () => {
-        document.querySelector('.grid').style.display = 'none'; // Hide grid
-        document.getElementById('table-container').style.display = 'block'; // Show table
-    });
-});
-
-</script>
-
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+            document.getElementById('show-table').addEventListener('click', () => {
+                document.querySelector('.grid').style.display = 'none';
+                document.getElementById('table-container').style.display = 'block';
+            });
+        });
+    </script>
 </body>
 </html>
