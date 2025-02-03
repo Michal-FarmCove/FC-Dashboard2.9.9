@@ -1,121 +1,3 @@
-// Budget data for Q1, Q2, and Q3
-const budgetData = {
-    q1: {
-        equipment: 20000,
-        props: 10000,
-        locations: 15000,
-        transport: 12000,
-        catering: 7000
-    },
-    q2: {
-        // Q2 budget values reduced by 25% compared to Q1
-        equipment: 15000, // Reduced from 20000
-        props: 7500,      // Reduced from 10000
-        locations: 11250, // Reduced from 15000
-        transport: 9000,  // Reduced from 12000
-        catering: 5250    // Reduced from 7000
-    },
-    q3: {
-        // Q3 budget values reduced by 35% compared to Q1 (following the pattern of reduction)
-        equipment: 13000, // Further reduced from Q2
-        props: 6500,      // Further reduced from Q2
-        locations: 9750,  // Further reduced from Q2
-        transport: 7800,  // Further reduced from Q2
-        catering: 4550    // Further reduced from Q2
-    }
-};
-
-// Function to show upload popup
-function showUploadPopup() {
-    const popup = document.createElement('div');
-    popup.style.cssText = `
-        position: fixed;
-        top: 50%;
-        left: 61%;
-        transform: translate(-50%, -50%);
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        text-align: center;
-    `;
-    
-    popup.innerHTML = `
-        <h3 style="margin-bottom: 20px; color: #161616;">Please upload a CSV file</h3>
-        <button id="uploadBtn" style="
-            background: #32B8CD;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            
-        ">Upload</button>
-    `;
-
-    // Add overlay
-    const overlay = document.createElement('div');
-    overlay.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 999;
-    `;
-
-    document.body.appendChild(overlay);
-    document.body.appendChild(popup);
-
-    // Add click handlers
-    overlay.addEventListener('click', () => {
-        popup.remove();
-        overlay.remove();
-    });
-
-    document.getElementById('uploadBtn').addEventListener('click', () => {
-        // Change popup content to success message
-        popup.innerHTML = `
-            <h3 style="margin-bottom: 20px; color: #161616;">Budget successfully uploaded and selected</h3>
-            <button id="okBtn" style="
-                background: #32B8CD;
-                color: white;
-                padding: 8px 20px;
-                border-radius: 5px;
-                border: none;
-                cursor: pointer;
-                font-size: 14px;
-                font-weight: 500;
-            ">OK</button>
-        `;
-
-        // Add click handler for OK button
-        document.getElementById('okBtn').addEventListener('click', () => {
-            // Select Q3 in the dropdown
-            const budgetSelect = document.getElementById('budgetSelect');
-            // Add Q3 option if it doesn't exist
-            if (!Array.from(budgetSelect.options).some(opt => opt.value === 'q3')) {
-                const q3Option = new Option('Q3 2024 Budget', 'q3');
-                budgetSelect.add(q3Option);
-            }
-            // Select Q3
-            budgetSelect.value = 'q3';
-            // Update chart
-            updateBudgetChart('q3');
-            // Remove popup
-            popup.remove();
-            overlay.remove();
-        });
-    });
-}
-
-// Add click handler to upload button
-document.querySelector('.upload-button').addEventListener('click', showUploadPopup);
-
 // Constant actual spend data that should never change
 const ACTUAL_SPEND = Object.freeze([15000, 11500, 12000, 9500, 5000]);
 
@@ -130,32 +12,6 @@ const createChart = (chartId, chartData) => {
     return charts[chartId];
 };
 
-// Function to update chart based on selected quarter
-window.updateBudgetChart = (quarter) => {
-    console.log('Updating budget for quarter:', quarter);
-    const selectedBudget = budgetData[quarter];
-    
-    if (charts["chart1"]) {
-        // Only update the budget dataset (index 0)
-        charts["chart1"].data.datasets[0].data = [
-            selectedBudget.equipment,
-            selectedBudget.props,
-            selectedBudget.locations,
-            selectedBudget.transport,
-            selectedBudget.catering
-        ];
-        
-        // Force a redraw of the chart
-        charts["chart1"].update();
-        console.log('Budget updated:', {
-            actualSpend: ACTUAL_SPEND,
-            newBudget: selectedBudget
-        });
-    } else {
-        console.error('Chart1 not found in charts object');
-    }
-};
-
 // Helper function to generate last 7 days
 const getLast7Days = () => {
     const days = [];
@@ -168,13 +24,11 @@ const getLast7Days = () => {
 };
 
 // Production Expenses Breakdown (Now Chart 1)
-const q1BudgetArray = [
-    budgetData.q1.equipment,
-    budgetData.q1.props,
-    budgetData.q1.locations,
-    budgetData.q1.transport,
-    budgetData.q1.catering
-];
+const budgetArray = [20000, 10000, 15000, 12000, 7000];
+
+// Calculate totals
+const totalBudget = budgetArray.reduce((acc, curr) => acc + curr, 0);
+const totalSpend = ACTUAL_SPEND.reduce((acc, curr) => acc + curr, 0);
 
 // Create the initial chart with constant actual spend data
 createChart("chart1", {
@@ -184,7 +38,7 @@ createChart("chart1", {
         datasets: [
             {
                 label: "Budget Available",
-                data: q1BudgetArray,
+                data: budgetArray,
                 backgroundColor: "rgba(112, 112, 112, 0.2)",
                 borderColor: "#707070",
                 borderWidth: 1
@@ -217,6 +71,49 @@ createChart("chart1", {
                 color: "#161616",
                 font: {
                     size: 16
+                },
+                padding: {
+                    bottom: 15
+                }
+            },
+            subtitle: {
+                display: true,
+                position: 'bottom',
+                text: ['Total Budget: £' + totalBudget.toLocaleString() + '                              Total Spend: £' + totalSpend.toLocaleString()],
+                color: '#161616',
+                font: {
+                    size: 14,
+                    family: "'Arial', sans-serif",
+                    weight: 'bold'
+                },
+                padding: {
+                    top: 25,
+                    bottom: 10
+                }
+            },
+            // Add custom plugin for colored rectangles
+            beforeDraw: (chart) => {
+                const ctx = chart.ctx;
+                const subtitle = chart.options.plugins.subtitle;
+                if (subtitle.display) {
+                    const x = chart.chartArea.left;
+                    const y = chart.height - 30;
+                    
+                    // Draw budget rectangle with exact legend style
+                    ctx.fillStyle = "rgba(112, 112, 112, 0.2)";
+                    ctx.strokeStyle = "#707070";
+                    ctx.lineWidth = 1;
+                    ctx.fillRect(x + 5, y + 4, 25, 4);
+                    ctx.strokeRect(x + 5, y + 4, 25, 4);
+                    
+                    // Draw spend rectangle with exact legend style
+                    const spendColor = totalSpend > totalBudget ? 'rgba(249, 90, 90, 0.2)' : 'rgba(50, 184, 205, 0.2)';
+                    const spendBorder = totalSpend > totalBudget ? '#F95A5A' : '#32B8CD';
+                    ctx.fillStyle = spendColor;
+                    ctx.strokeStyle = spendBorder;
+                    ctx.lineWidth = 1;
+                    ctx.fillRect(x + 350, y + 4, 25, 4);
+                    ctx.strokeRect(x + 350, y + 4, 25, 4);
                 }
             },
             legend: {
@@ -236,6 +133,7 @@ createChart("chart1", {
         },
         responsive: true,
         maintainAspectRatio: true,
+        aspectRatio: 1.5,
         scales: {
             x: {
                 grid: {
@@ -280,6 +178,10 @@ createChart("chart1", {
 const expensesData = [4250.00, 3600.00, 5200.00, 4800.00, 3900.00, 4700.00, 4100.00];
 const vatData = expensesData.map(amount => amount * 0.2); // 20% VAT
 
+// Calculate totals for expenses
+const totalExpenses = expensesData.reduce((acc, curr) => acc + curr, 0);
+const totalVAT = vatData.reduce((acc, curr) => acc + curr, 0);
+
 createChart("chart2", {
     type: "bar",
     data: {
@@ -313,6 +215,44 @@ createChart("chart2", {
                     size: 16
                 }
             },
+            subtitle: {
+                display: true,
+                position: 'bottom',
+                text: ['Total Expenses: £' + totalExpenses.toLocaleString() + '                              Total VAT: £' + totalVAT.toLocaleString()],
+                color: '#161616',
+                font: {
+                    size: 14,
+                    family: "'Arial', sans-serif",
+                    weight: 'bold'
+                },
+                padding: {
+                    top: 25,
+                    bottom: 10
+                }
+            },
+            // Add custom plugin for colored rectangles
+            beforeDraw: (chart) => {
+                const ctx = chart.ctx;
+                const subtitle = chart.options.plugins.subtitle;
+                if (subtitle.display) {
+                    const x = chart.chartArea.left;
+                    const y = chart.height - 30;
+                    
+                    // Draw expenses rectangle
+                    ctx.fillStyle = "rgba(50, 184, 205, 0.2)";
+                    ctx.strokeStyle = "#32B8CD";
+                    ctx.lineWidth = 1;
+                    ctx.fillRect(x + 5, y + 4, 25, 4);
+                    ctx.strokeRect(x + 5, y + 4, 25, 4);
+                    
+                    // Draw VAT rectangle
+                    ctx.fillStyle = "rgba(112, 112, 112, 0.2)";
+                    ctx.strokeStyle = "#707070";
+                    ctx.lineWidth = 1;
+                    ctx.fillRect(x + 350, y + 4, 25, 4);
+                    ctx.strokeRect(x + 350, y + 4, 25, 4);
+                }
+            },
             legend: {
                 labels: {
                     color: "#161616",
@@ -330,6 +270,7 @@ createChart("chart2", {
         },
         responsive: true,
         maintainAspectRatio: true,
+        aspectRatio: 1.5,
         scales: {
             x: {
                 grid: {
@@ -371,14 +312,21 @@ createChart("chart2", {
 });
 
 // Crew and Driver Logs (Now Chart 3)
+const crewHours = [11.0, 13.0, 10.5, 13.0, 11.5, 12.0, 11.0]; // Hours worked per day
+const driverHours = [6.5, 8.0, 10.0, 7.5, 9.0, 8.5, 7.0]; // Independent variation but generally less than crew
+
+// Calculate totals for hours
+const totalCrewHours = crewHours.reduce((acc, curr) => acc + curr, 0);
+const totalDriverHours = driverHours.reduce((acc, curr) => acc + curr, 0);
+
 createChart("chart3", {
     type: "line",
     data: {
         labels: getLast7Days(),
         datasets: [
             {
-                label: "Crew Logs",
-                data: [35, 42, 28, 45, 38, 41, 33],
+                label: "Crew Hours",
+                data: crewHours,
                 backgroundColor: "rgba(50, 184, 205, 0.2)",
                 borderColor: "#32B8CD",
                 borderWidth: 2,
@@ -386,8 +334,8 @@ createChart("chart3", {
                 fill: true
             },
             {
-                label: "Driver Logs",
-                data: [22, 28, 18, 30, 25, 27, 20],
+                label: "Driver Hours",
+                data: driverHours,
                 backgroundColor: "rgba(112, 112, 112, 0.2)",
                 borderColor: "#707070",
                 borderWidth: 2,
@@ -400,10 +348,48 @@ createChart("chart3", {
         plugins: {
             title: {
                 display: true,
-                text: "Crew and Driver Logs",
+                text: "Crew and Driver Hours",
                 color: "#161616",
                 font: {
                     size: 16
+                }
+            },
+            subtitle: {
+                display: true,
+                position: 'bottom',
+                text: ['Total Crew Hours: ' + totalCrewHours.toFixed(1) + ' hrs                              Total Driver Hours: ' + totalDriverHours.toFixed(1) + ' hrs'],
+                color: '#161616',
+                font: {
+                    size: 14,
+                    family: "'Arial', sans-serif",
+                    weight: 'bold'
+                },
+                padding: {
+                    top: 25,
+                    bottom: 10
+                }
+            },
+            // Add custom plugin for colored rectangles
+            beforeDraw: (chart) => {
+                const ctx = chart.ctx;
+                const subtitle = chart.options.plugins.subtitle;
+                if (subtitle.display) {
+                    const x = chart.chartArea.left;
+                    const y = chart.height - 30;
+                    
+                    // Draw crew rectangle
+                    ctx.fillStyle = "rgba(50, 184, 205, 0.2)";
+                    ctx.strokeStyle = "#32B8CD";
+                    ctx.lineWidth = 1;
+                    ctx.fillRect(x + 5, y + 4, 25, 4);
+                    ctx.strokeRect(x + 5, y + 4, 25, 4);
+                    
+                    // Draw driver rectangle
+                    ctx.fillStyle = "rgba(112, 112, 112, 0.2)";
+                    ctx.strokeStyle = "#707070";
+                    ctx.lineWidth = 1;
+                    ctx.fillRect(x + 350, y + 4, 25, 4);
+                    ctx.strokeRect(x + 350, y + 4, 25, 4);
                 }
             },
             legend: {
@@ -412,10 +398,18 @@ createChart("chart3", {
                     padding: 20
                 },
                 margin: 40
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        return `${context.dataset.label}: ${context.raw.toFixed(1)} hrs`;
+                    }
+                }
             }
         },
         responsive: true,
         maintainAspectRatio: true,
+        aspectRatio: 1.5,
         scales: {
             x: {
                 grid: {
@@ -434,9 +428,14 @@ createChart("chart3", {
                 },
                 ticks: {
                     color: "#161616",
-                    padding: 10
+                    padding: 10,
+                    callback: function(value) {
+                        return value + ' hrs';
+                    }
                 },
-                suggestedMax: 50
+                min: 0,
+                max: 18,
+                stepSize: 3
             }
         },
         layout: {
@@ -451,32 +450,33 @@ createChart("chart3", {
 });
 
 // Invoice Processing (Now Chart 4)
+const processedInvoices = [32, 40, 24, 36, 28];
+const pendingInvoices = [12, 8, 4, 12, 8];
+
+// Calculate totals for invoices
+const totalProcessed = processedInvoices.reduce((acc, curr) => acc + curr, 0);
+const totalPending = pendingInvoices.reduce((acc, curr) => acc + curr, 0);
+
 createChart("chart4", {
-    type: "radar",
+    type: "bar",
     data: {
         labels: getLast7Days().slice(2),
         datasets: [
             {
                 label: "Processed Invoices",
-                data: [8, 10, 6, 9, 7],
+                data: processedInvoices,
                 backgroundColor: "rgba(50, 184, 205, 0.2)",
                 borderColor: "#32B8CD",
-                borderWidth: 2,
-                pointBackgroundColor: "#32B8CD",
-                pointBorderColor: "#fff",
-                pointHoverBackgroundColor: "#fff",
-                pointHoverBorderColor: "#32B8CD"
+                borderWidth: 1,
+                stack: 'Stack 0'
             },
             {
                 label: "Pending Invoices",
-                data: [3, 2, 1, 3, 2],
+                data: pendingInvoices,
                 backgroundColor: "rgba(112, 112, 112, 0.2)",
                 borderColor: "#707070",
-                borderWidth: 2,
-                pointBackgroundColor: "#707070",
-                pointBorderColor: "#fff",
-                pointHoverBackgroundColor: "#fff",
-                pointHoverBorderColor: "#707070"
+                borderWidth: 1,
+                stack: 'Stack 0'
             }
         ]
     },
@@ -490,42 +490,79 @@ createChart("chart4", {
                     size: 16
                 }
             },
+            subtitle: {
+                display: true,
+                position: 'bottom',
+                text: ['Total Processed: ' + totalProcessed + '                              Total Pending: ' + totalPending],
+                color: '#161616',
+                font: {
+                    size: 14,
+                    family: "'Arial', sans-serif",
+                    weight: 'bold'
+                },
+                padding: {
+                    top: 25,
+                    bottom: 10
+                }
+            },
+            // Add custom plugin for colored rectangles
+            beforeDraw: (chart) => {
+                const ctx = chart.ctx;
+                const subtitle = chart.options.plugins.subtitle;
+                if (subtitle.display) {
+                    const x = chart.chartArea.left;
+                    const y = chart.height - 30;
+                    
+                    // Draw processed rectangle
+                    ctx.fillStyle = "rgba(50, 184, 205, 0.2)";
+                    ctx.strokeStyle = "#32B8CD";
+                    ctx.lineWidth = 1;
+                    ctx.fillRect(x + 5, y + 4, 25, 4);
+                    ctx.strokeRect(x + 5, y + 4, 25, 4);
+                    
+                    // Draw pending rectangle
+                    ctx.fillStyle = "rgba(112, 112, 112, 0.2)";
+                    ctx.strokeStyle = "#707070";
+                    ctx.lineWidth = 1;
+                    ctx.fillRect(x + 350, y + 4, 25, 4);
+                    ctx.strokeRect(x + 350, y + 4, 25, 4);
+                }
+            },
             legend: {
                 labels: {
-                    color: "#161616"
-                }
+                    color: "#161616",
+                    padding: 20
+                },
+                margin: 40
             }
         },
         responsive: true,
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
+        aspectRatio: 1.5,
         scales: {
-            r: {
-                angleLines: {
-                    color: "rgba(112, 112, 112, 0.2)",
-                    lineWidth: 1
-                },
+            x: {
                 grid: {
                     color: "rgba(112, 112, 112, 0.2)",
-                    circular: true
-                },
-                pointLabels: {
-                    color: "#161616",
-                    font: {
-                        size: 12
-                    },
-                    padding: 10
+                    drawBorder: false
                 },
                 ticks: {
                     color: "#161616",
-                    backdropColor: "transparent",
-                    stepSize: 5,
-                    padding: 10,
-                    font: {
-                        size: 12
-                    }
+                    padding: 10
+                }
+            },
+            y: {
+                grid: {
+                    color: "rgba(112, 112, 112, 0.2)",
+                    drawBorder: false
                 },
-                suggestedMin: 0,
-                suggestedMax: 15
+                ticks: {
+                    color: "#161616",
+                    padding: 10,
+                    stepSize: 8
+                },
+                min: 0,
+                max: 56,
+                suggestedMax: 56
             }
         },
         layout: {
