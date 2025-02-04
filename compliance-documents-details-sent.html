@@ -3,392 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="approvals-styles.css">
-	<link rel="stylesheet" href="overlay.css">
-	<link rel="stylesheet" href="overlay-compliance-documents.css">
-	
-	<style>
-		.image-class2 {
-			transition: all 0.5s ease;
-			cursor: pointer;
-			transform-origin: center;
-		}
-		
-		.image-class2.enlarged {
-			transform: scale(2.55);
-			cursor: move;
-		}
-		
-		.container-b {
-			overflow: hidden;
-			position: relative;
-		}
-	</style>
+    <link rel="stylesheet" href="approvals-styles.css">
+    <link rel="stylesheet" href="overlay.css">
+    <script src="navbar.js" defer></script>
+    <style>
+        .image-container {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .image-class2 {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            transform-origin: center center;
+            position: relative;
+        }
+        
+        .image-class2.enlarged {
+            transform: scale(2.55);
+            cursor: move;
+        }
+    </style>
 
     <title>Compliance Documents</title>
 </head>
 <body>
     <div class="container">
         <!-- Sidebar -->
+        <div id="navbar-placeholder"></div>
 
         <!-- Main Content -->
+        <!-- Blue Line Container -->
+        <div class="blue-line-container">
+            <div class="blue-line"></div>
+        </div>
 
-            <!-- Blue Line Container -->
-            <div class="blue-line-container">
-                <div class="blue-line"></div>
+        <!-- Overlay -->
+        <div class="overlay" style="margin-left: 25px; margin-top: -5px;"></div>        
+        
+        <!-- Centered White Box -->
+        <div class="centered-box" style="height: 80%; margin-left: 110px;">
+            <!-- Close Button -->
+            <a href="compliance-documents.html" class="close-circle">&#x2715;</a>
+
+            <!-- Top Container -->
+            <div class="top-container" style="margin-top: 10px; margin-left: 5px; margin-right: 25px;">
+                <h2 class="window-head">Transaction Processing</h2>
+                <div class="divider" style="background-color: black"></div>
             </div>
 
-			<!-- Overlay -->
-			<div class="overlay" style="margin-left: 25px; margin-top: -5px;"></div>		
-			
-			<!-- Centered White Box -->
-			<div class="centered-box" style="height: 80vh; margin-left: 110px; background: white; position: relative;">
-				<!-- Close Button -->
-				<a href="compliance-documents.html" class="close-circle">&#x2715;</a>
-				
-				<!-- Fixed Header -->
-				<div style="position: absolute; top: 0; left: 0; right: 0; background: white; z-index: 100; padding: 15px; border-bottom: 1px solid rgba(0,0,0,0.1);">
-					<h2 class="window-head" style="margin: 0;">Transaction Processing</h2>
-					<div class="divider" style="background-color: black"></div>
-				</div>
+            <div class="outer-container" style="max-height: calc(100% - 80px); overflow-y: auto; padding-right: 10px;">
+                <!-- Grid Layout -->
+                <div class="layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <!-- Version Details Container -->
+                    <div class="container-r">
+                        <h2 class="card-title" style="text-align: left; color: #32B8CD; margin-bottom: -5px;">Version Details</h2>
+                        <div class="divider" style="margin-bottom: 5px; background-color: #32B8CD; margin-bottom: 25px;"></div>
 
-				<!-- Scrollable Content Container -->
-				<div style="position: absolute; top: 65px; bottom: 0; left: 0; right: 0; overflow-y: auto; padding: 20px;">
-
-						<!-- Grid Layout -->
-						<div class="layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-							<!-- Version Details Container -->
-							<div class="container-r">
-
-								<h2 class="card-title" style="text-align: left; color: #32B8CD; margin-bottom: -5px;">Version Details</h2>
-								<div class="divider" style="margin-bottom: 5px; background-color: #32B8CD; margin-bottom: 25px;"></div>
-
-								<span class="label3" style="color: black;">Version</span>
-								<div class="box3">1</div>
-								<span class="label3" style="color: black;">Created</span>
-								<div class="box3">04/11/2024, 17:08</div>
-
-							</div>
-
-							<!-- Yellow Container -->
-							<div class="container-t-m">
-
-								<h2 class="card-title" style="text-align: left; color: #32B8CD; margin-bottom: -5px;">Project Document Details</h2>
-								<div class="divider" style="margin-bottom: 5px; background-color: #32B8CD; margin-bottom: 25px;"></div>
-
-								<span class="label3" style="color: black;">Creator</span>
-								<div class="box3">Mark Noir - Company Director
-								</div>
-								<span class="label3" style="color: black;">Status</span>
-								<div class="box3">Draft</div>
-								<span class="label3" style="color: black;">Type</span>
-								<div class="box3">Compliance</div>
-								<span class="label3" style="color: black;">Subtype</span>
-								<div class="box3">Transaction Processing Overview</div>
-
-							</div>
-
-							<!-- Recipients Container -->
-							<div class="container-t-l" style="grid-column: 1 / -1; margin-top: 10px;">
-								
-								<div class="manage-recipients">
-									<h2 class="card-title" style="text-align: left; color: #32B8CD; margin-bottom: -5px;">Manage Recipients</h2>
-									<div class="divider" style="margin-bottom: 5px; background-color: #32B8CD; margin-bottom: 25px;"></div>
-									<h4 class="current-recipients-title" style="margin-top: -10px;">Current Recipients</h4>
-									<table class="recipients-table">
-										<thead>
-											<tr>
-												<th>Name and Role</th>
-												<th>Email Sent To</th>
-												<th>Mobile Sent To</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>Thomas Brown (Finance Director)</td>
-												<td>thomas.brown@farmcove.co.uk</td>
-												<td>64226949444</td>
-											</tr>
-										</tbody>
-									</table>
-									<h4 class="add-recipient-title" style="margin-top: -10px;">Add Recipient</h4>
-									<table class="recipients-table">
-										<thead>
-											<tr>
-												<th></th>
-												<th>Name and Role</th>
-												<th>Type</th>
-												<th>Department</th>
-												<th>Email</th>
-												<th>Mobile</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td><input type="checkbox"></td>
-												<td>Emily Davis - Finance Manager</td>
-												<td>Manager</td>
-												<td>Finance</td>
-												<td>emily.davis@farmcove.co.uk</td>
-												<td>07563123777</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-									<div class="button-containerrr" style="margin-top: -10px;">
-										<button class="button1v1" onclick="saveAndClosePopup()">Save</button>
-										<button class="button1v1" onclick="submitForApproval()">Submit for Approval</button>
-									</div>
-
-							</div>
-
-							<div class="container-b" style="grid-column: 1 / -1;">
-								<div class="manage-recipients">
-									<h2 class="card-title" style="text-align: left; color: #32B8CD; margin-bottom: -5px;">Document</h2>
-									<div class="divider" style="margin-bottom: 5px; background-color: #32B8CD; margin-bottom: 25px;"></div>
-
-								</div>	
-
-									<img src="compliance-docs\transaction-processing.png" alt="Descriptive Text" class="image-class2">
-
-							</div>
-
-						</div>
-				</div>	
-				</div>			
-			</div>		
-			</div>	
-
-			
-	</div>
-			
-
-
-	</div>
-
-
-
-            <!-- Fixed Header -->
-            <div class="fixed-header">
-                <div class="top-bar">
-                </div>
-                <div class="divider5"></div>
-				
-				<div class="title-container">
-					<h2 class="page-title">Compliance Documents</h2>
-					<div class="toggle-buttons">
-						<button id="show-grid">Show Grid</button>
-						<button id="show-table">Show Table</button>
-					</div>
-				</div>
-            </div>
-
-            <!-- Scrollable Content -->
-            <div class="scrollable-content">
-                <div class="grid" style="margin-left: 30px; width: 800px">
-                    <!-- Example Card -->
-                    <div class="cardv2">
-                        <h2 class="card-title">Approval Structure</h2>
-                        <div class="divider4"></div>
-                            <span class="label bold" style ="color: #515151; text-align: center; margin-left: 62px; font-size: 12px;" >Requested</span>
-                        <div class="divider3"></div>
-						<div class="card-sectionv2" style="margin-top: 20px; margin-bottom: 20px;">
-							<img src="Request Iconv2.png" alt="File Icon" class="card-imagev2">
-						</div>
-						<div class="divider3"></div>
-                        <a href="compliance-documents-details-requested.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
+                        <span class="label3" style="color: black;">Version</span>
+                        <div class="box3">1</div>
+                        <span class="label3" style="color: black;">Created</span>
+                        <div class="box3">04/11/2024, 17:08</div>
                     </div>
-					
-                    <div class="cardv2">
-                        <h2 class="card-title">Approval Structure</h2>
-                        <div class="divider4"></div>
-                            <span class="label bold" style ="color: #F95A5A; text-align: center; margin-left: 4px; font-size: 12px;" >Production Approval Required</span>
-                        <div class="divider3"></div>
-						<div class="card-sectionv2" style="margin-top: 20px; margin-bottom: 20px;">
-							<img src="Prod Approval Required.png" alt="File Icon" class="card-imagev2">
-						</div>
-						<div class="divider3"></div>
-                        <a href="compliance-documents-details.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
+
+                    <!-- Yellow Container -->
+                    <div class="container-t-m">
+                        <h2 class="card-title" style="text-align: left; color: #32B8CD; margin-bottom: -5px;">Project Document Details</h2>
+                        <div class="divider" style="margin-bottom: 5px; background-color: #32B8CD; margin-bottom: 25px;"></div>
+
+                        <span class="label3" style="color: black;">Creator</span>
+                        <div class="box3">Mark Noir - Company Director</div>
+                        <span class="label3" style="color: black;">Status</span>
+                        <div class="box3">Sent</div>
+                        <span class="label3" style="color: black;">Type</span>
+                        <div class="box3">Compliance</div>
+                        <span class="label3" style="color: black;">Subtype</span>
+                        <div class="box3">Transaction Processing Overview</div>
                     </div>
-					
-                    <div class="cardv2">
-                        <h2 class="card-title">Transaction Processing </h2>
-                        <div class="divider4"></div>
-                            <span class="label bold" style ="color: #515151; text-align: center; margin-left: 62px; font-size: 12px;" >Generated</span>
-                        <div class="divider3"></div>
-						<div class="card-sectionv2" style="margin-top: 20px; margin-bottom: 20px;">
-							<img src="Generated Icon.png" alt="File Icon" class="card-imagev2">
-						</div>
-						<div class="divider3"></div>
-                        <a href="compliance-documents-details-gen.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
+
+                    <!-- Recipients Container -->
+                    <div class="container-t-l" style="grid-column: 1 / -1; margin-top: 10px;">
+                        <div class="manage-recipients">
+                            <h2 class="card-title" style="text-align: left; color: #32B8CD; margin-bottom: -5px;">Manage Recipients</h2>
+                            <div class="divider" style="margin-bottom: 5px; background-color: #32B8CD; margin-bottom: 25px;"></div>
+                            <h4 class="current-recipients-title" style="margin-top: -10px;">Current Recipients</h4>
+                            <table class="recipients-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name and Role</th>
+                                        <th>Email Sent To</th>
+                                        <th>Mobile Sent To</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Thomas Brown (Finance Director)</td>
+                                        <td>thomas.brown@farmcove.co.uk</td>
+                                        <td>64226949444</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h4 class="add-recipient-title" style="margin-top: -10px;">Add Recipient</h4>
+                            <table class="recipients-table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Name and Role</th>
+                                        <th>Type</th>
+                                        <th>Department</th>
+                                        <th>Email</th>
+                                        <th>Mobile</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>Emily Davis - Finance Manager</td>
+                                        <td>Manager</td>
+                                        <td>Finance</td>
+                                        <td>emily.davis@farmcove.co.uk</td>
+                                        <td>07563123777</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="button-containerrr" style="margin-top: -10px;">
+                            <button class="button1v1" onclick="saveAndClosePopup()">Save</button>
+                            <button class="button1v1" onclick="submitForApproval()">Submit for Approval</button>
+                        </div>
                     </div>
-					
-                    <div class="cardv2">
-                        <h2 class="card-title">Transaction Processing </h2>
-                        <div class="divider4"></div>
-                            <span class="label bold" style ="color: #515151; text-align: center;  margin-left: 75px; font-size: 12px;" >Draft</span>
-                        <div class="divider3"></div>
-						<div class="card-sectionv2" style="margin-top: 20px; margin-bottom: 20px;">
-							<img src="Draft Icon.png" alt="File Icon" class="card-imagev2">
-						</div>
-						<div class="divider3"></div>
-                        <a href="compliance-documents-details-draft.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
-                    </div>
-					                    
-					<div class="cardv2">
-                        <h2 class="card-title">Transaction Processing </h2>
-                        <div class="divider4"></div>
-                            <span class="label bold" style ="color: #515151; text-align: center;  margin-left: 70px; font-size: 12px;" >Queried</span>
-                        <div class="divider3"></div>
-						<div class="card-sectionv2" style="margin-top: 20px; margin-bottom: 20px;">
-							<img src="Querried Icon.png" alt="File Icon" class="card-imagev2">
-						</div>
-						<div class="divider3"></div>
-                        <a href="compliance-documents-details-queried.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
-                    </div>
-					
-					<div class="cardv2">
-                        <h2 class="card-title">Transaction Processing </h2>
-                        <div class="divider4"></div>
-                            <span class="label bold" style ="color: #32B8CD; text-align: center; margin-left: 78px; font-size: 12px;" >Sent</span>
-                        <div class="divider3"></div>
-						<div class="card-sectionv2" style="margin-top: 20px; margin-bottom: 20px;">
-							<img src="Sent Icon.png" alt="File Icon" class="card-imagev2">
-						</div>
-						<div class="divider3"></div>
-                        <a href="compliance-documents-details-sent.html"><button class="review-button" style="margin-bottom: 72px; margin-top: 15px;">View Details</button></a>
+
+                    <div class="container-b" style="grid-column: 1 / -1;">
+                        <div class="manage-recipients">
+                            <h2 class="card-title" style="text-align: left; color: #32B8CD; margin-bottom: -5px;">Document</h2>
+                            <div class="divider" style="margin-bottom: 5px; background-color: #32B8CD; margin-bottom: 25px;"></div>
+                        </div>    
+                        <img src="compliance-docs\transaction-processing.png" alt="Descriptive Text" class="image-class2">
                     </div>
                 </div>
-				
-	            <div id="table-container" class="table-container" style=" margin-lefT: 40px; margin-top: 103px; height: 300px; width: 670px;">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Date</th>
-                                <th>Status</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Approvals Process</td>
-                                <td>October 20, 2024</td>
-                                <td style="color: #F95A5A">Production Approval Required</td>
-                                <td>
-                                    <a href="compliance-documents-details.html" class="review-icon">
-                                        <svg><use href="#magnifying-glass"/></svg>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Approvals Process</td>
-                                <td>October 20, 2024</td>
-                                <td style="color: #F95A5A">Production Approval Required</td>
-                                <td>
-                                    <a href="compliance-documents-details.html" class="review-icon">
-                                        <svg><use href="#magnifying-glass"/></svg>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Transaction Processing</td>
-                                <td>October 20, 2024</td>
-                                <td style="color: #717171">Generated</td>
-                                <td>
-                                    <a href="compliance-documents-details.html" class="review-icon">
-                                        <svg><use href="#magnifying-glass"/></svg>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Transaction Processing</td>
-                                <td>October 20, 2024</td>
-                                <td style="color: #717171">Generated</td>
-                                <td>
-                                    <a href="compliance-documents-details.html" class="review-icon">
-                                        <svg><use href="#magnifying-glass"/></svg>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Transaction Processing</td>
-                                <td>October 20, 2024</td>
-                                <td style="color: #32B8CD">Sent</td>
-                                <td>
-                                    <a href="compliance-documents-details.html" class="review-icon">
-                                        <svg><use href="#magnifying-glass"/></svg>
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>			
-            </div>
-
+            </div>    
+        </div>    
     </div>
 
     <script>
-	
         // Dropdown functionality
-document.querySelectorAll('.dropdown-toggle').forEach(button => {
-    button.addEventListener('click', () => {
-        const currentDropdown = button.nextElementSibling; // Target the submenu
-        const arrow = button.querySelector('.arrow'); // Target the arrow icon
+        document.querySelectorAll('.dropdown-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const currentDropdown = button.nextElementSibling;
+                const arrow = button.querySelector('.arrow');
 
-        // Close other dropdowns
-        document.querySelectorAll('.submenu').forEach(menu => {
-            if (menu !== currentDropdown) {
-                menu.classList.remove('active');
-                menu.style.display = 'none'; // Ensure hidden state
-                menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;'; // Reset arrow
-            }
-        });
-
-        // Toggle the current dropdown
-        if (currentDropdown.classList.contains('active')) {
-            currentDropdown.classList.remove('active');
-            setTimeout(() => {
-                currentDropdown.style.display = 'none'; // Hide after animation ends
-            }, 200); // Match the transition duration
-            arrow.innerHTML = '&#9660;'; // Change arrow to down
-        } else {
-            currentDropdown.style.display = 'block'; // Show immediately for animation
-            setTimeout(() => {
-                currentDropdown.classList.add('active');
-                // Apply staggered animation delays to each item
-                const items = currentDropdown.querySelectorAll('li');
-                items.forEach((item, index) => {
-                    item.style.setProperty('--delay', `${index * 0.03}s`); // Stagger delay for each item
+                document.querySelectorAll('.submenu').forEach(menu => {
+                    if (menu !== currentDropdown) {
+                        menu.classList.remove('active');
+                        menu.style.display = 'none';
+                        menu.previousElementSibling.querySelector('.arrow').innerHTML = '&#9660;';
+                    }
                 });
-            }, 1); // Small delay to trigger animation
-            arrow.innerHTML = '&#9650;'; // Change arrow to up
-        }
-    });
-});
-    </script>
-	
-	
-	    <script>
-// Function to show overlay
-function showOverlay() {
-    document.querySelector('.overlay').style.display = 'flex';
-}
 
-// Function to hide overlay
-function hideOverlay() {
-    document.querySelector('.overlay').style.display = 'none';
-}
-    </script>
-	
-	
-	
-	<script>
-	// Function to hide overlay and white box
-function hideOverlay() {
-    document.querySelector('.overlay').style.display = 'none';
-    document.querySelector('.centered-box').style.display = 'none';
-}
+                if (currentDropdown.classList.contains('active')) {
+                    currentDropdown.classList.remove('active');
+                    setTimeout(() => {
+                        currentDropdown.style.display = 'none';
+                    }, 200);
+                    arrow.innerHTML = '&#9660;';
+                } else {
+                    currentDropdown.style.display = 'block';
+                    setTimeout(() => {
+                        currentDropdown.classList.add('active');
+                        const items = currentDropdown.querySelectorAll('li');
+                        items.forEach((item, index) => {
+                            item.style.setProperty('--delay', `${index * 0.03}s`);
+                        });
+                    }, 1);
+                    arrow.innerHTML = '&#9650;';
+                }
+            });
+        });
     </script>
     
     <script>
@@ -447,6 +237,5 @@ function hideOverlay() {
             });
         });
     </script>
-	
 </body>
 </html>
